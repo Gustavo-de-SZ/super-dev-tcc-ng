@@ -90,7 +90,7 @@ export class Login {
     }
 
     // Simula login e navega para Home
-    this.router.navigate(['/']);
+    this.router.navigate(['/user/home']);
   }
 
   irParaCadastro() {

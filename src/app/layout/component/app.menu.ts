@@ -22,7 +22,7 @@ export class AppMenu {
         this.model = [
             {
                 label: 'Home',
-                items: [{ label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
+                items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
             },
             {
                 label: 'UI Components',
@@ -54,6 +54,11 @@ export class AppMenu {
                         icon: 'pi pi-fw pi-globe',
                         routerLink: ['/landing']
                     },
+                    //{
+                       // label: 'Home',
+                       // icon: 'pi pi-fw pi-globe',
+                        //routerLink: ['/user/home']
+                   // },
                     {
                         label: 'Auth',
                         icon: 'pi pi-fw pi-user',
@@ -72,7 +77,14 @@ export class AppMenu {
                                 label: 'Access Denied',
                                 icon: 'pi pi-fw pi-lock',
                                 routerLink: ['/auth/access']
+                            },
+                            {
+                                label: 'Cadastro',
+                                icon: 'pi pi-fw pi-user-plus',
+                                routerLink: ['/auth/cadastro']
                             }
+                            
+                            
                         ]
                     },
                     {
@@ -86,9 +98,9 @@ export class AppMenu {
                         routerLink: ['/pages/notfound']
                     },
                     {
-                        label: 'Empty',
+                        label: 'Home',
                         icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty']
+                        routerLink: ['/pages/home']
                     }
                 ]
             },
