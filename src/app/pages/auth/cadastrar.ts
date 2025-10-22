@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-cadastro',
   standalone: true,
   imports: [
     CommonModule,
@@ -22,39 +22,44 @@ import { MessageModule } from 'primeng/message';
     MessageModule
   ],
   template: `
-    <div class="login-container">
-      <p-card header="TechHelp - Login" class="login-card">
+    <div class="cadastro-container">
+      <p-card header="TechHelp - Cadastro" class="cadastro-card">
         <div class="form">
           <span class="p-float-label">
-            <input pInputText type="email" [(ngModel)]="email" placeholder="E-mail" />
-          
+            <input pInputText type="text" [(ngModel)]="nome" placeholder="Nome " />
+           
           </span>
 
           <span class="p-float-label">
-            <p-password [(ngModel)]="senha" toggleMask="true" placeholder="Senha"></p-password>
+            <input pInputText type="email" [(ngModel)]="email" placeholder="E-mail " />
+            
+          </span>
+
+          <span class="p-float-label">
+            <p-password [(ngModel)]="senha" toggleMask="true" placeholder="Senha "></p-password>
            
           </span>
 
           <p-message *ngIf="erro" severity="error" text="{{ erro }}"></p-message>
 
           <p-button
-            label="Entrar"
-            icon="pi pi-sign-in"
+            label="Cadastrar"
+            icon="pi pi-user-plus"
             styleClass="w-full"
-            (click)="logar()"
+            (click)="cadastrar()"
           ></p-button>
 
           <p-button
-            label="Cadastrar"
+            label="Voltar para Login"
             styleClass="w-full p-button-outlined mt-2"
-            (click)="irParaCadastro()"
+            (click)="voltarLogin()"
           ></p-button>
         </div>
       </p-card>
     </div>
   `,
   styles: [`
-    .login-container {
+    .cadastro-container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,8 +67,8 @@ import { MessageModule } from 'primeng/message';
       background: linear-gradient(135deg, #1e293b, #0f172a);
     }
 
-    .login-card {
-      width: 380px;
+    .cadastro-card {
+      width: 400px;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -76,24 +81,25 @@ import { MessageModule } from 'primeng/message';
     }
   `]
 })
-export class Login {
+export class Cadastro {
+  nome = '';
   email = '';
   senha = '';
   erro: string | null = null;
 
   constructor(private router: Router) {}
 
-  logar() {
-    if (!this.email || !this.senha) {
+  cadastrar() {
+    if (!this.nome || !this.email || !this.senha) {
       this.erro = 'Preencha todos os campos';
       return;
     }
 
-    // Simula login e navega para Home
+    // Simula cadastro e navega para Home
     this.router.navigate(['/']);
   }
 
-  irParaCadastro() {
-    this.router.navigate(['cadastro']);
+  voltarLogin() {
+    this.router.navigate(['/login']);
   }
 }
