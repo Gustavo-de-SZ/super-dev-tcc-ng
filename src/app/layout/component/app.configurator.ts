@@ -81,15 +81,7 @@ declare type SurfacesType = {
                     }
                 </div>
             </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-sm text-muted-color font-semibold">Presets</span>
-                <p-selectbutton [options]="presets" [ngModel]="selectedPreset()" (ngModelChange)="onPresetChange($event)" [allowEmpty]="false" size="small" />
-            </div>
-            <div *ngIf="showMenuModeButton()" class="flex flex-col gap-2">
-                <span class="text-sm text-muted-color font-semibold">Menu Mode</span>
-                <p-selectbutton [ngModel]="menuMode()" (ngModelChange)="onMenuModeChange($event)" [options]="menuModeOptions" [allowEmpty]="false" size="small" />
-            </div>
-        </div>
+       
     `,
     host: {
         class: 'hidden absolute top-13 right-0 w-72 p-4 bg-surface-0 dark:bg-surface-900 border border-surface rounded-border origin-top shadow-[0px_3px_5px_rgba(0,0,0,0.02),0px_0px_2px_rgba(0,0,0,0.05),0px_1px_4px_rgba(0,0,0,0.08)]'
@@ -108,12 +100,9 @@ export class AppConfigurator {
 
     presets = Object.keys(presets);
 
-    showMenuModeButton = signal(!this.router.url.includes('auth'));
+   
 
-    menuModeOptions = [
-        { label: 'Static', value: 'static' },
-        { label: 'Overlay', value: 'overlay' }
-    ];
+  
 
     ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
@@ -268,7 +257,7 @@ export class AppConfigurator {
 
     selectedPreset = computed(() => this.layoutService.layoutConfig().preset);
 
-    menuMode = computed(() => this.layoutService.layoutConfig().menuMode);
+   
 
     primaryColors = computed<SurfacesType[]>(() => {
         const presetPalette = presets[this.layoutService.layoutConfig().preset as KeyOfType<typeof presets>].primitive;
@@ -440,7 +429,5 @@ export class AppConfigurator {
         $t().preset(preset).preset(this.getPresetExt()).surfacePalette(surfacePalette).use({ useDefaultOptions: true });
     }
 
-    onMenuModeChange(event: string) {
-        this.layoutService.layoutConfig.update((prev) => ({ ...prev, menuMode: event }));
-    }
+  
 }
