@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   standalone: true,
   imports: [
     CommonModule,
@@ -26,30 +26,33 @@ import { MessageModule } from 'primeng/message';
       <p-card header="TechHelp - Login" class="login-card">
         <div class="form">
           <span class="p-float-label">
-            <input pInputText type="email" [(ngModel)]="email" placeholder="E-mail" />
+            <input pInputText type="email" [(ngModel)]="email" placeholder="E-mail" fluid />
           
           </span>
 
           <span class="p-float-label">
-            <p-password [(ngModel)]="senha" toggleMask="true" placeholder="Senha"></p-password>
+            <p-password [(ngModel)]="senha" toggleMask="true" placeholder="Senha" fluid></p-password>
            
           </span>
 
           <p-message *ngIf="erro" severity="error" text="{{ erro }}"></p-message>
+        <div class="flex">
 
+          
           <p-button
-            label="Entrar"
-            icon="pi pi-sign-in"
-            styleClass="w-full"
-            (click)="logar()"
+          label="Entrar"
+          icon="pi pi-sign-in"
+          styleClass="w-full"
+          (click)="logar()"
           ></p-button>
-
+          
           <p-button
-            label="Cadastrar"
-            styleClass="w-full p-button-outlined mt-2"
-            (click)="irParaCadastro()"
+          label="Cadastrar"
+          styleClass="w-full p-button-outlined mt-2"
+          (click)="irParaCadastro()"
           ></p-button>
         </div>
+      </div>
       </p-card>
     </div>
   `,
@@ -94,6 +97,6 @@ export class Login {
   }
 
   irParaCadastro() {
-    this.router.navigate(['/cadastro']);
+    this.router.navigate(['cadastro']);
   }
 }
