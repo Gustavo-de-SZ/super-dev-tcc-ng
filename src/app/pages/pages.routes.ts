@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { Documentation } from './documentation/documentation';
+import { Suporte } from './documentation/suporte';
 import { Crud } from './crud/crud';
-import { Home } from './user/home';
+import { Cadastro } from './auth/cadastrar';
+
 
 export default [
-    { path: 'documentation', component: Documentation },
+    { path: 'suporte', component: Suporte },
     { path: 'crud', component: Crud },
-    { path: 'home', component: Home },
+    {path: 'cadastro', component: Cadastro},
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;

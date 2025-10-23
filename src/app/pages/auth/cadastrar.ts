@@ -9,7 +9,7 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 
 @Component({
-  selector: 'app-cadastro',
+  selector: 'cadastro',
   standalone: true,
   imports: [
     CommonModule,
@@ -96,10 +96,10 @@ export class Cadastro {
     }
 
     // Simula cadastro e navega para Home
-    this.router.navigate(['/user/home']);
+    this.router.navigate(['/']);
   }
 
   voltarLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 }
