@@ -51,7 +51,7 @@ import { UserService } from '@/layout/service/user.service';
   styles: [`
     .page {
       height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background-color: #1e293b, #0f172a;
       display: flex;
       justify-content: center;
       align-items: center;

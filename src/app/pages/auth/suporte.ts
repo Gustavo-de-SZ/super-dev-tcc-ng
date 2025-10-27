@@ -8,9 +8,9 @@ import { StepperModule } from 'primeng/stepper';
 <div class="card flex justify-center">
     <p-stepper [value]="1" class="basis-[50rem]">
         <p-step-list>
-            <p-step [value]="1">Header I</p-step>
-            <p-step [value]="2">Header II</p-step>
-            <p-step [value]="3">Header II</p-step>
+            <p-step [value]="1">Dispositivo</p-step>
+            <p-step [value]="2">Tipo de suporte</p-step>
+            <p-step [value]="3">Confirmação</p-step>
         </p-step-list>
         <p-step-panels>
             <p-step-panel [value]="1">

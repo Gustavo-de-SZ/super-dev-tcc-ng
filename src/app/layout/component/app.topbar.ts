@@ -28,8 +28,8 @@ import { LayoutService } from '../service/layout.service';
             <div class="layout-topbar-menu hidden lg:block">
                 <div class="layout-topbar-menu-content">
                     <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-user"></i>
-                        <span>Profile</span>
+                        <i class="pi pi-user" routerLink="/admin/user-perfil"></i>
+                        <span></span>
                     </button>
                 </div>
             </div>

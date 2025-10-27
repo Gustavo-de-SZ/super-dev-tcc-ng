@@ -96,7 +96,7 @@ export class Cadastro {
     }
 
     // Simula cadastro e navega para Home
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 
   voltarLogin() {
