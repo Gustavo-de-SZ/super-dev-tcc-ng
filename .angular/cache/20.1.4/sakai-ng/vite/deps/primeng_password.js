@@ -1,47 +1,53 @@
 import {
   BaseInput
-} from "./chunk-VDSSVXCQ.js";
+} from "./chunk-RIDLPB56.js";
 import {
   InputText
-} from "./chunk-4AC7EG3S.js";
+} from "./chunk-B7Y7BKU4.js";
 import {
   BaseEditableHolder
-} from "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-R7JFBUJZ.js";
+} from "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   Fluid
-} from "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
+} from "./chunk-CDN2HBI6.js";
 import {
   AutoFocus
-} from "./chunk-FKVBP7E7.js";
+} from "./chunk-DCN6VKWH.js";
+import {
+  ConnectedOverlayScrollHandler,
+  DomHandler
+} from "./chunk-Q42KCB4K.js";
 import {
   EyeIcon,
   EyeSlashIcon,
   TimesIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
-  ConnectedOverlayScrollHandler,
-  DomHandler
-} from "./chunk-C5DLRIHR.js";
-import "./chunk-64SSRD2L.js";
+  NG_VALUE_ACCESSOR
+} from "./chunk-R7JFBUJZ.js";
+import "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   OverlayService,
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import {
+  animate,
+  style,
+  transition,
+  trigger
+} from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   D,
   I,
@@ -50,14 +56,7 @@ import {
   W,
   Yt,
   v
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import {
-  animate,
-  style,
-  transition,
-  trigger
-} from "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -135,7 +134,7 @@ import "./chunk-RTGP7ALM.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/@primeuix/styles/dist/password/index.mjs
-var style2 = "\n    .p-password {\n        display: inline-flex;\n        position: relative;\n    }\n\n    .p-password .p-password-overlay {\n        min-width: 100%;\n    }\n\n    .p-password-meter {\n        height: dt('password.meter.height');\n        background: dt('password.meter.background');\n        border-radius: dt('password.meter.border.radius');\n    }\n\n    .p-password-meter-label {\n        height: 100%;\n        width: 0;\n        transition: width 1s ease-in-out;\n        border-radius: dt('password.meter.border.radius');\n    }\n\n    .p-password-meter-weak {\n        background: dt('password.strength.weak.background');\n    }\n\n    .p-password-meter-medium {\n        background: dt('password.strength.medium.background');\n    }\n\n    .p-password-meter-strong {\n        background: dt('password.strength.strong.background');\n    }\n\n    .p-password-fluid {\n        display: flex;\n    }\n\n    .p-password-fluid .p-password-input {\n        width: 100%;\n    }\n\n    .p-password-input::-ms-reveal,\n    .p-password-input::-ms-clear {\n        display: none;\n    }\n\n    .p-password-overlay {\n        padding: dt('password.overlay.padding');\n        background: dt('password.overlay.background');\n        color: dt('password.overlay.color');\n        border: 1px solid dt('password.overlay.border.color');\n        box-shadow: dt('password.overlay.shadow');\n        border-radius: dt('password.overlay.border.radius');\n    }\n\n    .p-password-content {\n        display: flex;\n        flex-direction: column;\n        gap: dt('password.content.gap');\n    }\n\n    .p-password-toggle-mask-icon {\n        inset-inline-end: dt('form.field.padding.x');\n        color: dt('password.icon.color');\n        position: absolute;\n        top: 50%;\n        margin-top: calc(-1 * calc(dt('icon.size') / 2));\n        width: dt('icon.size');\n        height: dt('icon.size');\n    }\n\n    .p-password-clear-icon {\n        position: absolute;\n        top: 50%;\n        margin-top: -0.5rem;\n        cursor: pointer;\n        inset-inline-end: dt('form.field.padding.x');\n        color: dt('form.field.icon.color');\n    }\n\n    .p-password:has(.p-password-toggle-mask-icon) .p-password-input {\n        padding-inline-end: calc((dt('form.field.padding.x') * 2) + dt('icon.size'));\n    }\n\n    .p-password:has(.p-password-toggle-mask-icon) .p-password-clear-icon {\n        inset-inline-end: calc((dt('form.field.padding.x') * 2) + dt('icon.size'));\n    }\n";
+var style2 = "\n    .p-password {\n        display: inline-flex;\n        position: relative;\n    }\n\n    .p-password .p-password-overlay {\n        min-width: 100%;\n    }\n\n    .p-password-meter {\n        height: dt('password.meter.height');\n        background: dt('password.meter.background');\n        border-radius: dt('password.meter.border.radius');\n    }\n\n    .p-password-meter-label {\n        height: 100%;\n        width: 0;\n        transition: width 1s ease-in-out;\n        border-radius: dt('password.meter.border.radius');\n    }\n\n    .p-password-meter-weak {\n        background: dt('password.strength.weak.background');\n    }\n\n    .p-password-meter-medium {\n        background: dt('password.strength.medium.background');\n    }\n\n    .p-password-meter-strong {\n        background: dt('password.strength.strong.background');\n    }\n\n    .p-password-fluid {\n        display: flex;\n    }\n\n    .p-password-fluid .p-password-input {\n        width: 100%;\n    }\n\n    .p-password-input::-ms-reveal,\n    .p-password-input::-ms-clear {\n        display: none;\n    }\n\n    .p-password-overlay {\n        padding: dt('password.overlay.padding');\n        background: dt('password.overlay.background');\n        color: dt('password.overlay.color');\n        border: 1px solid dt('password.overlay.border.color');\n        box-shadow: dt('password.overlay.shadow');\n        border-radius: dt('password.overlay.border.radius');\n    }\n\n    .p-password-content {\n        display: flex;\n        flex-direction: column;\n        gap: dt('password.content.gap');\n    }\n\n    .p-password-toggle-mask-icon {\n        inset-inline-end: dt('form.field.padding.x');\n        color: dt('password.icon.color');\n        position: absolute;\n        top: 50%;\n        margin-top: calc(-1 * calc(dt('icon.size') / 2));\n        width: dt('icon.size');\n        height: dt('icon.size');\n    }\n\n    .p-password-clear-icon {\n        position: absolute;\n        top: 50%;\n        margin-top: -0.5rem;\n        cursor: pointer;\n        inset-inline-end: dt('form.field.padding.x');\n        color: dt('form.field.icon.color');\n    }\n\n    .p-password:has(.p-password-toggle-mask-icon) .p-password-input {\n        padding-inline-end: calc((dt('form.field.padding.x') * 2) + dt('icon.size'));\n    }\n\n    .p-password:has(.p-password-toggle-mask-icon) .p-password-clear-icon {\n        inset-inline-end: calc((dt('form.field.padding.x') * 2) + dt('icon.size'));\n    }\n\n    .p-password:has(.p-password-clear-icon) .p-password-input {\n        padding-inline-end: calc((dt('form.field.padding.x') * 2) + dt('icon.size'));\n    }\n\n    .p-password:has(.p-password-clear-icon):has(.p-password-toggle-mask-icon)  .p-password-input {\n        padding-inline-end: calc((dt('form.field.padding.x') * 3) + calc(dt('icon.size') * 2));\n    }\n\n";
 
 // node_modules/primeng/fesm2022/primeng-password.mjs
 var _c0 = ["content"];
@@ -699,12 +698,16 @@ var PasswordDirective = class _PasswordDirective extends BaseEditableHolder {
       if (!this.panel || !R(this.panel, "p-connected-overlay-visible")) {
         this.showOverlay();
       }
-      this.renderer.setStyle(this.meter, "backgroundPosition", meterPos);
-      this.info.textContent = label;
+      if (this.meter) {
+        this.renderer.setStyle(this.meter, "backgroundPosition", meterPos);
+      }
+      if (this.info) {
+        this.info.textContent = label;
+      }
     }
   }
   updateMeter() {
-    if (this.labelSignal()) {
+    if (this.labelSignal() && this.meter && this.info) {
       const label = this.labelSignal();
       const strengthClass = this.strengthClass(label.toLowerCase());
       const width = this.getWidth(label.toLowerCase());
@@ -1223,8 +1226,8 @@ var Password = class _Password extends BaseInput {
   }
   testStrength(str) {
     let level = 0;
-    if (this.strongCheckRegExp.test(str)) level = 3;
-    else if (this.mediumCheckRegExp.test(str)) level = 2;
+    if (this.strongCheckRegExp?.test(str)) level = 3;
+    else if (this.mediumCheckRegExp?.test(str)) level = 2;
     else if (str.length) level = 1;
     return level;
   }

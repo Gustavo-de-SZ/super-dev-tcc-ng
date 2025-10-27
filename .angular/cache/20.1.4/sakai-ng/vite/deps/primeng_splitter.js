@@ -1,14 +1,14 @@
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   C2 as C,
   O,
@@ -18,7 +18,7 @@ import {
   V,
   W,
   v
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgForOf,
@@ -380,21 +380,21 @@ var Splitter = class _Splitter extends BaseComponent {
     let newPos, newPrevPanelSize, newNextPanelSize;
     if (isKeyDown) {
       if (this.horizontal()) {
-        newPrevPanelSize = 100 * (this.prevPanelSize + step) / this.size;
-        newNextPanelSize = 100 * (this.nextPanelSize - step) / this.size;
+        newPrevPanelSize = 100 * ((this.prevPanelSize ?? 0) + (step ?? 0)) / (this.size ?? 1);
+        newNextPanelSize = 100 * ((this.nextPanelSize ?? 0) - (step ?? 0)) / (this.size ?? 1);
       } else {
-        newPrevPanelSize = 100 * (this.prevPanelSize - step) / this.size;
-        newNextPanelSize = 100 * (this.nextPanelSize + step) / this.size;
+        newPrevPanelSize = 100 * ((this.prevPanelSize ?? 0) - (step ?? 0)) / (this.size ?? 1);
+        newNextPanelSize = 100 * ((this.nextPanelSize ?? 0) + (step ?? 0)) / (this.size ?? 1);
       }
     } else {
       if (this.horizontal()) {
         if (V(this.el.nativeElement)) {
-          newPos = (this.startPos - event.pageX) * 100 / this.size;
+          newPos = ((this.startPos ?? 0) - event.pageX) * 100 / (this.size ?? 1);
         } else {
-          newPos = (event.pageX - this.startPos) * 100 / this.size;
+          newPos = (event.pageX - (this.startPos ?? 0)) * 100 / (this.size ?? 1);
         }
       } else {
-        newPos = (event.pageY - this.startPos) * 100 / this.size;
+        newPos = (event.pageY - (this.startPos ?? 0)) * 100 / (this.size ?? 1);
       }
       newPrevPanelSize = this.prevPanelSize + newPos;
       newNextPanelSize = this.nextPanelSize - newPos;
@@ -565,9 +565,9 @@ var Splitter = class _Splitter extends BaseComponent {
     if (isPlatformBrowser(this.platformId)) {
       switch (this.stateStorage) {
         case "local":
-          return this.document.defaultView.localStorage;
+          return this.document.defaultView?.localStorage;
         case "session":
-          return this.document.defaultView.sessionStorage;
+          return this.document.defaultView?.sessionStorage;
         default:
           throw new Error(this.stateStorage + ' is not a valid value for the state storage, supported values are "local" and "session".');
       }
@@ -576,11 +576,11 @@ var Splitter = class _Splitter extends BaseComponent {
     }
   }
   saveState() {
-    this.getStorage().setItem(this.stateKey, JSON.stringify(this._panelSizes));
+    this.getStorage()?.setItem(this.stateKey, JSON.stringify(this._panelSizes));
   }
   restoreState() {
     const storage = this.getStorage();
-    const stateString = storage.getItem(this.stateKey);
+    const stateString = storage?.getItem(this.stateKey);
     if (stateString) {
       this._panelSizes = JSON.parse(stateString);
       let children = [...this.el.nativeElement.children].filter((child) => R(child, "p-splitterpanel"));

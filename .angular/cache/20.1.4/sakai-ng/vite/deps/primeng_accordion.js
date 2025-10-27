@@ -3,28 +3,21 @@ import {
 } from "./chunk-UQLQBFGK.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
+} from "./chunk-QCI5ZXXW.js";
 import {
   ChevronDownIcon,
   ChevronUpIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import {
-  Q2 as Q,
-  bt,
-  s3 as s,
-  z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -33,6 +26,13 @@ import {
   transition,
   trigger
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  Q2 as Q,
+  bt,
+  s3 as s,
+  z2 as z
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -236,6 +236,11 @@ var theme = (
     .p-accordioncontent.ng-animating {
         overflow: hidden;
     }
+
+    .p-accordionheader.p-ripple {
+        overflow: hidden;
+        position: relative;
+    }
 `
 );
 var classes = {
@@ -396,6 +401,9 @@ var AccordionHeader = class _AccordionHeader extends BaseComponent {
    */
   toggleicon;
   onClick(event) {
+    if (this.disabled()) {
+      return;
+    }
     const wasActive = this.active();
     this.changeActiveValue();
     const isActive = this.active();
@@ -413,7 +421,9 @@ var AccordionHeader = class _AccordionHeader extends BaseComponent {
     }
   }
   onFocus() {
-    this.pcAccordion.selectOnFocus() && this.changeActiveValue();
+    if (!this.disabled() && this.pcAccordion.selectOnFocus()) {
+      this.changeActiveValue();
+    }
   }
   onKeydown(event) {
     switch (event.code) {
@@ -486,7 +496,9 @@ var AccordionHeader = class _AccordionHeader extends BaseComponent {
     event.preventDefault();
   }
   onEnterKey(event) {
-    this.changeActiveValue();
+    if (!this.disabled()) {
+      this.changeActiveValue();
+    }
     event.preventDefault();
   }
   static ɵfac = /* @__PURE__ */ (() => {
@@ -655,8 +667,10 @@ var AccordionContent = class _AccordionContent extends BaseComponent {
       animation: [trigger("content", [state("hidden", style({
         height: "0",
         // To prevent memory leak, Angular issue. https://github.com/primefaces/primeng/issues/18546
-        paddingBlock: "0",
-        borderBlockWidth: "0",
+        paddingBlockStart: "0",
+        paddingBlockEnd: "0",
+        borderBlockStartWidth: "0",
+        borderBlockEndWidth: "0",
         //
         visibility: "hidden"
       })), state("visible", style({
@@ -689,8 +703,10 @@ var AccordionContent = class _AccordionContent extends BaseComponent {
       animations: [trigger("content", [state("hidden", style({
         height: "0",
         // To prevent memory leak, Angular issue. https://github.com/primefaces/primeng/issues/18546
-        paddingBlock: "0",
-        borderBlockWidth: "0",
+        paddingBlockStart: "0",
+        paddingBlockEnd: "0",
+        borderBlockStartWidth: "0",
+        borderBlockEndWidth: "0",
         //
         visibility: "hidden"
       })), state("visible", style({

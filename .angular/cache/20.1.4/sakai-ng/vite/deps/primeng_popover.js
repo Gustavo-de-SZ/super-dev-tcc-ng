@@ -3,30 +3,18 @@ import {
 } from "./chunk-UQLQBFGK.js";
 import {
   ConnectedOverlayScrollHandler
-} from "./chunk-C5DLRIHR.js";
+} from "./chunk-Q42KCB4K.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import {
-  rr
-} from "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   OverlayService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import {
-  D,
-  K,
-  Ut,
-  W,
-  Yt,
-  ut,
-  z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -35,6 +23,18 @@ import {
   transition,
   trigger
 } from "./chunk-7R335IKT.js";
+import {
+  rr
+} from "./chunk-QNSNH7RB.js";
+import {
+  D,
+  K,
+  Ut,
+  W,
+  Yt,
+  ut,
+  z2 as z
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -468,7 +468,7 @@ var Popover = class _Popover extends BaseComponent {
     }
     this.container?.style.setProperty(rr("popover.arrow.left").name, `${arrowLeft}px`);
     if (containerOffset.top < targetOffset.top) {
-      this.container.setAttribute("data-p-popover-flipped", "true");
+      this.container?.setAttribute("data-p-popover-flipped", "true");
       W(this.container, "p-popover-flipped");
     }
   }

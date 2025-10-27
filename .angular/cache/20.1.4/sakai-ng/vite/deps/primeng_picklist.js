@@ -2,33 +2,27 @@ import {
   CdkDropListGroup,
   DragDropModule,
   Listbox,
-  moveItemInArray,
-  transferArrayItem
-} from "./chunk-322GN7PA.js";
-import "./chunk-LSE2JJYG.js";
-import "./chunk-S2U7HDTI.js";
-import "./chunk-OTUZOPVJ.js";
-import "./chunk-4AC7EG3S.js";
-import "./chunk-4IDJL2IJ.js";
-import "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
-import {
-  FormsModule,
-  NgControlStatus,
-  NgModel
-} from "./chunk-R7JFBUJZ.js";
+  moveItemInArray
+} from "./chunk-CQGV7U5K.js";
+import "./chunk-GESXCIU2.js";
+import "./chunk-6ETDI7OT.js";
+import "./chunk-OTSBTDBE.js";
 import {
   ButtonDirective,
   ButtonIcon,
   ButtonModule
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import "./chunk-VCFFJTNK.js";
+import "./chunk-B7Y7BKU4.js";
+import "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
+} from "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   AngleDoubleDownIcon,
   AngleDoubleLeftIcon,
@@ -38,28 +32,32 @@ import {
   AngleLeftIcon,
   AngleRightIcon,
   AngleUpIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
+import {
+  FormsModule,
+  NgControlStatus,
+  NgModel
+} from "./chunk-R7JFBUJZ.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   FilterService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   C,
   Kt,
   Y2 as Y,
   a,
   s3 as s
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -935,6 +933,11 @@ var PickList = class _PickList extends BaseComponent {
    */
   target;
   /**
+   * Name of the field that uniquely identifies the options.
+   * @group Props
+   */
+  dataKey;
+  /**
    * Text for the source list caption
    * @group Props
    */
@@ -984,6 +987,16 @@ var PickList = class _PickList extends BaseComponent {
    * @group Props
    */
   bottomButtonAriaLabel;
+  /**
+   * Defines a string that labels the source list.
+   * @group Props
+   */
+  sourceAriaLabel;
+  /**
+   * Defines a string that labels the target list.
+   * @group Props
+   */
+  targetAriaLabel;
   /**
    * Text for the target list caption
    * @group Props
@@ -1633,8 +1646,8 @@ var PickList = class _PickList extends BaseComponent {
     return items.sort((item1, item2) => C(item1, list) - C(item2, list));
   }
   triggerChangeDetection() {
-    this.source = [...this.source];
-    this.target = [...this.target];
+    this.source = [...this.source || []];
+    this.target = [...this.target || []];
   }
   moveUp(listElement, list, selectedItems, callback, listType) {
     if (selectedItems && selectedItems.length) {
@@ -1731,7 +1744,7 @@ var PickList = class _PickList extends BaseComponent {
       let itemsToMove = [...this.selectedItemsSource];
       for (let i = 0; i < itemsToMove.length; i++) {
         let selectedItem = itemsToMove[i];
-        if (C(selectedItem, this.target) == -1) {
+        if (C(selectedItem, this.target || []) == -1) {
           this.target?.push(this.source?.splice(C(selectedItem, this.source), 1)[0]);
           if (this.visibleOptionsSource?.includes(selectedItem)) {
             this.visibleOptionsSource.splice(C(selectedItem, this.visibleOptionsSource), 1);
@@ -1758,7 +1771,9 @@ var PickList = class _PickList extends BaseComponent {
       for (let i = 0; i < this.source.length; i++) {
         if (this.isItemVisible(this.source[i], this.SOURCE_LIST)) {
           let removedItem = this.source.splice(i, 1)[0];
-          this.target?.push(removedItem);
+          if (this.target) {
+            this.target = [...this.target, removedItem];
+          }
           movedItems.push(removedItem);
           i--;
         }
@@ -1782,7 +1797,7 @@ var PickList = class _PickList extends BaseComponent {
       let itemsToMove = [...this.selectedItemsTarget];
       for (let i = 0; i < itemsToMove.length; i++) {
         let selectedItem = itemsToMove[i];
-        if (C(selectedItem, this.source) == -1) {
+        if (C(selectedItem, this.source || []) == -1) {
           this.source?.push(this.target?.splice(C(selectedItem, this.target), 1)[0]);
           if (this.visibleOptionsTarget?.includes(selectedItem)) {
             this.visibleOptionsTarget.splice(C(selectedItem, this.visibleOptionsTarget), 1)[0];
@@ -1809,7 +1824,9 @@ var PickList = class _PickList extends BaseComponent {
       for (let i = 0; i < this.target.length; i++) {
         if (this.isItemVisible(this.target[i], this.TARGET_LIST)) {
           let removedItem = this.target.splice(i, 1)[0];
-          this.source?.push(removedItem);
+          if (this.source) {
+            this.source = [...this.source, removedItem];
+          }
           movedItems.push(removedItem);
           i--;
         }
@@ -1839,20 +1856,41 @@ var PickList = class _PickList extends BaseComponent {
     let dropIndexes = this.getDropIndexes(event.previousIndex, event.currentIndex, listType, isTransfer, event.item.data);
     if (listType === this.SOURCE_LIST) {
       if (isTransfer) {
-        transferArrayItem(event.previousContainer.data, event.container.data, dropIndexes.previousIndex, dropIndexes.currentIndex);
-        let selectedItemIndex = C(event.item.data, this.selectedItemsTarget);
-        if (selectedItemIndex != -1) {
-          this.selectedItemsTarget.splice(selectedItemIndex, 1);
-          if (this.keepSelection) {
-            this.selectedItemsTarget.push(event.item.data);
+        let itemsToMove = [];
+        if (this.selectedItemsTarget && this.selectedItemsTarget.length > 0 && C(event.item.data, this.selectedItemsTarget) !== -1) {
+          itemsToMove = [...this.selectedItemsTarget];
+        } else {
+          itemsToMove = [event.item.data];
+        }
+        const sortedItems = this.sortByIndexInList(itemsToMove, this.target || []);
+        for (let item of sortedItems) {
+          const itemIndex = C(item, this.target || []);
+          if (itemIndex !== -1) {
+            this.target?.splice(itemIndex, 1);
           }
         }
-        if (this.visibleOptionsTarget) this.visibleOptionsTarget.splice(event.previousIndex, 1);
+        for (let i = 0; i < sortedItems.length; i++) {
+          this.source?.splice(dropIndexes.currentIndex + i, 0, sortedItems[i]);
+        }
+        this.selectedItemsTarget = [];
+        if (this.keepSelection) {
+          this.selectedItemsSource = [...this.selectedItemsSource, ...itemsToMove];
+        }
+        if (this.visibleOptionsTarget) {
+          for (let item of itemsToMove) {
+            const visibleIndex = C(item, this.visibleOptionsTarget);
+            if (visibleIndex !== -1) {
+              this.visibleOptionsTarget.splice(visibleIndex, 1);
+            }
+          }
+        }
         this.onMoveToSource.emit({
-          items: [event.item.data]
+          items: itemsToMove
         });
       } else {
-        moveItemInArray(event.container.data, dropIndexes.previousIndex, dropIndexes.currentIndex);
+        if (this.source) {
+          moveItemInArray(this.source, dropIndexes.previousIndex, dropIndexes.currentIndex);
+        }
         this.onSourceReorder.emit({
           items: [event.item.data]
         });
@@ -1862,20 +1900,41 @@ var PickList = class _PickList extends BaseComponent {
       }
     } else {
       if (isTransfer) {
-        transferArrayItem(event.previousContainer.data, event.container.data, dropIndexes.previousIndex, dropIndexes.currentIndex);
-        let selectedItemIndex = C(event.item.data, this.selectedItemsSource);
-        if (selectedItemIndex != -1) {
-          this.selectedItemsSource.splice(selectedItemIndex, 1);
-          if (this.keepSelection) {
-            this.selectedItemsTarget.push(event.item.data);
+        let itemsToMove = [];
+        if (this.selectedItemsSource && this.selectedItemsSource.length > 0 && C(event.item.data, this.selectedItemsSource) !== -1) {
+          itemsToMove = [...this.selectedItemsSource];
+        } else {
+          itemsToMove = [event.item.data];
+        }
+        const sortedItems = this.sortByIndexInList(itemsToMove, this.source || []);
+        for (let item of sortedItems) {
+          const itemIndex = C(item, this.source || []);
+          if (itemIndex !== -1) {
+            this.source?.splice(itemIndex, 1);
           }
         }
-        if (this.visibleOptionsSource) this.visibleOptionsSource.splice(event.previousIndex, 1);
+        for (let i = 0; i < sortedItems.length; i++) {
+          this.target?.splice(dropIndexes.currentIndex + i, 0, sortedItems[i]);
+        }
+        this.selectedItemsSource = [];
+        if (this.keepSelection) {
+          this.selectedItemsTarget = [...this.selectedItemsTarget, ...itemsToMove];
+        }
+        if (this.visibleOptionsSource) {
+          for (let item of itemsToMove) {
+            const visibleIndex = C(item, this.visibleOptionsSource);
+            if (visibleIndex !== -1) {
+              this.visibleOptionsSource.splice(visibleIndex, 1);
+            }
+          }
+        }
         this.onMoveToTarget.emit({
-          items: [event.item.data]
+          items: itemsToMove
         });
       } else {
-        moveItemInArray(event.container.data, dropIndexes.previousIndex, dropIndexes.currentIndex);
+        if (this.target) {
+          moveItemInArray(this.target, dropIndexes.previousIndex, dropIndexes.currentIndex);
+        }
         this.onTargetReorder.emit({
           items: [event.item.data]
         });
@@ -1884,6 +1943,10 @@ var PickList = class _PickList extends BaseComponent {
         this.filter(this.target, this.TARGET_LIST);
       }
     }
+    if (isTransfer) {
+      this.triggerChangeDetection();
+    }
+    this.cd.markForCheck();
   }
   onListFocus(event, listType) {
     this.onFocus.emit(event);
@@ -1918,11 +1981,11 @@ var PickList = class _PickList extends BaseComponent {
   getDropIndexes(fromIndex, toIndex, droppedList, isTransfer, data) {
     let previousIndex, currentIndex;
     if (droppedList === this.SOURCE_LIST) {
-      previousIndex = isTransfer ? this.filterValueTarget ? C(data, this.target) : fromIndex : this.filterValueSource ? C(data, this.source) : fromIndex;
-      currentIndex = this.filterValueSource ? this.findFilteredCurrentIndex(this.visibleOptionsSource, toIndex, this.source) : toIndex;
+      previousIndex = isTransfer ? this.filterValueTarget ? C(data, this.target || []) : fromIndex : this.filterValueSource ? C(data, this.source || []) : fromIndex;
+      currentIndex = this.filterValueSource ? this.findFilteredCurrentIndex(this.visibleOptionsSource || [], toIndex, this.source || []) : toIndex;
     } else {
-      previousIndex = isTransfer ? this.filterValueSource ? C(data, this.source) : fromIndex : this.filterValueTarget ? C(data, this.target) : fromIndex;
-      currentIndex = this.filterValueTarget ? this.findFilteredCurrentIndex(this.visibleOptionsTarget, toIndex, this.target) : toIndex;
+      previousIndex = isTransfer ? this.filterValueSource ? C(data, this.source || []) : fromIndex : this.filterValueTarget ? C(data, this.target || []) : fromIndex;
+      currentIndex = this.filterValueTarget ? this.findFilteredCurrentIndex(this.visibleOptionsTarget || [], toIndex, this.target || []) : toIndex;
     }
     return {
       previousIndex,
@@ -1953,8 +2016,8 @@ var PickList = class _PickList extends BaseComponent {
   }
   initMedia() {
     if (isPlatformBrowser(this.platformId)) {
-      this.media = this.document.defaultView.matchMedia(`(max-width: ${this.breakpoint})`);
-      this.viewChanged = this.media.matches;
+      this.media = this.document.defaultView?.matchMedia(`(max-width: ${this.breakpoint})`) || null;
+      this.viewChanged = this.media?.matches || false;
       this.bindMediaChangeListener();
     }
   }
@@ -1981,6 +2044,7 @@ var PickList = class _PickList extends BaseComponent {
         this.renderer.setAttribute(this.el.nativeElement.children[0], this.id, "");
         this.styleElement = this.renderer.createElement("style");
         this.renderer.setAttribute(this.styleElement, "type", "text/css");
+        Kt(this.styleElement, "nonce", this.config?.csp()?.nonce);
         this.renderer.appendChild(this.document.head, this.styleElement);
         let innerHTML = `
                 @media screen and (max-width: ${this.breakpoint}) {
@@ -2105,6 +2169,7 @@ var PickList = class _PickList extends BaseComponent {
     inputs: {
       source: "source",
       target: "target",
+      dataKey: "dataKey",
       sourceHeader: "sourceHeader",
       tabindex: [2, "tabindex", "tabindex", numberAttribute],
       rightButtonAriaLabel: "rightButtonAriaLabel",
@@ -2115,6 +2180,8 @@ var PickList = class _PickList extends BaseComponent {
       downButtonAriaLabel: "downButtonAriaLabel",
       topButtonAriaLabel: "topButtonAriaLabel",
       bottomButtonAriaLabel: "bottomButtonAriaLabel",
+      sourceAriaLabel: "sourceAriaLabel",
+      targetAriaLabel: "targetAriaLabel",
       targetHeader: "targetHeader",
       responsive: [2, "responsive", "responsive", booleanAttribute],
       filterBy: "filterBy",
@@ -2171,8 +2238,8 @@ var PickList = class _PickList extends BaseComponent {
     },
     features: [ɵɵProvidersFeature([PickListStyle]), ɵɵInheritDefinitionFeature],
     decls: 34,
-    vars: 103,
-    consts: [["sourcelist", ""], ["targetlist", ""], ["header", ""], ["filter", ""], ["item", ""], ["empty", ""], ["emptyfilter", ""], ["cdkDropListGroup", "", 3, "ngStyle"], [3, "class", 4, "ngIf"], ["optionLabel", "name", 3, "ngModelChange", "onFocus", "onBlur", "onChange", "onDblClick", "onDrop", "onFilter", "multiple", "options", "ngModel", "id", "listStyle", "striped", "tabindex", "disabled", "optionDisabled", "metaKeySelection", "scrollHeight", "autoOptionFocus", "filter", "filterBy", "filterLocale", "filterMatchMode", "filterPlaceHolder", "dragdrop"], [4, "ngIf"], ["type", "button", "pButton", "", "pRipple", "", "severity", "secondary", 3, "click", "disabled", "buttonProps"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["data-p-icon", "angle-up", "pButtonIcon", "", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "angle-double-up", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-up", "pButtonIcon", ""], ["data-p-icon", "angle-double-up", "pButtonIcon", ""], ["data-p-icon", "angle-down", "pButtonIcon", ""], ["data-p-icon", "angle-double-down", "pButtonIcon", ""], ["data-p-icon", "angle-right", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-right", "pButtonIcon", ""], ["data-p-icon", "angle-double-right", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-right", "pButtonIcon", ""], ["data-p-icon", "angle-left", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-left", "pButtonIcon", ""], ["data-p-icon", "angle-double-left", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-left", "pButtonIcon", ""], ["type", "button", "pButton", "", "pRipple", "", "severity", "secondary", 1, "p-button-icon-only", 3, "click", "disabled", "buttonProps"]],
+    vars: 109,
+    consts: [["sourcelist", ""], ["targetlist", ""], ["header", ""], ["filter", ""], ["item", ""], ["empty", ""], ["emptyfilter", ""], ["cdkDropListGroup", "", 3, "ngStyle"], [3, "class", 4, "ngIf"], [3, "ngModelChange", "onFocus", "onBlur", "onChange", "onDblClick", "onDrop", "onFilter", "ariaLabel", "multiple", "options", "ngModel", "optionLabel", "id", "listStyle", "striped", "tabindex", "disabled", "optionDisabled", "metaKeySelection", "scrollHeight", "autoOptionFocus", "filter", "filterBy", "filterLocale", "filterMatchMode", "filterPlaceHolder", "dragdrop", "dropListData"], [4, "ngIf"], ["type", "button", "pButton", "", "pRipple", "", "severity", "secondary", 3, "click", "disabled", "buttonProps"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["data-p-icon", "angle-up", "pButtonIcon", "", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "angle-double-up", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-up", "pButtonIcon", ""], ["data-p-icon", "angle-double-up", "pButtonIcon", ""], ["data-p-icon", "angle-down", "pButtonIcon", ""], ["data-p-icon", "angle-double-down", "pButtonIcon", ""], ["data-p-icon", "angle-right", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-right", "pButtonIcon", ""], ["data-p-icon", "angle-double-right", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-right", "pButtonIcon", ""], ["data-p-icon", "angle-left", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-left", "pButtonIcon", ""], ["data-p-icon", "angle-double-left", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-left", "pButtonIcon", ""], ["type", "button", "pButton", "", "pRipple", "", "severity", "secondary", 1, "p-button-icon-only", 3, "click", "disabled", "buttonProps"]],
     template: function PickList_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = ɵɵgetCurrentView();
@@ -2273,9 +2340,9 @@ var PickList = class _PickList extends BaseComponent {
         ɵɵclassMap(ctx.cx("sourceListContainer"));
         ɵɵattribute("data-pc-section", "sourceWrapper")("data-pc-group-section", "listWrapper");
         ɵɵadvance();
-        ɵɵproperty("multiple", true)("options", ctx.source);
+        ɵɵproperty("ariaLabel", ctx.sourceAriaLabel)("multiple", true)("options", ctx.source);
         ɵɵtwoWayProperty("ngModel", ctx.selectedItemsSource);
-        ɵɵproperty("id", ctx.idSource + "_list")("listStyle", ctx.sourceStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("disabled", ctx.disabled)("optionDisabled", ctx.sourceOptionDisabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterMatchMode", ctx.filterMatchMode)("filterPlaceHolder", ctx.sourceFilterPlaceholder)("dragdrop", ctx.dragdrop);
+        ɵɵproperty("optionLabel", ctx.dataKey ?? "name")("id", ctx.idSource + "_list")("listStyle", ctx.sourceStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("disabled", ctx.disabled)("optionDisabled", ctx.sourceOptionDisabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterMatchMode", ctx.filterMatchMode)("filterPlaceHolder", ctx.sourceFilterPlaceholder)("dragdrop", ctx.dragdrop)("dropListData", ctx.source);
         ɵɵadvance(2);
         ɵɵproperty("ngIf", ctx.sourceHeaderTemplate || ctx._sourceHeaderTemplate || ctx.sourceHeader);
         ɵɵadvance();
@@ -2297,35 +2364,35 @@ var PickList = class _PickList extends BaseComponent {
         ɵɵadvance();
         ɵɵproperty("ngIf", !ctx.moveToTargetIconTemplate && !ctx._moveToTargetIconTemplate);
         ɵɵadvance();
-        ɵɵproperty("ngTemplateOutlet", ctx.moveToTargetIconTemplate || ctx._moveToTargetIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(95, _c21, ctx.viewChanged));
+        ɵɵproperty("ngTemplateOutlet", ctx.moveToTargetIconTemplate || ctx._moveToTargetIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(101, _c21, ctx.viewChanged));
         ɵɵadvance();
         ɵɵproperty("disabled", ctx.moveAllRightDisabled())("buttonProps", ctx.getButtonProps("movealltotarget"));
         ɵɵattribute("aria-label", ctx.moveAllToTargetAriaLabel)("data-pc-section", "moveAllToTargetButton");
         ɵɵadvance();
         ɵɵproperty("ngIf", !ctx.moveAllToTargetIconTemplate && !ctx._moveAllToTargetIconTemplate);
         ɵɵadvance();
-        ɵɵproperty("ngTemplateOutlet", ctx.moveAllToTargetIconTemplate || ctx._moveAllToTargetIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(97, _c21, ctx.viewChanged));
+        ɵɵproperty("ngTemplateOutlet", ctx.moveAllToTargetIconTemplate || ctx._moveAllToTargetIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(103, _c21, ctx.viewChanged));
         ɵɵadvance();
         ɵɵproperty("disabled", ctx.moveLeftDisabled())("buttonProps", ctx.getButtonProps("movetosource"));
         ɵɵattribute("aria-label", ctx.moveToSourceAriaLabel)("data-pc-section", "moveToSourceButton");
         ɵɵadvance();
         ɵɵproperty("ngIf", !ctx.moveToSourceIconTemplate && !ctx._moveToSourceIconTemplate);
         ɵɵadvance();
-        ɵɵproperty("ngTemplateOutlet", ctx.moveToSourceIconTemplate || ctx._moveToSourceIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(99, _c21, ctx.viewChanged));
+        ɵɵproperty("ngTemplateOutlet", ctx.moveToSourceIconTemplate || ctx._moveToSourceIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(105, _c21, ctx.viewChanged));
         ɵɵadvance();
         ɵɵproperty("disabled", ctx.moveAllLeftDisabled())("buttonProps", ctx.getButtonProps("movealltosource"));
         ɵɵattribute("aria-label", ctx.moveAllToSourceAriaLabel)("data-pc-section", "moveAllToSourceButton");
         ɵɵadvance();
         ɵɵproperty("ngIf", !ctx.moveAllToSourceIconTemplate && !ctx._moveAllToSourceIconTemplate);
         ɵɵadvance();
-        ɵɵproperty("ngTemplateOutlet", ctx.moveAllToSourceIconTemplate || ctx._moveAllToSourceIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(101, _c21, ctx.viewChanged));
+        ɵɵproperty("ngTemplateOutlet", ctx.moveAllToSourceIconTemplate || ctx._moveAllToSourceIconTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(107, _c21, ctx.viewChanged));
         ɵɵadvance();
         ɵɵclassMap(ctx.cx("targetListContainer"));
         ɵɵattribute("data-pc-section", "targetWrapper")("data-pc-group-section", "listwrapper");
         ɵɵadvance();
-        ɵɵproperty("multiple", true)("options", ctx.target);
+        ɵɵproperty("ariaLabel", ctx.targetAriaLabel)("multiple", true)("options", ctx.target);
         ɵɵtwoWayProperty("ngModel", ctx.selectedItemsTarget);
-        ɵɵproperty("id", ctx.idTarget + "_list")("listStyle", ctx.targetStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("disabled", ctx.disabled)("optionDisabled", ctx.targetOptionDisabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterMatchMode", ctx.filterMatchMode)("filterPlaceHolder", ctx.targetFilterPlaceholder)("dragdrop", ctx.dragdrop);
+        ɵɵproperty("optionLabel", ctx.dataKey ?? "name")("id", ctx.idTarget + "_list")("listStyle", ctx.targetStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("disabled", ctx.disabled)("optionDisabled", ctx.targetOptionDisabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterMatchMode", ctx.filterMatchMode)("filterPlaceHolder", ctx.targetFilterPlaceholder)("dragdrop", ctx.dragdrop)("dropListData", ctx.target);
         ɵɵadvance(2);
         ɵɵproperty("ngIf", ctx.targetHeaderTemplate || ctx._targetHeaderTemplate || ctx.targetHeader);
         ɵɵadvance();
@@ -2417,10 +2484,11 @@ var PickList = class _PickList extends BaseComponent {
             <div [class]="cx('sourceListContainer')" [attr.data-pc-section]="'sourceWrapper'" [attr.data-pc-group-section]="'listWrapper'">
                 <p-listbox
                     #sourcelist
+                    [ariaLabel]="sourceAriaLabel"
                     [multiple]="true"
                     [options]="source"
                     [(ngModel)]="selectedItemsSource"
-                    optionLabel="name"
+                    [optionLabel]="dataKey ?? 'name'"
                     [id]="idSource + '_list'"
                     [listStyle]="sourceStyle"
                     [striped]="stripedRows"
@@ -2440,6 +2508,7 @@ var PickList = class _PickList extends BaseComponent {
                     [filterMatchMode]="filterMatchMode"
                     [filterPlaceHolder]="sourceFilterPlaceholder"
                     [dragdrop]="dragdrop"
+                    [dropListData]="source"
                     (onDrop)="onDrop($event, SOURCE_LIST)"
                     (onFilter)="onFilter($event.originalEvent, SOURCE_LIST)"
                 >
@@ -2547,10 +2616,11 @@ var PickList = class _PickList extends BaseComponent {
             <div [class]="cx('targetListContainer')" [attr.data-pc-section]="'targetWrapper'" [attr.data-pc-group-section]="'listwrapper'">
                 <p-listbox
                     #targetlist
+                    [ariaLabel]="targetAriaLabel"
                     [multiple]="true"
                     [options]="target"
                     [(ngModel)]="selectedItemsTarget"
-                    optionLabel="name"
+                    [optionLabel]="dataKey ?? 'name'"
                     [id]="idTarget + '_list'"
                     [listStyle]="targetStyle"
                     [striped]="stripedRows"
@@ -2570,6 +2640,7 @@ var PickList = class _PickList extends BaseComponent {
                     [filterMatchMode]="filterMatchMode"
                     [filterPlaceHolder]="targetFilterPlaceholder"
                     [dragdrop]="dragdrop"
+                    [dropListData]="target"
                     (onDrop)="onDrop($event, TARGET_LIST)"
                     (onFilter)="onFilter($event.originalEvent, TARGET_LIST)"
                 >
@@ -2676,6 +2747,9 @@ var PickList = class _PickList extends BaseComponent {
     target: [{
       type: Input
     }],
+    dataKey: [{
+      type: Input
+    }],
     sourceHeader: [{
       type: Input
     }],
@@ -2707,6 +2781,12 @@ var PickList = class _PickList extends BaseComponent {
       type: Input
     }],
     bottomButtonAriaLabel: [{
+      type: Input
+    }],
+    sourceAriaLabel: [{
+      type: Input
+    }],
+    targetAriaLabel: [{
       type: Input
     }],
     targetHeader: [{

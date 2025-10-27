@@ -1,36 +1,43 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-KSBGS73W.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
-import {
-  Badge,
-  BadgeModule
-} from "./chunk-TRCD2RJ4.js";
-import {
-  AngleRightIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+} from "./chunk-QCI5ZXXW.js";
 import {
   DomHandler
-} from "./chunk-C5DLRIHR.js";
+} from "./chunk-Q42KCB4K.js";
+import {
+  AngleRightIcon
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   OverlayService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import {
+  animate,
+  style,
+  transition,
+  trigger
+} from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   $t,
   G2 as G,
@@ -48,21 +55,14 @@ import {
   s3 as s2,
   v,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import {
-  animate,
-  style,
-  transition,
-  trigger
-} from "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   RouterLink,
   RouterModule
-} from "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -1260,7 +1260,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
       if (!this.documentClickListener) {
         const documentTarget = this.el ? this.el.nativeElement.ownerDocument : "document";
         this.documentClickListener = this.renderer.listen(documentTarget, "click", (event) => {
-          if (this.containerViewChild.nativeElement.offsetParent && this.isOutsideClicked(event) && !event.ctrlKey && event.button !== 2 && this.triggerEvent !== "click") {
+          if (this.containerViewChild?.nativeElement?.offsetParent && this.isOutsideClicked(event) && !event.ctrlKey && event.button !== 2) {
             this.hide();
           }
         });
@@ -1390,7 +1390,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
         parentKey,
         item
       });
-      bt(this.rootmenu.sublistViewChild.nativeElement);
+      bt(this.rootmenu?.sublistViewChild?.nativeElement);
     } else {
       grouped ? this.onItemChange(event) : this.hide();
     }
@@ -1536,8 +1536,8 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
   }
   onEnterKey(event) {
     if (this.focusedItemInfo().index !== -1) {
-      const element = z(this.rootmenu.el.nativeElement, `li[id="${`${this.focusedItemId}`}"]`);
-      const anchorElement = element && z(element, 'a[data-pc-section="action"]');
+      const element = z(this.rootmenu?.el?.nativeElement, `li[id="${`${this.focusedItemId}`}"]`);
+      const anchorElement = element && (z(element, '[data-pc-section="action"]') || z(element, "a,button"));
       anchorElement ? anchorElement.click() : element && element.click();
       const processedItem = this.visibleItems[this.focusedItemInfo().index];
       const grouped = this.isProccessedItemGroup(processedItem);
@@ -1575,7 +1575,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
       parentKey,
       item: processedItem.item
     });
-    isFocus && bt(this.rootmenu.sublistViewChild.nativeElement);
+    isFocus && bt(this.rootmenu?.sublistViewChild?.nativeElement);
     if (type === "hover" && this.queryMatches) {
       return;
     }
@@ -1607,10 +1607,10 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
         this.container = event.element;
         this.position();
         this.moveOnTop();
-        this.attrSelector && this.container.setAttribute(this.attrSelector, "");
+        this.attrSelector && this.container?.setAttribute(this.attrSelector, "");
         this.appendOverlay();
         this.bindGlobalListeners();
-        bt(this.rootmenu.sublistViewChild.nativeElement);
+        bt(this.rootmenu?.sublistViewChild?.nativeElement);
         break;
     }
   }
@@ -1678,6 +1678,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
     event.preventDefault();
   }
   position() {
+    if (!this.document.scrollingElement || !this.containerViewChild?.nativeElement) return;
     let left = this.pageX + 1;
     let top = this.pageY + 1;
     let width = this.containerViewChild.nativeElement.offsetParent ? this.containerViewChild.nativeElement.offsetWidth : J(this.containerViewChild.nativeElement);
@@ -1767,7 +1768,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
   }
   scrollInView(index = -1) {
     const id = index !== -1 ? `${this.id}_${index}` : this.focusedItemId;
-    const element = z(this.rootmenu.el.nativeElement, `li[id="${id}"]`);
+    const element = z(this.rootmenu?.el?.nativeElement, `li[id="${id}"]`);
     if (element) {
       element.scrollIntoView && element.scrollIntoView({
         block: "nearest",
@@ -1785,7 +1786,7 @@ var ContextMenu = class _ContextMenu extends BaseComponent {
     }
   }
   isOutsideClicked(event) {
-    return !(this.containerViewChild.nativeElement.isSameNode(event.target) || this.containerViewChild.nativeElement.contains(event.target));
+    return !(this.containerViewChild?.nativeElement?.isSameNode(event.target) || this.containerViewChild?.nativeElement?.contains(event.target));
   }
   unbindResizeListener() {
     if (this.resizeListener) {

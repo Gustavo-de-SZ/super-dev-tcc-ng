@@ -1,37 +1,30 @@
 import {
   BaseEditableHolder
-} from "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-R7JFBUJZ.js";
+} from "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   AutoFocus,
   AutoFocusModule
-} from "./chunk-FKVBP7E7.js";
+} from "./chunk-DCN6VKWH.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
-} from "./chunk-C5DLRIHR.js";
-import "./chunk-64SSRD2L.js";
+} from "./chunk-Q42KCB4K.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-R7JFBUJZ.js";
+import "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   OverlayService,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
-import {
-  D,
-  I,
-  Yt,
-  f
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -39,6 +32,13 @@ import {
   transition,
   trigger
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  D,
+  I,
+  Yt,
+  f
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -538,7 +538,7 @@ var ColorPicker = class _ColorPicker extends BaseEditableHolder {
       case "visible":
         if (!this.inline) {
           this.overlay = event.element;
-          this.attrSelector && this.overlay.setAttribute(this.attrSelector, "");
+          this.attrSelector && this.overlay?.setAttribute(this.attrSelector, "");
           this.appendOverlay();
           if (this.autoZIndex) {
             zindexutils.set("overlay", this.overlay, this.config.zIndex.overlay);

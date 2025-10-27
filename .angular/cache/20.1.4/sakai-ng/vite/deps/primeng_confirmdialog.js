@@ -1,26 +1,24 @@
 import {
   Dialog
-} from "./chunk-7DYMJVDF.js";
-import "./chunk-UC5MMFCA.js";
-import "./chunk-UQLQBFGK.js";
+} from "./chunk-ADBCGOMB.js";
+import "./chunk-ZACHOH5A.js";
 import {
   Button
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
-import "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import "./chunk-UQLQBFGK.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
+import "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   ConfirmEventType,
   ConfirmationService,
@@ -28,12 +26,7 @@ import {
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
-import {
-  Kt,
-  s3 as s,
-  z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -43,6 +36,12 @@ import {
   trigger,
   useAnimation
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  Kt,
+  s3 as s,
+  z2 as z
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -771,6 +770,7 @@ var ConfirmDialog = class _ConfirmDialog extends BaseComponent {
     return [cxClass, optionClass].filter(Boolean).join(" ");
   }
   getElementToFocus() {
+    if (!this.dialog?.el?.nativeElement) return;
     switch (this.option("defaultFocus")) {
       case "accept":
         return z(this.dialog.el.nativeElement, ".p-confirm-dialog-accept");
@@ -789,6 +789,7 @@ var ConfirmDialog = class _ConfirmDialog extends BaseComponent {
     if (!this.styleElement) {
       this.styleElement = this.document.createElement("style");
       this.styleElement.type = "text/css";
+      Kt(this.styleElement, "nonce", this.config?.csp()?.nonce);
       this.document.head.appendChild(this.styleElement);
       let innerHTML = "";
       for (let breakpoint in this.breakpoints) {
@@ -940,8 +941,8 @@ var ConfirmDialog = class _ConfirmDialog extends BaseComponent {
     features: [ɵɵProvidersFeature([ConfirmDialogStyle]), ɵɵInheritDefinitionFeature],
     ngContentSelectors: _c8,
     decls: 6,
-    vars: 14,
-    consts: [["dialog", ""], ["footer", ""], ["headless", ""], ["content", ""], ["header", ""], ["icon", ""], ["role", "alertdialog", 3, "visibleChange", "visible", "closable", "styleClass", "modal", "header", "closeOnEscape", "blockScroll", "appendTo", "position", "dismissableMask", "draggable"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [4, "ngTemplateOutlet"], [3, "ngClass", "class"], [3, "class", "innerHTML"], [3, "ngClass", "class", 4, "ngIf"], [3, "ngClass"], [3, "innerHTML"], [3, "label", "styleClass", "ariaLabel", "buttonProps", "onClick", 4, "ngIf"], [3, "onClick", "label", "styleClass", "ariaLabel", "buttonProps"], [3, "class"], [3, "class", 4, "ngIf"]],
+    vars: 16,
+    consts: [["dialog", ""], ["footer", ""], ["headless", ""], ["content", ""], ["header", ""], ["icon", ""], ["role", "alertdialog", 3, "visibleChange", "visible", "closable", "styleClass", "modal", "header", "closeOnEscape", "blockScroll", "appendTo", "position", "dismissableMask", "draggable", "baseZIndex", "autoZIndex"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [4, "ngTemplateOutlet"], [3, "ngClass", "class"], [3, "class", "innerHTML"], [3, "ngClass", "class", 4, "ngIf"], [3, "ngClass"], [3, "innerHTML"], [3, "label", "styleClass", "ariaLabel", "buttonProps", "onClick", 4, "ngIf"], [3, "onClick", "label", "styleClass", "ariaLabel", "buttonProps"], [3, "class"], [3, "class", 4, "ngIf"]],
     template: function ConfirmDialog_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = ɵɵgetCurrentView();
@@ -957,7 +958,7 @@ var ConfirmDialog = class _ConfirmDialog extends BaseComponent {
       }
       if (rf & 2) {
         ɵɵstyleMap(ctx.style);
-        ɵɵproperty("visible", ctx.visible)("closable", ctx.option("closable"))("styleClass", ctx.cn(ctx.cx("root"), ctx.styleClass))("modal", true)("header", ctx.option("header"))("closeOnEscape", ctx.option("closeOnEscape"))("blockScroll", ctx.option("blockScroll"))("appendTo", ctx.option("appendTo"))("position", ctx.position)("dismissableMask", ctx.dismissableMask)("draggable", ctx.draggable);
+        ɵɵproperty("visible", ctx.visible)("closable", ctx.option("closable"))("styleClass", ctx.cn(ctx.cx("root"), ctx.styleClass))("modal", true)("header", ctx.option("header"))("closeOnEscape", ctx.option("closeOnEscape"))("blockScroll", ctx.option("blockScroll"))("appendTo", ctx.option("appendTo"))("position", ctx.position)("dismissableMask", ctx.dismissableMask)("draggable", ctx.draggable)("baseZIndex", ctx.baseZIndex)("autoZIndex", ctx.autoZIndex);
         ɵɵadvance(2);
         ɵɵconditional(ctx.headlessTemplate || ctx._headlessTemplate ? 2 : 3);
       }
@@ -994,6 +995,8 @@ var ConfirmDialog = class _ConfirmDialog extends BaseComponent {
             [style]="style"
             [dismissableMask]="dismissableMask"
             [draggable]="draggable"
+            [baseZIndex]="baseZIndex"
+            [autoZIndex]="autoZIndex"
         >
             @if (headlessTemplate || _headlessTemplate) {
                 <ng-template #headless>

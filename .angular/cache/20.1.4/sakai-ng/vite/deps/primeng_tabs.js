@@ -1,23 +1,23 @@
 import {
   Ripple,
   RippleModule
-} from "./chunk-Q6YVT4HY.js";
+} from "./chunk-QCI5ZXXW.js";
 import {
   ChevronLeftIcon,
   ChevronRightIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   K,
   Q2 as Q,
@@ -28,7 +28,7 @@ import {
   s3 as s,
   v,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgTemplateOutlet,
@@ -48,6 +48,7 @@ import {
   ViewEncapsulation,
   booleanAttribute,
   computed,
+  contentChild,
   effect,
   forwardRef,
   inject,
@@ -65,10 +66,12 @@ import {
   ɵɵconditional,
   ɵɵconditionalCreate,
   ɵɵcontentQuery,
+  ɵɵcontentQuerySignal,
   ɵɵdefineComponent,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
+  ɵɵdomProperty,
   ɵɵelement,
   ɵɵelementContainer,
   ɵɵelementEnd,
@@ -82,10 +85,13 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵproperty,
+  ɵɵqueryAdvance,
   ɵɵqueryRefresh,
+  ɵɵreference,
   ɵɵresetView,
   ɵɵrestoreView,
   ɵɵtemplate,
+  ɵɵtemplateRefExtractor,
   ɵɵviewQuery
 } from "./chunk-ONJW5VE5.js";
 import "./chunk-G6ECYYJH.js";
@@ -94,7 +100,7 @@ import "./chunk-RTGP7ALM.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/@primeuix/styles/dist/tabs/index.mjs
-var style = "\n    .p-tabs {\n        display: flex;\n        flex-direction: column;\n    }\n\n    .p-tablist {\n        display: flex;\n        position: relative;\n    }\n\n    .p-tabs-scrollable > .p-tablist {\n        overflow: hidden;\n    }\n\n    .p-tablist-viewport {\n        overflow-x: auto;\n        overflow-y: hidden;\n        scroll-behavior: smooth;\n        scrollbar-width: none;\n        overscroll-behavior: contain auto;\n    }\n\n    .p-tablist-viewport::-webkit-scrollbar {\n        display: none;\n    }\n\n    .p-tablist-tab-list {\n        position: relative;\n        display: flex;\n        background: dt('tabs.tablist.background');\n        border-style: solid;\n        border-color: dt('tabs.tablist.border.color');\n        border-width: dt('tabs.tablist.border.width');\n    }\n\n    .p-tablist-content {\n        flex-grow: 1;\n    }\n\n    .p-tablist-nav-button {\n        all: unset;\n        position: absolute !important;\n        flex-shrink: 0;\n        inset-block-start: 0;\n        z-index: 2;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        background: dt('tabs.nav.button.background');\n        color: dt('tabs.nav.button.color');\n        width: dt('tabs.nav.button.width');\n        transition:\n            color dt('tabs.transition.duration'),\n            outline-color dt('tabs.transition.duration'),\n            box-shadow dt('tabs.transition.duration');\n        box-shadow: dt('tabs.nav.button.shadow');\n        outline-color: transparent;\n        cursor: pointer;\n    }\n\n    .p-tablist-nav-button:focus-visible {\n        z-index: 1;\n        box-shadow: dt('tabs.nav.button.focus.ring.shadow');\n        outline: dt('tabs.nav.button.focus.ring.width') dt('tabs.nav.button.focus.ring.style') dt('tabs.nav.button.focus.ring.color');\n        outline-offset: dt('tabs.nav.button.focus.ring.offset');\n    }\n\n    .p-tablist-nav-button:hover {\n        color: dt('tabs.nav.button.hover.color');\n    }\n\n    .p-tablist-prev-button {\n        inset-inline-start: 0;\n    }\n\n    .p-tablist-next-button {\n        inset-inline-end: 0;\n    }\n\n    .p-tablist-prev-button:dir(rtl),\n    .p-tablist-next-button:dir(rtl) {\n        transform: rotate(180deg);\n    }\n\n    .p-tab {\n        flex-shrink: 0;\n        cursor: pointer;\n        user-select: none;\n        position: relative;\n        border-style: solid;\n        white-space: nowrap;\n        gap: dt('tabs.tab.gap');\n        background: dt('tabs.tab.background');\n        border-width: dt('tabs.tab.border.width');\n        border-color: dt('tabs.tab.border.color');\n        color: dt('tabs.tab.color');\n        padding: dt('tabs.tab.padding');\n        font-weight: dt('tabs.tab.font.weight');\n        transition:\n            background dt('tabs.transition.duration'),\n            border-color dt('tabs.transition.duration'),\n            color dt('tabs.transition.duration'),\n            outline-color dt('tabs.transition.duration'),\n            box-shadow dt('tabs.transition.duration');\n        margin: dt('tabs.tab.margin');\n        outline-color: transparent;\n    }\n\n    .p-tab:not(.p-disabled):focus-visible {\n        z-index: 1;\n        box-shadow: dt('tabs.tab.focus.ring.shadow');\n        outline: dt('tabs.tab.focus.ring.width') dt('tabs.tab.focus.ring.style') dt('tabs.tab.focus.ring.color');\n        outline-offset: dt('tabs.tab.focus.ring.offset');\n    }\n\n    .p-tab:not(.p-tab-active):not(.p-disabled):hover {\n        background: dt('tabs.tab.hover.background');\n        border-color: dt('tabs.tab.hover.border.color');\n        color: dt('tabs.tab.hover.color');\n    }\n\n    .p-tab-active {\n        background: dt('tabs.tab.active.background');\n        border-color: dt('tabs.tab.active.border.color');\n        color: dt('tabs.tab.active.color');\n    }\n\n    .p-tabpanels {\n        background: dt('tabs.tabpanel.background');\n        color: dt('tabs.tabpanel.color');\n        padding: dt('tabs.tabpanel.padding');\n        outline: 0 none;\n    }\n\n    .p-tabpanel:focus-visible {\n        box-shadow: dt('tabs.tabpanel.focus.ring.shadow');\n        outline: dt('tabs.tabpanel.focus.ring.width') dt('tabs.tabpanel.focus.ring.style') dt('tabs.tabpanel.focus.ring.color');\n        outline-offset: dt('tabs.tabpanel.focus.ring.offset');\n    }\n\n    .p-tablist-active-bar {\n        z-index: 1;\n        display: block;\n        position: absolute;\n        inset-block-end: dt('tabs.active.bar.bottom');\n        height: dt('tabs.active.bar.height');\n        background: dt('tabs.active.bar.background');\n        transition: 250ms cubic-bezier(0.35, 0, 0.25, 1);\n    }\n";
+var style = "\n    .p-tabs {\n        display: flex;\n        flex-direction: column;\n    }\n\n    .p-tablist {\n        display: flex;\n        position: relative;\n        overflow: hidden;\n        background: dt('tabs.tablist.background');\n    }\n\n    .p-tablist-viewport {\n        overflow-x: auto;\n        overflow-y: hidden;\n        scroll-behavior: smooth;\n        scrollbar-width: none;\n        overscroll-behavior: contain auto;\n    }\n\n    .p-tablist-viewport::-webkit-scrollbar {\n        display: none;\n    }\n\n    .p-tablist-tab-list {\n        position: relative;\n        display: flex;\n        border-style: solid;\n        border-color: dt('tabs.tablist.border.color');\n        border-width: dt('tabs.tablist.border.width');\n    }\n\n    .p-tablist-content {\n        flex-grow: 1;\n    }\n\n    .p-tablist-nav-button {\n        all: unset;\n        position: absolute !important;\n        flex-shrink: 0;\n        inset-block-start: 0;\n        z-index: 2;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        background: dt('tabs.nav.button.background');\n        color: dt('tabs.nav.button.color');\n        width: dt('tabs.nav.button.width');\n        transition:\n            color dt('tabs.transition.duration'),\n            outline-color dt('tabs.transition.duration'),\n            box-shadow dt('tabs.transition.duration');\n        box-shadow: dt('tabs.nav.button.shadow');\n        outline-color: transparent;\n        cursor: pointer;\n    }\n\n    .p-tablist-nav-button:focus-visible {\n        z-index: 1;\n        box-shadow: dt('tabs.nav.button.focus.ring.shadow');\n        outline: dt('tabs.nav.button.focus.ring.width') dt('tabs.nav.button.focus.ring.style') dt('tabs.nav.button.focus.ring.color');\n        outline-offset: dt('tabs.nav.button.focus.ring.offset');\n    }\n\n    .p-tablist-nav-button:hover {\n        color: dt('tabs.nav.button.hover.color');\n    }\n\n    .p-tablist-prev-button {\n        inset-inline-start: 0;\n    }\n\n    .p-tablist-next-button {\n        inset-inline-end: 0;\n    }\n\n    .p-tablist-prev-button:dir(rtl),\n    .p-tablist-next-button:dir(rtl) {\n        transform: rotate(180deg);\n    }\n\n    .p-tab {\n        flex-shrink: 0;\n        cursor: pointer;\n        user-select: none;\n        position: relative;\n        border-style: solid;\n        white-space: nowrap;\n        gap: dt('tabs.tab.gap');\n        background: dt('tabs.tab.background');\n        border-width: dt('tabs.tab.border.width');\n        border-color: dt('tabs.tab.border.color');\n        color: dt('tabs.tab.color');\n        padding: dt('tabs.tab.padding');\n        font-weight: dt('tabs.tab.font.weight');\n        transition:\n            background dt('tabs.transition.duration'),\n            border-color dt('tabs.transition.duration'),\n            color dt('tabs.transition.duration'),\n            outline-color dt('tabs.transition.duration'),\n            box-shadow dt('tabs.transition.duration');\n        margin: dt('tabs.tab.margin');\n        outline-color: transparent;\n    }\n\n    .p-tab:not(.p-disabled):focus-visible {\n        z-index: 1;\n        box-shadow: dt('tabs.tab.focus.ring.shadow');\n        outline: dt('tabs.tab.focus.ring.width') dt('tabs.tab.focus.ring.style') dt('tabs.tab.focus.ring.color');\n        outline-offset: dt('tabs.tab.focus.ring.offset');\n    }\n\n    .p-tab:not(.p-tab-active):not(.p-disabled):hover {\n        background: dt('tabs.tab.hover.background');\n        border-color: dt('tabs.tab.hover.border.color');\n        color: dt('tabs.tab.hover.color');\n    }\n\n    .p-tab-active {\n        background: dt('tabs.tab.active.background');\n        border-color: dt('tabs.tab.active.border.color');\n        color: dt('tabs.tab.active.color');\n    }\n\n    .p-tabpanels {\n        background: dt('tabs.tabpanel.background');\n        color: dt('tabs.tabpanel.color');\n        padding: dt('tabs.tabpanel.padding');\n        outline: 0 none;\n    }\n\n    .p-tabpanel:focus-visible {\n        box-shadow: dt('tabs.tabpanel.focus.ring.shadow');\n        outline: dt('tabs.tabpanel.focus.ring.width') dt('tabs.tabpanel.focus.ring.style') dt('tabs.tabpanel.focus.ring.color');\n        outline-offset: dt('tabs.tabpanel.focus.ring.offset');\n    }\n\n    .p-tablist-active-bar {\n        z-index: 1;\n        display: block;\n        position: absolute;\n        inset-block-end: dt('tabs.active.bar.bottom');\n        height: dt('tabs.active.bar.height');\n        background: dt('tabs.active.bar.background');\n        transition: 250ms cubic-bezier(0.35, 0, 0.25, 1);\n    }\n";
 
 // node_modules/primeng/fesm2022/primeng-tabs.mjs
 var _c0 = ["previcon"];
@@ -185,9 +191,24 @@ function TabList_Conditional_8_Template(rf, ctx) {
     ɵɵconditional(ctx_r2.nextIconTemplate || ctx_r2._nextIconTemplate ? 2 : 3);
   }
 }
-function TabPanel_Conditional_0_Template(rf, ctx) {
+function TabPanel_ng_template_0_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵprojection(0);
+  }
+}
+function TabPanel_Conditional_2_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementContainer(0);
+  }
+}
+function TabPanel_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtemplate(0, TabPanel_Conditional_2_ng_container_0_Template, 1, 0, "ng-container", 1);
+  }
+  if (rf & 2) {
+    const ctx_r0 = ɵɵnextContext();
+    const defaultContent_r2 = ɵɵreference(1);
+    ɵɵproperty("ngTemplateOutlet", ctx_r0.content() ? ctx_r0.content() : defaultContent_r2);
   }
 }
 var classes$4 = {
@@ -231,11 +252,7 @@ var TabsClasses;
 })(TabsClasses || (TabsClasses = {}));
 var classes$3 = {
   root: "p-tablist",
-  content: ({
-    instance
-  }) => ["p-tablist-content", {
-    "p-tablist-viewport": instance.scrollable()
-  }],
+  content: "p-tablist-content p-tablist-viewport",
   tabList: "p-tablist-tab-list",
   activeBar: "p-tablist-active-bar",
   prevButton: "p-tablist-prev-button p-tablist-nav-button",
@@ -318,10 +335,10 @@ var TabList = class _TabList extends BaseComponent {
     });
   }
   get prevButtonAriaLabel() {
-    return this.config.translation.aria.previous;
+    return this.config?.translation?.aria?.previous;
   }
   get nextButtonAriaLabel() {
-    return this.config.translation.aria.next;
+    return this.config?.translation?.aria?.next;
   }
   ngAfterViewInit() {
     super.ngAfterViewInit();
@@ -333,7 +350,7 @@ var TabList = class _TabList extends BaseComponent {
   _prevIconTemplate;
   _nextIconTemplate;
   ngAfterContentInit() {
-    this.templates.forEach((t) => {
+    this.templates?.forEach((t) => {
       switch (t.getType()) {
         case "previcon":
           this._prevIconTemplate = t.template;
@@ -377,7 +394,7 @@ var TabList = class _TabList extends BaseComponent {
     const scrollLeft = Math.abs(_content.scrollLeft);
     const width = Rt(_content);
     this.isPrevButtonEnabled.set(scrollLeft !== 0);
-    this.isNextButtonEnabled.set(_list.offsetWidth >= offsetWidth && scrollLeft !== scrollWidth - width);
+    this.isNextButtonEnabled.set(_list.offsetWidth >= offsetWidth && Math.abs(scrollLeft - scrollWidth + width) > 1);
   }
   updateInkBar() {
     const _content = this.content?.nativeElement;
@@ -633,15 +650,19 @@ var Tab = class _Tab extends BaseComponent {
   active = computed(() => k(this.pcTabs.value(), this.value()), ...ngDevMode ? [{
     debugName: "active"
   }] : []);
-  tabindex = computed(() => this.active() ? this.pcTabs.tabindex() : -1, ...ngDevMode ? [{
+  tabindex = computed(() => this.disabled() ? -1 : this.active() ? this.pcTabs.tabindex() : -1, ...ngDevMode ? [{
     debugName: "tabindex"
   }] : []);
   mutationObserver;
   onFocus(event) {
-    this.pcTabs.selectOnFocus() && this.changeActiveValue();
+    if (!this.disabled()) {
+      this.pcTabs.selectOnFocus() && this.changeActiveValue();
+    }
   }
   onClick(event) {
-    this.changeActiveValue();
+    if (!this.disabled()) {
+      this.changeActiveValue();
+    }
   }
   onKeyDown(event) {
     switch (event.code) {
@@ -706,7 +727,9 @@ var Tab = class _Tab extends BaseComponent {
     event.preventDefault();
   }
   onEnterKey(event) {
-    this.changeActiveValue();
+    if (!this.disabled()) {
+      this.changeActiveValue();
+    }
     event.preventDefault();
   }
   findNextTab(tabElement, selfCheck = false) {
@@ -752,7 +775,7 @@ var Tab = class _Tab extends BaseComponent {
     }
   }
   unbindMutationObserver() {
-    this.mutationObserver.disconnect();
+    this.mutationObserver?.disconnect();
   }
   ngOnDestroy() {
     if (this.mutationObserver) {
@@ -769,7 +792,7 @@ var Tab = class _Tab extends BaseComponent {
   static ɵcmp = ɵɵdefineComponent({
     type: _Tab,
     selectors: [["p-tab"]],
-    hostVars: 10,
+    hostVars: 11,
     hostBindings: function Tab_HostBindings(rf, ctx) {
       if (rf & 1) {
         ɵɵlistener("focus", function Tab_focus_HostBindingHandler($event) {
@@ -781,7 +804,7 @@ var Tab = class _Tab extends BaseComponent {
         });
       }
       if (rf & 2) {
-        ɵɵattribute("data-pc-name", "tab")("id", ctx.id())("aria-controls", ctx.ariaControls())("role", "tab")("aria-selected", ctx.active())("data-p-disabled", ctx.disabled())("data-p-active", ctx.active())("tabindex", ctx.tabindex());
+        ɵɵattribute("data-pc-name", "tab")("id", ctx.id())("aria-controls", ctx.ariaControls())("role", "tab")("aria-selected", ctx.active())("aria-disabled", ctx.disabled())("data-p-disabled", ctx.disabled())("data-p-active", ctx.active())("tabindex", ctx.tabindex());
         ɵɵclassMap(ctx.cx("root"));
       }
     },
@@ -824,6 +847,7 @@ var Tab = class _Tab extends BaseComponent {
         "[attr.aria-controls]": "ariaControls()",
         "[attr.role]": '"tab"',
         "[attr.aria-selected]": "active()",
+        "[attr.aria-disabled]": "disabled()",
         "[attr.data-p-disabled]": "disabled()",
         "[attr.data-p-active]": "active()",
         "[attr.tabindex]": "tabindex()"
@@ -879,12 +903,31 @@ var TabPanelClasses;
 var TabPanel = class _TabPanel extends BaseComponent {
   pcTabs = inject(forwardRef(() => Tabs));
   /**
+   * When enabled, tab is not rendered until activation.
+   * @type boolean
+   * @defaultValue false
+   * @group Props
+   */
+  lazy = input(false, ...ngDevMode ? [{
+    debugName: "lazy",
+    transform: booleanAttribute
+  }] : [{
+    transform: booleanAttribute
+  }]);
+  /**
    * Value of the active tab.
    * @defaultValue undefined
    * @group Props
    */
   value = model(void 0, ...ngDevMode ? [{
     debugName: "value"
+  }] : []);
+  /**
+   * Template for initializing complex content when lazy is enabled.
+   * @group Templates
+   */
+  content = contentChild("content", ...ngDevMode ? [{
+    debugName: "content"
   }] : []);
   id = computed(() => `${this.pcTabs.id()}_tabpanel_${this.value()}`, ...ngDevMode ? [{
     debugName: "id"
@@ -894,6 +937,22 @@ var TabPanel = class _TabPanel extends BaseComponent {
   }] : []);
   active = computed(() => k(this.pcTabs.value(), this.value()), ...ngDevMode ? [{
     debugName: "active"
+  }] : []);
+  isLazyEnabled = computed(() => this.pcTabs.lazy() || this.lazy(), ...ngDevMode ? [{
+    debugName: "isLazyEnabled"
+  }] : []);
+  hasBeenRendered = false;
+  shouldRender = computed(() => {
+    if (!this.isLazyEnabled() || this.hasBeenRendered) {
+      return true;
+    }
+    if (this.active()) {
+      this.hasBeenRendered = true;
+      return true;
+    }
+    return false;
+  }, ...ngDevMode ? [{
+    debugName: "shouldRender"
   }] : []);
   _componentStyle = inject(TabPanelStyle);
   static ɵfac = /* @__PURE__ */ (() => {
@@ -905,14 +964,24 @@ var TabPanel = class _TabPanel extends BaseComponent {
   static ɵcmp = ɵɵdefineComponent({
     type: _TabPanel,
     selectors: [["p-tabpanel"]],
-    hostVars: 7,
+    contentQueries: function TabPanel_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        ɵɵcontentQuerySignal(dirIndex, ctx.content, _c2, 5);
+      }
+      if (rf & 2) {
+        ɵɵqueryAdvance();
+      }
+    },
+    hostVars: 8,
     hostBindings: function TabPanel_HostBindings(rf, ctx) {
       if (rf & 2) {
+        ɵɵdomProperty("hidden", !ctx.active());
         ɵɵattribute("data-pc-name", "tabpanel")("id", ctx.id())("role", "tabpanel")("aria-labelledby", ctx.ariaLabelledby())("data-p-active", ctx.active());
         ɵɵclassMap(ctx.cx("root"));
       }
     },
     inputs: {
+      lazy: [1, "lazy"],
       value: [1, "value"]
     },
     outputs: {
@@ -920,18 +989,21 @@ var TabPanel = class _TabPanel extends BaseComponent {
     },
     features: [ɵɵProvidersFeature([TabPanelStyle]), ɵɵInheritDefinitionFeature],
     ngContentSelectors: _c7,
-    decls: 1,
+    decls: 3,
     vars: 1,
+    consts: [["defaultContent", ""], [4, "ngTemplateOutlet"]],
     template: function TabPanel_Template(rf, ctx) {
       if (rf & 1) {
         ɵɵprojectionDef();
-        ɵɵconditionalCreate(0, TabPanel_Conditional_0_Template, 1, 0);
+        ɵɵtemplate(0, TabPanel_ng_template_0_Template, 1, 0, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+        ɵɵconditionalCreate(2, TabPanel_Conditional_2_Template, 1, 1, "ng-container");
       }
       if (rf & 2) {
-        ɵɵconditional(ctx.active() ? 0 : -1);
+        ɵɵadvance(2);
+        ɵɵconditional(ctx.shouldRender() ? 2 : -1);
       }
     },
-    dependencies: [CommonModule],
+    dependencies: [NgTemplateOutlet],
     encapsulation: 2,
     changeDetection: 0
   });
@@ -942,21 +1014,28 @@ var TabPanel = class _TabPanel extends BaseComponent {
     args: [{
       selector: "p-tabpanel",
       standalone: true,
-      imports: [CommonModule],
-      template: `@if (active()) {
-        <ng-content></ng-content>
-    }`,
+      imports: [NgTemplateOutlet],
+      template: `
+        <ng-template #defaultContent>
+            <ng-content />
+        </ng-template>
+
+        @if (shouldRender()) {
+            <ng-container *ngTemplateOutlet="content() ? content() : defaultContent" />
+        }
+    `,
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation.None,
+      providers: [TabPanelStyle],
       host: {
         "[class]": 'cx("root")',
         "[attr.data-pc-name]": '"tabpanel"',
         "[attr.id]": "id()",
         "[attr.role]": '"tabpanel"',
         "[attr.aria-labelledby]": "ariaLabelledby()",
-        "[attr.data-p-active]": "active()"
-      },
-      providers: [TabPanelStyle]
+        "[attr.data-p-active]": "active()",
+        "[hidden]": "!active()"
+      }
     }]
   }], null, null);
 })();
@@ -1060,7 +1139,7 @@ var Tabs = class _Tabs extends BaseComponent {
     transform: booleanAttribute
   }]);
   /**
-   * When enabled, hidden tabs are not rendered at all. Defaults to false that hides tabs with css.
+   * When enabled, tabs are not rendered until activation.
    * @type boolean
    * @defaultValue false
    * @group Props
@@ -1185,7 +1264,7 @@ var TabsModule = class _TabsModule {
     exports: [Tabs, TabPanels, TabPanel, TabList, Tab]
   });
   static ɵinj = ɵɵdefineInjector({
-    imports: [Tabs, TabPanels, TabPanel, TabList, Tab]
+    imports: [Tabs, TabPanels, TabList, Tab]
   });
 };
 (() => {

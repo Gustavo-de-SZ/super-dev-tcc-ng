@@ -1,35 +1,35 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-KSBGS73W.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
-import {
-  Badge,
-  BadgeModule
-} from "./chunk-TRCD2RJ4.js";
+} from "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   AngleDownIcon,
   AngleRightIcon,
   BarsIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   M,
   Yt,
@@ -40,15 +40,15 @@ import {
   s,
   s3 as s2,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   RouterLink,
   RouterLinkActive,
   RouterModule
-} from "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -897,10 +897,10 @@ var MegaMenuSub = class _MegaMenuSub extends BaseComponent {
     return s(processedItem.items);
   }
   getAriaSetSize() {
-    return this.items.filter((processedItem) => this.isItemVisible(processedItem) && !this.getItemProp(processedItem, "separator")).length;
+    return this.items?.filter((processedItem) => this.isItemVisible(processedItem) && !this.getItemProp(processedItem, "separator")).length;
   }
   getAriaPosInset(index) {
-    return index - this.items.slice(0, index).filter((processedItem) => this.isItemVisible(processedItem) && this.getItemProp(processedItem, "separator")).length + 1;
+    return index - (this.items?.slice(0, index).filter((processedItem) => this.isItemVisible(processedItem) && this.getItemProp(processedItem, "separator")).length || 0) + 1;
   }
   onItemMouseEnter(param) {
     const {
@@ -1516,11 +1516,11 @@ var MegaMenu = class _MegaMenu extends BaseComponent {
   toggle(event) {
     if (this.mobileActive) {
       this.mobileActive = false;
-      zindexutils.clear(this.rootmenu.el.nativeElement);
+      zindexutils.clear(this.rootmenu?.el.nativeElement);
       this.hide();
     } else {
       this.mobileActive = true;
-      zindexutils.set("menu", this.rootmenu.el.nativeElement, this.config.zIndex.menu);
+      zindexutils.set("menu", this.rootmenu?.el.nativeElement, this.config.zIndex.menu);
       setTimeout(() => {
         this.show();
       }, 0);
@@ -1540,7 +1540,7 @@ var MegaMenu = class _MegaMenu extends BaseComponent {
     const id = index !== -1 ? `${this.id}_${index}` : this.focusedItemId;
     let element;
     if (id === null && this.queryMatches) {
-      element = this.menubuttonViewChild.nativeElement;
+      element = this.menubuttonViewChild?.nativeElement;
     } else {
       element = z(this.rootmenu?.menubarViewChild?.nativeElement, `li[id="${id}"]`);
     }
@@ -1918,7 +1918,7 @@ var MegaMenu = class _MegaMenu extends BaseComponent {
   onEnterKey(event) {
     if (this.focusedItemInfo().index !== -1) {
       const element = z(this.rootmenu?.el?.nativeElement, `li[id="${`${this.focusedItemId}`}"]`);
-      const anchorElement = element && z(element, 'a[data-pc-section="action"]');
+      const anchorElement = element && (z(element, '[data-pc-section="action"]') || z(element, "a,button"));
       anchorElement ? anchorElement.click() : element && element.click();
       const processedItem = this.visibleItems[this.focusedItemInfo().index];
       const grouped = this.isProccessedItemGroup(processedItem);

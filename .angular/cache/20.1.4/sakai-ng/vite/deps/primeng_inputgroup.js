@@ -1,14 +1,14 @@
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
+import "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule
 } from "./chunk-I7P5IMQC.js";
@@ -73,6 +73,10 @@ var theme = (
     .p-inputgroup:has(> p-button:last-child) .p-button {
         border-start-end-radius: dt('inputgroup.addon.border.radius');
         border-end-end-radius: dt('inputgroup.addon.border.radius');
+    }
+
+    .p-inputgroup > p-inputmask > .p-inputtext {
+        width: 100%;
     }
 `
 );

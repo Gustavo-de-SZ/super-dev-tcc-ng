@@ -1,25 +1,33 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
 import "./chunk-UQLQBFGK.js";
+import "./chunk-Q42KCB4K.js";
 import {
   ChevronDownIcon,
   ChevronRightIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   Q2 as Q,
   a,
@@ -31,23 +39,15 @@ import {
   s,
   s3 as s2,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   RouterLink,
   RouterLinkActive,
   RouterModule
-} from "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -209,7 +209,7 @@ function PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_span_2_Template(rf, 
   if (rf & 2) {
     const processedItem_r2 = ɵɵnextContext(4).$implicit;
     const ctx_r2 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r2.cx("itemIcon", ɵɵpureFunction1(3, _c1, processedItem_r2)));
+    ɵɵclassMap(ctx_r2.cn(ctx_r2.cx("itemIcon"), ctx_r2.getItemProp(processedItem_r2, "icon")));
     ɵɵproperty("ngStyle", ctx_r2.getItemProp(processedItem_r2, "iconStyle"));
   }
 }
@@ -241,7 +241,7 @@ function PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_ng_template_4_Templa
 function PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "a", 13);
-    ɵɵtemplate(1, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_ng_container_1_Template, 3, 2, "ng-container", 9)(2, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_span_2_Template, 1, 5, "span", 14)(3, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_span_3_Template, 2, 3, "span", 15)(4, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_ng_template_4_Template, 1, 3, "ng-template", null, 1, ɵɵtemplateRefExtractor);
+    ɵɵtemplate(1, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_ng_container_1_Template, 3, 2, "ng-container", 9)(2, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_span_2_Template, 1, 3, "span", 14)(3, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_span_3_Template, 2, 3, "span", 15)(4, PanelMenuSub_ng_template_2_li_1_ng_container_2_a_1_ng_template_4_Template, 1, 3, "ng-template", null, 1, ɵɵtemplateRefExtractor);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -1175,7 +1175,7 @@ var PanelMenuSub = class _PanelMenuSub extends BaseComponent {
                                     </ng-container>
                                     <ng-template *ngTemplateOutlet="panelMenu.submenuIconTemplate || panelMenu._submenuIconTemplate"></ng-template>
                                 </ng-container>
-                                <span [class]="cx('itemIcon', { processedItem })" *ngIf="processedItem.icon" [ngStyle]="getItemProp(processedItem, 'iconStyle')"></span>
+                                <span [class]="cn(cx('itemIcon'), getItemProp(processedItem, 'icon'))" *ngIf="processedItem.icon" [ngStyle]="getItemProp(processedItem, 'iconStyle')"></span>
                                 <span [class]="cx('itemLabel')" *ngIf="processedItem.item?.escape !== false; else htmlLabel">{{ getItemProp(processedItem, 'label') }}</span>
                                 <ng-template #htmlLabel><span [class]="cx('itemLabel')" [innerHTML]="getItemProp(processedItem, 'label')"></span></ng-template>
                             </a>
@@ -1617,16 +1617,16 @@ var PanelMenuList = class _PanelMenuList extends BaseComponent {
     let matched = false;
     if (s(this.focusedItem())) {
       const focusedItemIndex = this.visibleItems().findIndex((processedItem) => processedItem.key === this.focusedItem().key);
-      matchedItem = this.visibleItems().slice(focusedItemIndex).find((processedItem) => this.isItemMatched(processedItem));
-      matchedItem = a(matchedItem) ? this.visibleItems().slice(0, focusedItemIndex).find((processedItem) => this.isItemMatched(processedItem)) : matchedItem;
+      matchedItem = this.visibleItems().slice(focusedItemIndex).find((processedItem) => this.isItemMatched(processedItem)) || null;
+      matchedItem = a(matchedItem) ? this.visibleItems().slice(0, focusedItemIndex).find((processedItem) => this.isItemMatched(processedItem)) || null : matchedItem;
     } else {
-      matchedItem = this.visibleItems().find((processedItem) => this.isItemMatched(processedItem));
+      matchedItem = this.visibleItems().find((processedItem) => this.isItemMatched(processedItem)) || null;
     }
     if (s(matchedItem)) {
       matched = true;
     }
     if (a(matchedItem) && a(this.focusedItem())) {
-      matchedItem = this.findFirstItem();
+      matchedItem = this.findFirstItem() || null;
     }
     if (s(matchedItem)) {
       this.changeFocusedItem({
@@ -1961,10 +1961,10 @@ var PanelMenu = class _PanelMenu extends BaseComponent {
     return headerElement ? Q(headerElement, "data-p-disabled") ? this.findPrevHeader(headerElement.parentElement) : headerElement : null;
   }
   findFirstHeader() {
-    return this.findNextHeader(this.containerViewChild.nativeElement.firstElementChild, true);
+    return this.containerViewChild?.nativeElement ? this.findNextHeader(this.containerViewChild.nativeElement.firstElementChild, true) : null;
   }
   findLastHeader() {
-    return this.findPrevHeader(this.containerViewChild.nativeElement.lastElementChild, true);
+    return this.containerViewChild?.nativeElement ? this.findPrevHeader(this.containerViewChild.nativeElement.lastElementChild, true) : null;
   }
   onHeaderClick(event, item, index) {
     if (this.isItemDisabled(item)) {
