@@ -66,8 +66,6 @@ export class LayoutService {
 
     isSidebarActive = computed(() => this.layoutState().overlayMenuActive || this.layoutState().staticMenuMobileActive);
 
-    isDarkTheme = computed(() => this.layoutConfig().darkTheme);
-
     getPrimary = computed(() => this.layoutConfig().primary);
 
     getSurface = computed(() => this.layoutConfig().surface);
@@ -85,48 +83,9 @@ export class LayoutService {
                 this.onConfigUpdate();
             }
         });
-
-        effect(() => {
-            const config = this.layoutConfig();
-
-            if (!this.initialized || !config) {
-                this.initialized = true;
-                return;
-            }
-
-            this.handleDarkModeTransition(config);
-        });
     }
 
-    private handleDarkModeTransition(config: layoutConfig): void {
-        if ((document as any).startViewTransition) {
-            this.startViewTransition(config);
-        } else {
-            this.toggleDarkMode(config);
-            this.onTransitionEnd();
-        }
-    }
 
-    private startViewTransition(config: layoutConfig): void {
-        const transition = (document as any).startViewTransition(() => {
-            this.toggleDarkMode(config);
-        });
-
-        transition.ready
-            .then(() => {
-                this.onTransitionEnd();
-            })
-            .catch(() => {});
-    }
-
-    toggleDarkMode(config?: layoutConfig): void {
-        const _config = config || this.layoutConfig();
-        if (_config.darkTheme) {
-            document.documentElement.classList.add('app-dark');
-        } else {
-            document.documentElement.classList.remove('app-dark');
-        }
-    }
 
     private onTransitionEnd() {
         this.transitionComplete.set(true);

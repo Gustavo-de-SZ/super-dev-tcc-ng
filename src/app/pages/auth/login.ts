@@ -93,10 +93,10 @@ export class Login {
     }
 
     // Simula login e navega para Home
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin/dashboard']);
   }
 
   irParaCadastro() {
-    this.router.navigate(['cadastro']);
+    this.router.navigate(['/auth/cadastro']);
   }
 }

@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 
-import { Crud } from './crud/crud';
-import { Cadastro } from './auth/cadastrar';
+import { Suporte } from './auth/suporte';
+import { UserList } from './user-perfil/list';
+import { Dashboard } from './dashboard/dashboard';
 
 
 export default [
-
-    { path: 'crud', component: Crud },
-    {path: 'cadastro', component: Cadastro},
-    { path: '**', redirectTo: '/notfound' }
+    { path: 'dashboard', component: Dashboard },
+    { path: 'suporte', component: Suporte },
+    { path: 'user-perfil', component: UserList },
+    { path: '**', redirectTo: "dashboard"}
 ] as Routes;
