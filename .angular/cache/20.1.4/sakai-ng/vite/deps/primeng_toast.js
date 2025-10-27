@@ -6,27 +6,21 @@ import {
   InfoCircleIcon,
   TimesCircleIcon,
   TimesIcon
-} from "./chunk-WSGNGDVK.js";
+} from "./chunk-GP6JIWIS.js";
 import {
   CheckIcon
-} from "./chunk-NJWM2EWG.js";
+} from "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   MessageService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import {
-  Kt,
-  a,
-  s3 as s
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -37,6 +31,12 @@ import {
   transition,
   trigger
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  Kt,
+  a,
+  s3 as s
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -455,6 +455,7 @@ var ToastItem = class _ToastItem extends BaseComponent {
   }
   initTimeout() {
     if (!this.message?.sticky) {
+      this.clearTimeout();
       this.zone.runOutsideAngular(() => {
         this.timeout = setTimeout(() => {
           this.onClose.emit({
@@ -889,6 +890,7 @@ var Toast = class _Toast extends BaseComponent {
     if (!this.styleElement) {
       this.styleElement = this.renderer.createElement("style");
       this.styleElement.type = "text/css";
+      Kt(this.styleElement, "nonce", this.config?.csp()?.nonce);
       this.renderer.appendChild(this.document.head, this.styleElement);
       let innerHTML = "";
       for (let breakpoint in this.breakpoints) {

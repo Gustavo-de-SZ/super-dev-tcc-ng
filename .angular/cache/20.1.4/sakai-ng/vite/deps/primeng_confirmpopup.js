@@ -1,45 +1,35 @@
 import {
   FocusTrap
-} from "./chunk-UC5MMFCA.js";
-import {
-  zindexutils
-} from "./chunk-UQLQBFGK.js";
+} from "./chunk-ZACHOH5A.js";
 import {
   Button,
   ButtonModule
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
-import "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import {
+  zindexutils
+} from "./chunk-UQLQBFGK.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
 import {
   ConnectedOverlayScrollHandler
-} from "./chunk-C5DLRIHR.js";
+} from "./chunk-Q42KCB4K.js";
+import "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   ConfirmationService,
   OverlayService,
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
-import {
-  D,
-  K,
-  Ut,
-  W,
-  Yt,
-  bt
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -48,6 +38,15 @@ import {
   transition,
   trigger
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  D,
+  K,
+  Ut,
+  W,
+  Yt,
+  bt
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -235,7 +234,7 @@ function ConfirmPopup_div_0_ng_template_2_p_button_6_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext(3);
     ɵɵclassMap(ctx_r1.cx("pcRejectButton"));
-    ɵɵproperty("label", ctx_r1.rejectButtonLabel)("styleClass", ctx_r1.confirmation == null ? null : ctx_r1.confirmation.rejectButtonStyleClass)("size", (ctx_r1.confirmation.rejectButtonProps == null ? null : ctx_r1.confirmation.rejectButtonProps.size) || "small")("text", (ctx_r1.confirmation.rejectButtonProps == null ? null : ctx_r1.confirmation.rejectButtonProps.text) || false)("buttonProps", ctx_r1.getRejectButtonProps())("autofocus", ctx_r1.autoFocusReject);
+    ɵɵproperty("label", ctx_r1.rejectButtonLabel)("styleClass", ctx_r1.confirmation == null ? null : ctx_r1.confirmation.rejectButtonStyleClass)("size", (ctx_r1.confirmation == null ? null : ctx_r1.confirmation.rejectButtonProps == null ? null : ctx_r1.confirmation.rejectButtonProps.size) || "small")("text", (ctx_r1.confirmation == null ? null : ctx_r1.confirmation.rejectButtonProps == null ? null : ctx_r1.confirmation.rejectButtonProps.text) || false)("buttonProps", ctx_r1.getRejectButtonProps())("autofocus", ctx_r1.autoFocusReject);
     ɵɵattribute("aria-label", ctx_r1.rejectButtonLabel);
   }
 }
@@ -281,7 +280,7 @@ function ConfirmPopup_div_0_ng_template_2_p_button_7_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext(3);
     ɵɵclassMap(ctx_r1.cx("pcAcceptButton"));
-    ɵɵproperty("label", ctx_r1.acceptButtonLabel)("styleClass", ctx_r1.confirmation == null ? null : ctx_r1.confirmation.acceptButtonStyleClass)("size", (ctx_r1.confirmation.acceptButtonProps == null ? null : ctx_r1.confirmation.acceptButtonProps.size) || "small")("buttonProps", ctx_r1.getAcceptButtonProps())("autofocus", ctx_r1.autoFocusAccept);
+    ɵɵproperty("label", ctx_r1.acceptButtonLabel)("styleClass", ctx_r1.confirmation == null ? null : ctx_r1.confirmation.acceptButtonStyleClass)("size", (ctx_r1.confirmation == null ? null : ctx_r1.confirmation.acceptButtonProps == null ? null : ctx_r1.confirmation.acceptButtonProps.size) || "small")("buttonProps", ctx_r1.getAcceptButtonProps())("autofocus", ctx_r1.autoFocusAccept);
     ɵɵattribute("aria-label", ctx_r1.acceptButtonLabel);
   }
 }
@@ -517,7 +516,7 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
     return void 0;
   }
   onEscapeKeydown(event) {
-    if (this.confirmation && this.confirmation.closeOnEscape) {
+    if (this.confirmation && this.confirmation.closeOnEscape !== false) {
       this.onReject();
     }
   }
@@ -548,18 +547,20 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
     if (this.autoZIndex) {
       zindexutils.set("overlay", this.container, this.config.zIndex.overlay);
     }
-    if (!this.confirmation) {
+    if (!this.confirmation || !this.confirmation.target) {
       return;
     }
     D(this.container, this.confirmation?.target, false);
     const containerOffset = K(this.container);
     const targetOffset = K(this.confirmation?.target);
     let arrowLeft = 0;
-    if (containerOffset.left < targetOffset.left) {
+    if (containerOffset && targetOffset && containerOffset.left < targetOffset.left) {
       arrowLeft = targetOffset.left - containerOffset.left;
     }
-    this.container.style.setProperty("--p-confirmpopup-arrow-left", `${arrowLeft}px`);
-    if (containerOffset.top < targetOffset.top) {
+    if (this.container) {
+      this.container.style.setProperty("--p-confirmpopup-arrow-left", `${arrowLeft}px`);
+    }
+    if (containerOffset && targetOffset && containerOffset.top < targetOffset.top) {
       W(this.container, "p-confirm-popup-flipped");
     }
   }
@@ -711,7 +712,7 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
     },
     hostBindings: function ConfirmPopup_HostBindings(rf, ctx) {
       if (rf & 1) {
-        ɵɵlistener("keydown.escape", function ConfirmPopup_keydown_escape_HostBindingHandler($event) {
+        ɵɵlistener("keydown.Escape", function ConfirmPopup_keydown_Escape_HostBindingHandler($event) {
           return ctx.onEscapeKeydown($event);
         }, ɵɵresolveDocument);
       }
@@ -795,8 +796,8 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
                         (onClick)="onReject()"
                         [class]="cx('pcRejectButton')"
                         [styleClass]="confirmation?.rejectButtonStyleClass"
-                        [size]="confirmation.rejectButtonProps?.size || 'small'"
-                        [text]="confirmation.rejectButtonProps?.text || false"
+                        [size]="confirmation?.rejectButtonProps?.size || 'small'"
+                        [text]="confirmation?.rejectButtonProps?.text || false"
                         *ngIf="confirmation?.rejectVisible !== false"
                         [attr.aria-label]="rejectButtonLabel"
                         [buttonProps]="getRejectButtonProps()"
@@ -813,7 +814,7 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
                         (onClick)="onAccept()"
                         [class]="cx('pcAcceptButton')"
                         [styleClass]="confirmation?.acceptButtonStyleClass"
-                        [size]="confirmation.acceptButtonProps?.size || 'small'"
+                        [size]="confirmation?.acceptButtonProps?.size || 'small'"
                         *ngIf="confirmation?.acceptVisible !== false"
                         [attr.aria-label]="acceptButtonLabel"
                         [buttonProps]="getAcceptButtonProps()"
@@ -919,7 +920,7 @@ var ConfirmPopup = class _ConfirmPopup extends BaseComponent {
     }],
     onEscapeKeydown: [{
       type: HostListener,
-      args: ["document:keydown.escape", ["$event"]]
+      args: ["document:keydown.Escape", ["$event"]]
     }]
   });
 })();

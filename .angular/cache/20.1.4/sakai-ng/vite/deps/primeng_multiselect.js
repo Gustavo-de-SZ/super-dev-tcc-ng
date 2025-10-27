@@ -1,28 +1,55 @@
 import {
+  Checkbox
+} from "./chunk-GESXCIU2.js";
+import {
   IconField
-} from "./chunk-LSE2JJYG.js";
+} from "./chunk-6ETDI7OT.js";
 import {
   InputIcon
-} from "./chunk-S2U7HDTI.js";
+} from "./chunk-OTSBTDBE.js";
+import {
+  Tooltip
+} from "./chunk-SYXSV3Z6.js";
 import {
   Overlay
-} from "./chunk-BHJRJD25.js";
+} from "./chunk-UP7BBXCM.js";
 import {
   Scroller
-} from "./chunk-OTUZOPVJ.js";
+} from "./chunk-VCFFJTNK.js";
 import {
   InputText
-} from "./chunk-4AC7EG3S.js";
-import {
-  Checkbox
-} from "./chunk-4IDJL2IJ.js";
-import {
-  Chip
-} from "./chunk-25T7JC3Q.js";
+} from "./chunk-B7Y7BKU4.js";
 import {
   BaseEditableHolder
-} from "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
+} from "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
+import {
+  ObjectUtils
+} from "./chunk-UQLQBFGK.js";
+import {
+  Fluid
+} from "./chunk-CDN2HBI6.js";
+import {
+  AutoFocus
+} from "./chunk-DCN6VKWH.js";
+import {
+  Ripple
+} from "./chunk-QCI5ZXXW.js";
+import {
+  DomHandler,
+  unblockBodyScroll
+} from "./chunk-Q42KCB4K.js";
+import {
+  Chip
+} from "./chunk-COSOQYJX.js";
+import {
+  ChevronDownIcon,
+  SearchIcon,
+  TimesIcon
+} from "./chunk-GP6JIWIS.js";
+import {
+  CheckIcon
+} from "./chunk-E7AGI74O.js";
 import {
   FormsModule,
   NG_VALUE_ACCESSOR,
@@ -30,40 +57,11 @@ import {
   NgModel
 } from "./chunk-R7JFBUJZ.js";
 import {
-  Tooltip
-} from "./chunk-LUYMOFWJ.js";
-import {
-  ObjectUtils
-} from "./chunk-UQLQBFGK.js";
-import {
-  Fluid
-} from "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import {
-  Ripple
-} from "./chunk-Q6YVT4HY.js";
-import {
-  AutoFocus
-} from "./chunk-FKVBP7E7.js";
-import {
-  ChevronDownIcon,
-  SearchIcon,
-  TimesIcon
-} from "./chunk-WSGNGDVK.js";
-import {
-  CheckIcon
-} from "./chunk-NJWM2EWG.js";
-import {
-  DomHandler,
-  unblockBodyScroll
-} from "./chunk-C5DLRIHR.js";
-import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   FilterService,
   Footer,
@@ -72,7 +70,10 @@ import {
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   Lt,
   M,
@@ -87,9 +88,7 @@ import {
   vt,
   y,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -178,7 +177,7 @@ import {
 } from "./chunk-WDMUDEB6.js";
 
 // node_modules/@primeuix/styles/dist/multiselect/index.mjs
-var style = "\n    .p-multiselect {\n        display: inline-flex;\n        cursor: pointer;\n        position: relative;\n        user-select: none;\n        background: dt('multiselect.background');\n        border: 1px solid dt('multiselect.border.color');\n        transition:\n            background dt('multiselect.transition.duration'),\n            color dt('multiselect.transition.duration'),\n            border-color dt('multiselect.transition.duration'),\n            outline-color dt('multiselect.transition.duration'),\n            box-shadow dt('multiselect.transition.duration');\n        border-radius: dt('multiselect.border.radius');\n        outline-color: transparent;\n        box-shadow: dt('multiselect.shadow');\n    }\n\n    .p-multiselect:not(.p-disabled):hover {\n        border-color: dt('multiselect.hover.border.color');\n    }\n\n    .p-multiselect:not(.p-disabled).p-focus {\n        border-color: dt('multiselect.focus.border.color');\n        box-shadow: dt('multiselect.focus.ring.shadow');\n        outline: dt('multiselect.focus.ring.width') dt('multiselect.focus.ring.style') dt('multiselect.focus.ring.color');\n        outline-offset: dt('multiselect.focus.ring.offset');\n    }\n\n    .p-multiselect.p-variant-filled {\n        background: dt('multiselect.filled.background');\n    }\n\n    .p-multiselect.p-variant-filled:not(.p-disabled):hover {\n        background: dt('multiselect.filled.hover.background');\n    }\n\n    .p-multiselect.p-variant-filled.p-focus {\n        background: dt('multiselect.filled.focus.background');\n    }\n\n    .p-multiselect.p-invalid {\n        border-color: dt('multiselect.invalid.border.color');\n    }\n\n    .p-multiselect.p-disabled {\n        opacity: 1;\n        background: dt('multiselect.disabled.background');\n    }\n\n    .p-multiselect-dropdown {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        flex-shrink: 0;\n        background: transparent;\n        color: dt('multiselect.dropdown.color');\n        width: dt('multiselect.dropdown.width');\n        border-start-end-radius: dt('multiselect.border.radius');\n        border-end-end-radius: dt('multiselect.border.radius');\n    }\n\n    .p-multiselect-clear-icon {\n        position: absolute;\n        top: 50%;\n        margin-top: -0.5rem;\n        color: dt('multiselect.clear.icon.color');\n        inset-inline-end: dt('multiselect.dropdown.width');\n    }\n\n    .p-multiselect-label-container {\n        overflow: hidden;\n        flex: 1 1 auto;\n        cursor: pointer;\n    }\n\n    .p-multiselect-label {\n        white-space: nowrap;\n        cursor: pointer;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        padding: dt('multiselect.padding.y') dt('multiselect.padding.x');\n        color: dt('multiselect.color');\n    }\n\n    .p-multiselect-display-chip .p-multiselect-label {\n        display: flex;\n        align-items: center;\n        gap: calc(dt('multiselect.padding.y') / 2);\n    }\n\n    .p-multiselect-label.p-placeholder {\n        color: dt('multiselect.placeholder.color');\n    }\n\n    .p-multiselect.p-invalid .p-multiselect-label.p-placeholder {\n        color: dt('multiselect.invalid.placeholder.color');\n    }\n\n    .p-multiselect.p-disabled .p-multiselect-label {\n        color: dt('multiselect.disabled.color');\n    }\n\n    .p-multiselect-label-empty {\n        overflow: hidden;\n        visibility: hidden;\n    }\n\n    .p-multiselect-overlay {\n        position: absolute;\n        top: 0;\n        left: 0;\n        background: dt('multiselect.overlay.background');\n        color: dt('multiselect.overlay.color');\n        border: 1px solid dt('multiselect.overlay.border.color');\n        border-radius: dt('multiselect.overlay.border.radius');\n        box-shadow: dt('multiselect.overlay.shadow');\n        min-width: 100%;\n    }\n\n    .p-multiselect-header {\n        display: flex;\n        align-items: center;\n        padding: dt('multiselect.list.header.padding');\n    }\n\n    .p-multiselect-header .p-checkbox {\n        margin-inline-end: dt('multiselect.option.gap');\n    }\n\n    .p-multiselect-filter-container {\n        flex: 1 1 auto;\n    }\n\n    .p-multiselect-filter {\n        width: 100%;\n    }\n\n    .p-multiselect-list-container {\n        overflow: auto;\n    }\n\n    .p-multiselect-list {\n        margin: 0;\n        padding: 0;\n        list-style-type: none;\n        padding: dt('multiselect.list.padding');\n        display: flex;\n        flex-direction: column;\n        gap: dt('multiselect.list.gap');\n    }\n\n    .p-multiselect-option {\n        cursor: pointer;\n        font-weight: normal;\n        white-space: nowrap;\n        position: relative;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        gap: dt('multiselect.option.gap');\n        padding: dt('multiselect.option.padding');\n        border: 0 none;\n        color: dt('multiselect.option.color');\n        background: transparent;\n        transition:\n            background dt('multiselect.transition.duration'),\n            color dt('multiselect.transition.duration'),\n            border-color dt('multiselect.transition.duration'),\n            box-shadow dt('multiselect.transition.duration'),\n            outline-color dt('multiselect.transition.duration');\n        border-radius: dt('multiselect.option.border.radius');\n    }\n\n    .p-multiselect-option:not(.p-multiselect-option-selected):not(.p-disabled).p-focus {\n        background: dt('multiselect.option.focus.background');\n        color: dt('multiselect.option.focus.color');\n    }\n\n    .p-multiselect-option.p-multiselect-option-selected {\n        background: dt('multiselect.option.selected.background');\n        color: dt('multiselect.option.selected.color');\n    }\n\n    .p-multiselect-option.p-multiselect-option-selected.p-focus {\n        background: dt('multiselect.option.selected.focus.background');\n        color: dt('multiselect.option.selected.focus.color');\n    }\n\n    .p-multiselect-option-group {\n        cursor: auto;\n        margin: 0;\n        padding: dt('multiselect.option.group.padding');\n        background: dt('multiselect.option.group.background');\n        color: dt('multiselect.option.group.color');\n        font-weight: dt('multiselect.option.group.font.weight');\n    }\n\n    .p-multiselect-empty-message {\n        padding: dt('multiselect.empty.message.padding');\n    }\n\n    .p-multiselect-label .p-chip {\n        padding-block-start: calc(dt('multiselect.padding.y') / 2);\n        padding-block-end: calc(dt('multiselect.padding.y') / 2);\n        border-radius: dt('multiselect.chip.border.radius');\n    }\n\n    .p-multiselect-label:has(.p-chip) {\n        padding: calc(dt('multiselect.padding.y') / 2) calc(dt('multiselect.padding.x') / 2);\n    }\n\n    .p-multiselect-fluid {\n        display: flex;\n        width: 100%;\n    }\n\n    .p-multiselect-sm .p-multiselect-label {\n        font-size: dt('multiselect.sm.font.size');\n        padding-block: dt('multiselect.sm.padding.y');\n        padding-inline: dt('multiselect.sm.padding.x');\n    }\n\n    .p-multiselect-sm .p-multiselect-dropdown .p-icon {\n        font-size: dt('multiselect.sm.font.size');\n        width: dt('multiselect.sm.font.size');\n        height: dt('multiselect.sm.font.size');\n    }\n\n    .p-multiselect-lg .p-multiselect-label {\n        font-size: dt('multiselect.lg.font.size');\n        padding-block: dt('multiselect.lg.padding.y');\n        padding-inline: dt('multiselect.lg.padding.x');\n    }\n\n    .p-multiselect-lg .p-multiselect-dropdown .p-icon {\n        font-size: dt('multiselect.lg.font.size');\n        width: dt('multiselect.lg.font.size');\n        height: dt('multiselect.lg.font.size');\n    }\n";
+var style = "\n    .p-multiselect {\n        display: inline-flex;\n        cursor: pointer;\n        position: relative;\n        user-select: none;\n        background: dt('multiselect.background');\n        border: 1px solid dt('multiselect.border.color');\n        transition:\n            background dt('multiselect.transition.duration'),\n            color dt('multiselect.transition.duration'),\n            border-color dt('multiselect.transition.duration'),\n            outline-color dt('multiselect.transition.duration'),\n            box-shadow dt('multiselect.transition.duration');\n        border-radius: dt('multiselect.border.radius');\n        outline-color: transparent;\n        box-shadow: dt('multiselect.shadow');\n    }\n\n    .p-multiselect:not(.p-disabled):hover {\n        border-color: dt('multiselect.hover.border.color');\n    }\n\n    .p-multiselect:not(.p-disabled).p-focus {\n        border-color: dt('multiselect.focus.border.color');\n        box-shadow: dt('multiselect.focus.ring.shadow');\n        outline: dt('multiselect.focus.ring.width') dt('multiselect.focus.ring.style') dt('multiselect.focus.ring.color');\n        outline-offset: dt('multiselect.focus.ring.offset');\n    }\n\n    .p-multiselect.p-variant-filled {\n        background: dt('multiselect.filled.background');\n    }\n\n    .p-multiselect.p-variant-filled:not(.p-disabled):hover {\n        background: dt('multiselect.filled.hover.background');\n    }\n\n    .p-multiselect.p-variant-filled.p-focus {\n        background: dt('multiselect.filled.focus.background');\n    }\n\n    .p-multiselect.p-invalid {\n        border-color: dt('multiselect.invalid.border.color');\n    }\n\n    .p-multiselect.p-disabled {\n        opacity: 1;\n        background: dt('multiselect.disabled.background');\n    }\n\n    .p-multiselect-dropdown {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        flex-shrink: 0;\n        background: transparent;\n        color: dt('multiselect.dropdown.color');\n        width: dt('multiselect.dropdown.width');\n        border-start-end-radius: dt('multiselect.border.radius');\n        border-end-end-radius: dt('multiselect.border.radius');\n    }\n\n    .p-multiselect-clear-icon {\n        align-self: center;\n        color: dt('multiselect.clear.icon.color');\n        inset-inline-end: dt('multiselect.dropdown.width');\n    }\n\n    .p-multiselect-label-container {\n        overflow: hidden;\n        flex: 1 1 auto;\n        cursor: pointer;\n    }\n\n    .p-multiselect-label {\n        white-space: nowrap;\n        cursor: pointer;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        padding: dt('multiselect.padding.y') dt('multiselect.padding.x');\n        color: dt('multiselect.color');\n    }\n\n    .p-multiselect-display-chip .p-multiselect-label {\n        display: flex;\n        align-items: center;\n        gap: calc(dt('multiselect.padding.y') / 2);\n    }\n\n    .p-multiselect-label.p-placeholder {\n        color: dt('multiselect.placeholder.color');\n    }\n\n    .p-multiselect.p-invalid .p-multiselect-label.p-placeholder {\n        color: dt('multiselect.invalid.placeholder.color');\n    }\n\n    .p-multiselect.p-disabled .p-multiselect-label {\n        color: dt('multiselect.disabled.color');\n    }\n\n    .p-multiselect-label-empty {\n        overflow: hidden;\n        visibility: hidden;\n    }\n\n    .p-multiselect-overlay {\n        position: absolute;\n        top: 0;\n        left: 0;\n        background: dt('multiselect.overlay.background');\n        color: dt('multiselect.overlay.color');\n        border: 1px solid dt('multiselect.overlay.border.color');\n        border-radius: dt('multiselect.overlay.border.radius');\n        box-shadow: dt('multiselect.overlay.shadow');\n        min-width: 100%;\n    }\n\n    .p-multiselect-header {\n        display: flex;\n        align-items: center;\n        padding: dt('multiselect.list.header.padding');\n    }\n\n    .p-multiselect-header .p-checkbox {\n        margin-inline-end: dt('multiselect.option.gap');\n    }\n\n    .p-multiselect-filter-container {\n        flex: 1 1 auto;\n    }\n\n    .p-multiselect-filter {\n        width: 100%;\n    }\n\n    .p-multiselect-list-container {\n        overflow: auto;\n    }\n\n    .p-multiselect-list {\n        margin: 0;\n        padding: 0;\n        list-style-type: none;\n        padding: dt('multiselect.list.padding');\n        display: flex;\n        flex-direction: column;\n        gap: dt('multiselect.list.gap');\n    }\n\n    .p-multiselect-option {\n        cursor: pointer;\n        font-weight: normal;\n        white-space: nowrap;\n        position: relative;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        gap: dt('multiselect.option.gap');\n        padding: dt('multiselect.option.padding');\n        border: 0 none;\n        color: dt('multiselect.option.color');\n        background: transparent;\n        transition:\n            background dt('multiselect.transition.duration'),\n            color dt('multiselect.transition.duration'),\n            border-color dt('multiselect.transition.duration'),\n            box-shadow dt('multiselect.transition.duration'),\n            outline-color dt('multiselect.transition.duration');\n        border-radius: dt('multiselect.option.border.radius');\n    }\n\n    .p-multiselect-option:not(.p-multiselect-option-selected):not(.p-disabled).p-focus {\n        background: dt('multiselect.option.focus.background');\n        color: dt('multiselect.option.focus.color');\n    }\n\n    .p-multiselect-option.p-multiselect-option-selected {\n        background: dt('multiselect.option.selected.background');\n        color: dt('multiselect.option.selected.color');\n    }\n\n    .p-multiselect-option.p-multiselect-option-selected.p-focus {\n        background: dt('multiselect.option.selected.focus.background');\n        color: dt('multiselect.option.selected.focus.color');\n    }\n\n    .p-multiselect-option-group {\n        cursor: auto;\n        margin: 0;\n        padding: dt('multiselect.option.group.padding');\n        background: dt('multiselect.option.group.background');\n        color: dt('multiselect.option.group.color');\n        font-weight: dt('multiselect.option.group.font.weight');\n    }\n\n    .p-multiselect-empty-message {\n        padding: dt('multiselect.empty.message.padding');\n    }\n\n    .p-multiselect-label .p-chip {\n        padding-block-start: calc(dt('multiselect.padding.y') / 2);\n        padding-block-end: calc(dt('multiselect.padding.y') / 2);\n        border-radius: dt('multiselect.chip.border.radius');\n    }\n\n    .p-multiselect-label:has(.p-chip) {\n        padding: calc(dt('multiselect.padding.y') / 2) calc(dt('multiselect.padding.x') / 2);\n    }\n\n    .p-multiselect-fluid {\n        display: flex;\n        width: 100%;\n    }\n\n    .p-multiselect-sm .p-multiselect-label {\n        font-size: dt('multiselect.sm.font.size');\n        padding-block: dt('multiselect.sm.padding.y');\n        padding-inline: dt('multiselect.sm.padding.x');\n    }\n\n    .p-multiselect-sm .p-multiselect-dropdown .p-icon {\n        font-size: dt('multiselect.sm.font.size');\n        width: dt('multiselect.sm.font.size');\n        height: dt('multiselect.sm.font.size');\n    }\n\n    .p-multiselect-lg .p-multiselect-label {\n        font-size: dt('multiselect.lg.font.size');\n        padding-block: dt('multiselect.lg.padding.y');\n        padding-inline: dt('multiselect.lg.padding.x');\n    }\n\n    .p-multiselect-lg .p-multiselect-dropdown .p-icon {\n        font-size: dt('multiselect.lg.font.size');\n        width: dt('multiselect.lg.font.size');\n        height: dt('multiselect.lg.font.size');\n    }\n\n    .p-floatlabel-in .p-multiselect-filter {\n        padding-block-start: dt('multiselect.padding.y');\n        padding-block-end: dt('multiselect.padding.y');\n    }\n";
 
 // node_modules/primeng/fesm2022/primeng-multiselect.mjs
 var _c0 = (a0) => ({
@@ -902,14 +901,19 @@ function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_s
 }
 function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementContainer(0);
+    ɵɵelementContainer(0, 54);
+  }
+  if (rf & 2) {
+    const option_r18 = ɵɵnextContext(2).$implicit;
+    const ctx_r1 = ɵɵnextContext(3);
+    ɵɵproperty("ngTemplateOutlet", ctx_r1.groupTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c1, option_r18.optionGroup));
   }
 }
 function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementContainerStart(0);
     ɵɵelementStart(1, "li", 52);
-    ɵɵtemplate(2, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_span_2_Template, 2, 1, "span", 19)(3, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_ng_container_3_Template, 1, 0, "ng-container", 27);
+    ɵɵtemplate(2, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_span_2_Template, 2, 1, "span", 19)(3, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_ng_container_3_Template, 1, 4, "ng-container", 53);
     ɵɵelementEnd();
     ɵɵelementContainerEnd();
   }
@@ -921,19 +925,19 @@ function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_T
     const ctx_r1 = ɵɵnextContext(2);
     ɵɵadvance();
     ɵɵclassMap(ctx_r1.cx("optionGroup"));
-    ɵɵproperty("ngStyle", ɵɵpureFunction1(7, _c0, scrollerOptions_r21.itemSize + "px"));
+    ɵɵproperty("ngStyle", ɵɵpureFunction1(6, _c0, scrollerOptions_r21.itemSize + "px"));
     ɵɵattribute("id", ctx_r1.id + "_" + ctx_r1.getOptionIndex(i_r20, scrollerOptions_r21));
     ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r1.groupTemplate);
+    ɵɵproperty("ngIf", !ctx_r1.groupTemplate && option_r18.optionGroup);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r1.groupTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(9, _c1, option_r18.optionGroup));
+    ɵɵproperty("ngIf", option_r18.optionGroup && ctx_r1.groupTemplate);
   }
 }
 function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r22 = ɵɵgetCurrentView();
     ɵɵelementContainerStart(0);
-    ɵɵelementStart(1, "p-multiselect-item", 53);
+    ɵɵelementStart(1, "p-multiselect-item", 55);
     ɵɵlistener("onClick", function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_1_Template_p_multiselect_item_onClick_1_listener($event) {
       ɵɵrestoreView(_r22);
       const i_r20 = ɵɵnextContext().index;
@@ -962,7 +966,7 @@ function MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_1_T
 }
 function MultiSelect_ng_template_14_ng_template_8_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_Template, 4, 11, "ng-container", 19)(1, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_1_Template, 2, 13, "ng-container", 19);
+    ɵɵtemplate(0, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_0_Template, 4, 8, "ng-container", 19)(1, MultiSelect_ng_template_14_ng_template_8_ng_template_2_ng_container_1_Template, 2, 13, "ng-container", 19);
   }
   if (rf & 2) {
     const option_r18 = ctx.$implicit;
@@ -1165,7 +1169,7 @@ var classes = {
     "p-multiselect-display-chip": instance.display === "chip",
     "p-disabled": instance.$disabled(),
     "p-invalid": instance.invalid(),
-    "p-variant-filled": instance.$variant(),
+    "p-variant-filled": instance.$variant() === "filled",
     "p-focus": instance.focused,
     "p-inputwrapper-filled": instance.$filled(),
     "p-inputwrapper-focus": instance.focused || instance.overlayVisible,
@@ -1522,7 +1526,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
    * Specifies the visibility of the options panel.
    * @group Props
    */
-  overlayVisible;
+  overlayVisible = false;
   /**
    * Index of the element in tabbing order.
    * @group Props
@@ -1555,7 +1559,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
    * @defaultValue 3
    */
   set maxSelectedLabels(val) {
-    this._maxSelectedLabels = val;
+    this._maxSelectedLabels = val || 0;
   }
   get maxSelectedLabels() {
     return this._maxSelectedLabels;
@@ -1749,7 +1753,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
   }
   set options(val) {
     if (!y(this._options(), val)) {
-      this._options.set(val);
+      this._options.set(val || []);
     }
   }
   /**
@@ -2042,7 +2046,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
   _filterValue = signal(null, ...ngDevMode ? [{
     debugName: "_filterValue"
   }] : []);
-  _options = signal(null, ...ngDevMode ? [{
+  _options = signal([], ...ngDevMode ? [{
     debugName: "_options"
   }] : []);
   startRangeIndex = signal(-1, ...ngDevMode ? [{
@@ -2102,8 +2106,8 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
   label = computed(() => {
     let label;
     const modelValue = this.modelValue();
-    if (modelValue && modelValue.length && this.displaySelectedLabel) {
-      if (s(this.maxSelectedLabels) && modelValue.length > this.maxSelectedLabels) {
+    if (modelValue && modelValue?.length && this.displaySelectedLabel) {
+      if (s(this.maxSelectedLabels) && modelValue?.length > (this.maxSelectedLabels || 0)) {
         return this.getSelectedItemsLabel();
       } else {
         label = "";
@@ -2122,7 +2126,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     debugName: "label"
   }] : []);
   chipSelectedItems = computed(() => {
-    return s(this.maxSelectedLabels) && this.modelValue() && this.modelValue().length > this.maxSelectedLabels ? this.modelValue().slice(0, this.maxSelectedLabels) : this.modelValue();
+    return s(this.maxSelectedLabels) && this.modelValue() && this.modelValue()?.length > (this.maxSelectedLabels || 0) ? this.modelValue()?.slice(0, this.maxSelectedLabels) : this.modelValue();
   }, ...ngDevMode ? [{
     debugName: "chipSelectedItems"
   }] : []);
@@ -2219,9 +2223,9 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
       return;
     }
     let selected = this.isSelected(option);
-    let value = null;
+    let value = [];
     if (selected) {
-      value = this.modelValue().filter((val) => !k(val, this.getOptionValue(option), this.equalityKey()));
+      value = this.modelValue().filter((val) => !k(val, this.getOptionValue(option), this.equalityKey() || ""));
     } else {
       value = [...this.modelValue() || [], this.getOptionValue(option)];
     }
@@ -2291,7 +2295,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     return this.isValidOption(option) && this.isSelected(option);
   }
   isOptionGroup(option) {
-    return (this.group || this.optionGroupLabel) && option.optionGroup && option.group;
+    return option && (this.group || this.optionGroupLabel) && option.optionGroup && option.group;
   }
   isValidOption(option) {
     return option && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
@@ -2304,10 +2308,10 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
   }
   isSelected(option) {
     const optionValue = this.getOptionValue(option);
-    return (this.modelValue() || []).some((value) => k(value, optionValue, this.equalityKey()));
+    return (this.modelValue() || []).some((value) => k(value, optionValue, this.equalityKey() || ""));
   }
   isOptionMatched(option) {
-    return this.isValidOption(option) && this.getOptionLabel(option).toString().toLocaleLowerCase(this.filterLocale).startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale));
+    return this.isValidOption(option) && this.getOptionLabel(option).toString().toLocaleLowerCase(this.filterLocale).startsWith(this.searchValue?.toLocaleLowerCase(this.filterLocale));
   }
   isEmpty() {
     return !this._options() || this.visibleOptions() && this.visibleOptions().length === 0;
@@ -2323,7 +2327,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
   }
   getLabelByValue(value) {
     const options = this.group ? this.flatOptions(this._options()) : this._options() || [];
-    const matchedOption = options.find((option) => !this.isOptionGroup(option) && k(this.getOptionValue(option), value, this.equalityKey()));
+    const matchedOption = options.find((option) => !this.isOptionGroup(option) && k(this.getOptionValue(option), value, this.equalityKey() || ""));
     return matchedOption ? this.getOptionLabel(matchedOption) : null;
   }
   getSelectedItemsLabel() {
@@ -2344,7 +2348,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     return this.optionGroupLabel ? c(optionGroup, this.optionGroupLabel) : optionGroup && optionGroup.label != void 0 ? optionGroup.label : optionGroup;
   }
   getOptionGroupChildren(optionGroup) {
-    return this.optionGroupChildren ? c(optionGroup, this.optionGroupChildren) : optionGroup.items;
+    return optionGroup ? this.optionGroupChildren ? c(optionGroup, this.optionGroupChildren) : optionGroup.items : [];
   }
   onKeyDown(event) {
     if (this.$disabled()) {
@@ -2527,14 +2531,16 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     event.preventDefault();
   }
   onEscapeKey(event) {
-    this.overlayVisible && this.hide(true);
-    event.stopPropagation();
-    event.preventDefault();
+    if (this.overlayVisible) {
+      this.hide(true);
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
   onTabKey(event, pressedInInputText = false) {
     if (!pressedInInputText) {
       if (this.overlayVisible && this.hasFocusableElements()) {
-        bt(event.shiftKey ? this.lastHiddenFocusableElementOnOverlay.nativeElement : this.firstHiddenFocusableElementOnOverlay.nativeElement);
+        bt(event.shiftKey ? this.lastHiddenFocusableElementOnOverlay?.nativeElement : this.firstHiddenFocusableElementOnOverlay?.nativeElement);
         event.preventDefault();
       } else {
         if (this.focusedOptionIndex() !== -1) {
@@ -2552,7 +2558,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     this.startRangeIndex.set(this.focusedOptionIndex());
   }
   onContainerClick(event) {
-    if (this.$disabled() || this.loading || this.readonly || event.target.isSameNode(this.focusInputViewChild?.nativeElement)) {
+    if (this.$disabled() || this.loading || this.readonly || event.target?.isSameNode?.(this.focusInputViewChild?.nativeElement)) {
       return;
     }
     if (!this.overlayViewChild || !this.overlayViewChild.el.nativeElement.contains(event.target)) {
@@ -2602,9 +2608,9 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
       originalEvent: event,
       filter: this._filterValue()
     });
-    !this.virtualScrollerDisabled && this.scroller.scrollToIndex(0);
+    !this.virtualScrollerDisabled && this.scroller?.scrollToIndex(0);
     setTimeout(() => {
-      this.overlayViewChild.alignOverlay();
+      this.overlayViewChild?.alignOverlay();
     });
   }
   onLastHiddenFocus(event) {
@@ -2643,7 +2649,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
       }
     }
     if (this.partialSelected()) {
-      this.selectedOptions = null;
+      this.selectedOptions = [];
       this.cd.markForCheck();
     }
     this.onChange.emit({
@@ -2687,7 +2693,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     return this.selectAll !== null ? this.selectAll : s(this.visibleOptions()) && this.visibleOptions().every((option) => this.isOptionGroup(option) || this.isOptionDisabled(option) || this.isSelected(option));
   }
   partialSelected() {
-    return this.selectedOptions && this.selectedOptions.length > 0 && this.selectedOptions.length < this.options.length;
+    return this.selectedOptions && this.selectedOptions.length > 0 && this.selectedOptions.length < (this.options?.length || 0);
   }
   /**
    * Displays the panel.
@@ -2759,15 +2765,21 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     this._filterValue.set(null);
     this._filteredOptions = null;
   }
+  onOverlayHide(event) {
+    this.focusedOptionIndex.set(-1);
+    if (this.filter && this.resetFilterOnHide) {
+      this.resetFilter();
+    }
+  }
   close(event) {
     this.hide();
     event.preventDefault();
     event.stopPropagation();
   }
   clear(event) {
-    this.value = null;
+    this.value = [];
     this.updateModel(null, event);
-    this.selectedOptions = null;
+    this.selectedOptions = [];
     this.onClear.emit();
     this._disableTooltip = true;
     event.stopPropagation();
@@ -2776,7 +2788,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     if (this._disableTooltip) this._disableTooltip = false;
   }
   removeOption(optionValue, event) {
-    let value = this.modelValue().filter((val) => !k(val, optionValue, this.equalityKey()));
+    let value = this.modelValue().filter((val) => !k(val, optionValue, this.equalityKey() || ""));
     this.updateModel(value, event);
     this.onChange.emit({
       originalEvent: event,
@@ -2836,7 +2848,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     return matched;
   }
   hasFocusableElements() {
-    return b2(this.overlayViewChild.overlayViewChild.nativeElement, ':not([data-p-hidden-focusable="true"])').length > 0;
+    return b2(this.overlayViewChild?.overlayViewChild?.nativeElement, ':not([data-p-hidden-focusable="true"])').length > 0;
   }
   hasFilter() {
     return this._filterValue() && this._filterValue().trim().length > 0;
@@ -3024,7 +3036,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
     ngContentSelectors: _c29,
     decls: 16,
     vars: 40,
-    consts: [["focusInput", ""], ["elseBlock", ""], ["overlay", ""], ["content", ""], ["token", ""], ["removeicon", ""], ["firstHiddenFocusableEl", ""], ["buildInItems", ""], ["lastHiddenFocusableEl", ""], ["builtInFilterElement", ""], ["headerCheckbox", ""], ["icon", ""], ["filterInput", ""], ["scroller", ""], ["loader", ""], ["items", ""], [1, "p-hidden-accessible"], ["role", "combobox", 3, "focus", "blur", "keydown", "pTooltip", "tooltipPosition", "positionStyle", "tooltipStyleClass", "pAutoFocus"], [3, "mouseleave", "pTooltip", "tooltipDisabled", "tooltipPosition", "positionStyle", "tooltipStyleClass"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], [3, "visibleChange", "onAnimationStart", "onHide", "hostAttrSelector", "visible", "options", "target", "appendTo"], [3, "class"], [3, "class", 4, "ngFor", "ngForOf"], [3, "onRemove", "label", "removable", "removeIcon"], [3, "class", "click", 4, "ngIf"], [3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["data-p-icon", "times", 3, "class", "click", 4, "ngIf"], ["data-p-icon", "times", 3, "click"], [4, "ngTemplateOutlet"], [3, "class", 4, "ngIf"], [3, "class", "ngClass", 4, "ngIf"], ["data-p-icon", "chevron-down", 3, "class", 4, "ngIf"], [3, "ngClass"], ["data-p-icon", "chevron-down"], [3, "ngStyle"], ["role", "presentation", 1, "p-hidden-accessible", "p-hidden-focusable", 3, "focus"], [3, "items", "style", "itemSize", "autoSize", "tabindex", "lazy", "options", "onLazyLoad", 4, "ngIf"], [3, "ngModel", "ariaLabel", "binary", "variant", "disabled", "onChange", 4, "ngIf"], [3, "onChange", "ngModel", "ariaLabel", "binary", "variant", "disabled"], ["data-p-icon", "check", 3, "class", 4, "ngIf"], ["data-p-icon", "check"], ["pInputText", "", "type", "text", "role", "searchbox", 3, "input", "keydown", "click", "blur", "variant", "value"], ["data-p-icon", "search", 4, "ngIf"], ["class", "p-multiselect-filter-icon", 4, "ngIf"], ["data-p-icon", "search"], [1, "p-multiselect-filter-icon"], [3, "onLazyLoad", "items", "itemSize", "autoSize", "tabindex", "lazy", "options"], ["role", "listbox", "aria-multiselectable", "true"], ["ngFor", "", 3, "ngForOf"], ["role", "option", 3, "class", "ngStyle", 4, "ngIf"], ["role", "option", 3, "ngStyle"], [3, "onClick", "onMouseEnter", "id", "option", "selected", "label", "disabled", "template", "itemCheckboxIconTemplate", "itemSize", "focused", "ariaPosInset", "ariaSetSize", "variant", "highlightOnSelect"]],
+    consts: [["focusInput", ""], ["elseBlock", ""], ["overlay", ""], ["content", ""], ["token", ""], ["removeicon", ""], ["firstHiddenFocusableEl", ""], ["buildInItems", ""], ["lastHiddenFocusableEl", ""], ["builtInFilterElement", ""], ["headerCheckbox", ""], ["icon", ""], ["filterInput", ""], ["scroller", ""], ["loader", ""], ["items", ""], [1, "p-hidden-accessible"], ["role", "combobox", 3, "focus", "blur", "keydown", "pTooltip", "tooltipPosition", "positionStyle", "tooltipStyleClass", "pAutoFocus"], [3, "mouseleave", "pTooltip", "tooltipDisabled", "tooltipPosition", "positionStyle", "tooltipStyleClass"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], [3, "visibleChange", "onAnimationStart", "onHide", "hostAttrSelector", "visible", "options", "target", "appendTo"], [3, "class"], [3, "class", 4, "ngFor", "ngForOf"], [3, "onRemove", "label", "removable", "removeIcon"], [3, "class", "click", 4, "ngIf"], [3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["data-p-icon", "times", 3, "class", "click", 4, "ngIf"], ["data-p-icon", "times", 3, "click"], [4, "ngTemplateOutlet"], [3, "class", 4, "ngIf"], [3, "class", "ngClass", 4, "ngIf"], ["data-p-icon", "chevron-down", 3, "class", 4, "ngIf"], [3, "ngClass"], ["data-p-icon", "chevron-down"], [3, "ngStyle"], ["role", "presentation", 1, "p-hidden-accessible", "p-hidden-focusable", 3, "focus"], [3, "items", "style", "itemSize", "autoSize", "tabindex", "lazy", "options", "onLazyLoad", 4, "ngIf"], [3, "ngModel", "ariaLabel", "binary", "variant", "disabled", "onChange", 4, "ngIf"], [3, "onChange", "ngModel", "ariaLabel", "binary", "variant", "disabled"], ["data-p-icon", "check", 3, "class", 4, "ngIf"], ["data-p-icon", "check"], ["pInputText", "", "type", "text", "role", "searchbox", 3, "input", "keydown", "click", "blur", "variant", "value"], ["data-p-icon", "search", 4, "ngIf"], ["class", "p-multiselect-filter-icon", 4, "ngIf"], ["data-p-icon", "search"], [1, "p-multiselect-filter-icon"], [3, "onLazyLoad", "items", "itemSize", "autoSize", "tabindex", "lazy", "options"], ["role", "listbox", "aria-multiselectable", "true"], ["ngFor", "", 3, "ngForOf"], ["role", "option", 3, "class", "ngStyle", 4, "ngIf"], ["role", "option", 3, "ngStyle"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "onClick", "onMouseEnter", "id", "option", "selected", "label", "disabled", "template", "itemCheckboxIconTemplate", "itemSize", "focused", "ariaPosInset", "ariaSetSize", "variant", "highlightOnSelect"]],
     template: function MultiSelect_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = ɵɵgetCurrentView();
@@ -3062,9 +3074,9 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
         ɵɵlistener("onAnimationStart", function MultiSelect_Template_p_overlay_onAnimationStart_12_listener($event) {
           ɵɵrestoreView(_r1);
           return ɵɵresetView(ctx.onOverlayAnimationStart($event));
-        })("onHide", function MultiSelect_Template_p_overlay_onHide_12_listener() {
+        })("onHide", function MultiSelect_Template_p_overlay_onHide_12_listener($event) {
           ɵɵrestoreView(_r1);
-          return ɵɵresetView(ctx.hide());
+          return ɵɵresetView(ctx.onOverlayHide($event));
         });
         ɵɵtemplate(14, MultiSelect_ng_template_14_Template, 13, 19, "ng-template", null, 3, ɵɵtemplateRefExtractor);
         ɵɵelementEnd();
@@ -3207,7 +3219,7 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
                 </span>
             </ng-template>
         </div>
-        <p-overlay #overlay [hostAttrSelector]="attrSelector" [(visible)]="overlayVisible" [options]="overlayOptions" [target]="'@parent'" [appendTo]="$appendTo()" (onAnimationStart)="onOverlayAnimationStart($event)" (onHide)="hide()">
+        <p-overlay #overlay [hostAttrSelector]="attrSelector" [(visible)]="overlayVisible" [options]="overlayOptions" [target]="'@parent'" [appendTo]="$appendTo()" (onAnimationStart)="onOverlayAnimationStart($event)" (onHide)="onOverlayHide($event)">
             <ng-template #content>
                 <div [attr.id]="id + '_list'" [class]="cn(cx('overlay'), panelStyleClass)" [ngStyle]="panelStyle">
                     <span
@@ -3312,8 +3324,8 @@ var MultiSelect = class _MultiSelect extends BaseEditableHolder {
                                 <ng-template ngFor let-option [ngForOf]="items" let-i="index">
                                     <ng-container *ngIf="isOptionGroup(option)">
                                         <li [attr.id]="id + '_' + getOptionIndex(i, scrollerOptions)" [class]="cx('optionGroup')" [ngStyle]="{ height: scrollerOptions.itemSize + 'px' }" role="option">
-                                            <span *ngIf="!groupTemplate">{{ getOptionGroupLabel(option.optionGroup) }}</span>
-                                            <ng-container *ngTemplateOutlet="groupTemplate; context: { $implicit: option.optionGroup }"></ng-container>
+                                            <span *ngIf="!groupTemplate && option.optionGroup">{{ getOptionGroupLabel(option.optionGroup) }}</span>
+                                            <ng-container *ngIf="option.optionGroup && groupTemplate" [ngTemplateOutlet]="groupTemplate" [ngTemplateOutletContext]="{ $implicit: option.optionGroup }"></ng-container>
                                         </li>
                                     </ng-container>
                                     <ng-container *ngIf="!isOptionGroup(option)">

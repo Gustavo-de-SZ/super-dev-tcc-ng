@@ -35,6 +35,11 @@ export class AppMenu {
                         icon: 'pi pi-fw pi-globe',
                         routerLink: ['/landing']
                     },
+                    {
+                        label: 'Perfil',
+                        icon: 'pi pi-fw pi-user',
+                        routerLink: ['/user-perfil']
+                    },
                     //{
                        // label: 'Home',
                        // icon: 'pi pi-fw pi-globe',
@@ -55,9 +60,9 @@ export class AppMenu {
                                 routerLink: ['/auth/error']
                             },
                             {
-                                label: 'Access Denied',
+                                label: 'Sup',
                                 icon: 'pi pi-fw pi-lock',
-                                routerLink: ['/auth/access']
+                                routerLink: ['/auth/suporte']
                             },
                             {
                                 label: 'Cadastro',
@@ -132,11 +137,7 @@ export class AppMenu {
             {
                 label: 'Get Started',
                 items: [
-                    {
-                        label: 'Suporte',
-                        icon: 'pi pi-fw pi-book',
-                        routerLink: ['/suporte']
-                    },
+                   
                     {
                         label: 'View Source',
                         icon: 'pi pi-fw pi-github',

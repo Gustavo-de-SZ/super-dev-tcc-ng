@@ -1,48 +1,47 @@
 import {
   TieredMenu
-} from "./chunk-LFXCGCE3.js";
+} from "./chunk-HGRZSO6K.js";
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
-import "./chunk-UQLQBFGK.js";
+} from "./chunk-SYXSV3Z6.js";
 import {
   ButtonDirective
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import {
-  Ripple
-} from "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import "./chunk-UQLQBFGK.js";
+import "./chunk-CDN2HBI6.js";
 import {
   AutoFocus
-} from "./chunk-FKVBP7E7.js";
+} from "./chunk-DCN6VKWH.js";
+import {
+  Ripple
+} from "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   ChevronDownIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import {
-  s3 as s
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import "./chunk-7R335IKT.js";
-import "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  s3 as s
+} from "./chunk-LEDTVQ4Z.js";
+import "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgIf,
@@ -363,9 +362,9 @@ var SplitButton = class _SplitButton extends BaseComponent {
    * @group Props
    */
   set disabled(v) {
-    this._disabled = v;
-    this.buttonDisabled = v;
-    this.menuButtonDisabled = v;
+    this._disabled = v ?? false;
+    this.buttonDisabled = v ?? false;
+    this.menuButtonDisabled = v ?? false;
   }
   get disabled() {
     return this._disabled;
@@ -448,8 +447,8 @@ var SplitButton = class _SplitButton extends BaseComponent {
     });
   }
   onDefaultButtonClick(event) {
-    this.onClick.emit(event);
-    this.menu.hide();
+    this.onClick?.emit(event);
+    this.menu?.hide();
   }
   onDropdownButtonClick(event) {
     this.onDropdownClick.emit(event);

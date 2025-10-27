@@ -1,52 +1,51 @@
 import {
   ProgressBar
-} from "./chunk-3SYZS23C.js";
+} from "./chunk-M42RMZ4W.js";
 import {
   Message
-} from "./chunk-6L5GOKAI.js";
+} from "./chunk-7D5JZEA6.js";
 import {
   Button
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
+} from "./chunk-HP7BHHX4.js";
 import {
   Badge
-} from "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
+} from "./chunk-KSBGS73W.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   PlusIcon,
   TimesIcon,
   UploadIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule,
   TranslationKeys
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   O,
   W
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   DomSanitizer
-} from "./chunk-YIYCLP5X.js";
+} from "./chunk-AFGWAMKA.js";
+import "./chunk-MFAXB7NO.js";
 import {
   HttpClient,
   HttpEventType
 } from "./chunk-RSPUADW5.js";
-import "./chunk-MFAXB7NO.js";
 import {
   CommonModule,
   NgClass,
@@ -1711,7 +1710,6 @@ var FileUpload = class _FileUpload extends BaseComponent {
   }
   onRemoveUploadedFileClick(e) {
     const {
-      event,
       index
     } = e;
     if (this.hasUploadedFiles()) {
@@ -1980,7 +1978,7 @@ var FileUpload = class _FileUpload extends BaseComponent {
       mode: "mode",
       headers: "headers",
       customUpload: [2, "customUpload", "customUpload", booleanAttribute],
-      fileLimit: [2, "fileLimit", "fileLimit", (value) => numberAttribute(value, null)],
+      fileLimit: [2, "fileLimit", "fileLimit", (value) => numberAttribute(value, void 0)],
       uploadStyleClass: "uploadStyleClass",
       cancelStyleClass: "cancelStyleClass",
       removeStyleClass: "removeStyleClass",
@@ -2354,7 +2352,7 @@ var FileUpload = class _FileUpload extends BaseComponent {
     fileLimit: [{
       type: Input,
       args: [{
-        transform: (value) => numberAttribute(value, null)
+        transform: (value) => numberAttribute(value, void 0)
       }]
     }],
     uploadStyleClass: [{

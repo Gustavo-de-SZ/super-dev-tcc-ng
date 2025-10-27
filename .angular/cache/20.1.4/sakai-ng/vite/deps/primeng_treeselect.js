@@ -1,48 +1,49 @@
 import {
   Tree
-} from "./chunk-65O5WOJP.js";
-import "./chunk-LSE2JJYG.js";
-import "./chunk-S2U7HDTI.js";
+} from "./chunk-B5KSGBI3.js";
+import "./chunk-GESXCIU2.js";
+import "./chunk-6ETDI7OT.js";
+import "./chunk-OTSBTDBE.js";
 import {
   Overlay
-} from "./chunk-BHJRJD25.js";
-import "./chunk-OTUZOPVJ.js";
-import "./chunk-4AC7EG3S.js";
-import "./chunk-4IDJL2IJ.js";
-import {
-  Chip
-} from "./chunk-25T7JC3Q.js";
+} from "./chunk-UP7BBXCM.js";
+import "./chunk-VCFFJTNK.js";
+import "./chunk-B7Y7BKU4.js";
 import {
   BaseEditableHolder
-} from "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-R7JFBUJZ.js";
+} from "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
 import "./chunk-UQLQBFGK.js";
 import {
   Fluid
-} from "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
+} from "./chunk-CDN2HBI6.js";
 import {
   AutoFocus
-} from "./chunk-FKVBP7E7.js";
+} from "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
+import {
+  Chip
+} from "./chunk-COSOQYJX.js";
 import {
   ChevronDownIcon,
   TimesIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
-import "./chunk-64SSRD2L.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-R7JFBUJZ.js";
+import "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   Lt,
   R,
@@ -51,9 +52,7 @@ import {
   s,
   s3 as s2,
   vt
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgForOf,
@@ -129,7 +128,7 @@ import {
 } from "./chunk-WDMUDEB6.js";
 
 // node_modules/@primeuix/styles/dist/treeselect/index.mjs
-var style = "\n    .p-treeselect {\n        display: inline-flex;\n        cursor: pointer;\n        position: relative;\n        user-select: none;\n        background: dt('treeselect.background');\n        border: 1px solid dt('treeselect.border.color');\n        transition:\n            background dt('treeselect.transition.duration'),\n            color dt('treeselect.transition.duration'),\n            border-color dt('treeselect.transition.duration'),\n            outline-color dt('treeselect.transition.duration'),\n            box-shadow dt('treeselect.transition.duration');\n        border-radius: dt('treeselect.border.radius');\n        outline-color: transparent;\n        box-shadow: dt('treeselect.shadow');\n    }\n\n    .p-treeselect:not(.p-disabled):hover {\n        border-color: dt('treeselect.hover.border.color');\n    }\n\n    .p-treeselect:not(.p-disabled).p-focus {\n        border-color: dt('treeselect.focus.border.color');\n        box-shadow: dt('treeselect.focus.ring.shadow');\n        outline: dt('treeselect.focus.ring.width') dt('treeselect.focus.ring.style') dt('treeselect.focus.ring.color');\n        outline-offset: dt('treeselect.focus.ring.offset');\n    }\n\n    .p-treeselect.p-variant-filled {\n        background: dt('treeselect.filled.background');\n    }\n\n    .p-treeselect.p-variant-filled:not(.p-disabled):hover {\n        background: dt('treeselect.filled.hover.background');\n    }\n\n    .p-treeselect.p-variant-filled.p-focus {\n        background: dt('treeselect.filled.focus.background');\n    }\n\n    .p-treeselect.p-invalid {\n        border-color: dt('treeselect.invalid.border.color');\n    }\n\n    .p-treeselect.p-disabled {\n        opacity: 1;\n        background: dt('treeselect.disabled.background');\n    }\n\n    .p-treeselect-clear-icon {\n        position: absolute;\n        top: 50%;\n        margin-top: -0.5rem;\n        color: dt('treeselect.clear.icon.color');\n        inset-inline-end: dt('treeselect.dropdown.width');\n    }\n\n    .p-treeselect-dropdown {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        flex-shrink: 0;\n        background: transparent;\n        color: dt('treeselect.dropdown.color');\n        width: dt('treeselect.dropdown.width');\n        border-start-end-radius: dt('border.radius.md');\n        border-end-end-radius: dt('border.radius.md');\n    }\n\n    .p-treeselect-label-container {\n        overflow: hidden;\n        flex: 1 1 auto;\n        cursor: pointer;\n    }\n\n    .p-treeselect-label {\n        display: flex;\n        align-items: center;\n        gap: calc(dt('treeselect.padding.y') / 2);\n        white-space: nowrap;\n        cursor: pointer;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        padding: dt('treeselect.padding.y') dt('treeselect.padding.x');\n        color: dt('treeselect.color');\n    }\n\n    .p-treeselect-label.p-placeholder {\n        color: dt('treeselect.placeholder.color');\n    }\n\n    .p-treeselect.p-invalid .p-treeselect-label.p-placeholder {\n        color: dt('treeselect.invalid.placeholder.color');\n    }\n\n    .p-treeselect.p-disabled .p-treeselect-label {\n        color: dt('treeselect.disabled.color');\n    }\n\n    .p-treeselect-label-empty {\n        overflow: hidden;\n        visibility: hidden;\n    }\n\n    .p-treeselect-overlay {\n        position: absolute;\n        top: 0;\n        left: 0;\n        background: dt('treeselect.overlay.background');\n        color: dt('treeselect.overlay.color');\n        border: 1px solid dt('treeselect.overlay.border.color');\n        border-radius: dt('treeselect.overlay.border.radius');\n        box-shadow: dt('treeselect.overlay.shadow');\n        overflow: hidden;\n        min-width: 100%;\n    }\n\n    .p-treeselect-tree-container {\n        overflow: auto;\n    }\n\n    .p-treeselect-empty-message {\n        padding: dt('treeselect.empty.message.padding');\n        background: transparent;\n    }\n\n    .p-treeselect-fluid {\n        display: flex;\n    }\n\n    .p-treeselect-overlay .p-tree {\n        padding: dt('treeselect.tree.padding');\n    }\n\n    .p-treeselect-overlay .p-tree-loading {\n        min-height: 3rem;\n    }\n\n    .p-treeselect-label .p-chip {\n        padding-block-start: calc(dt('treeselect.padding.y') / 2);\n        padding-block-end: calc(dt('treeselect.padding.y') / 2);\n        border-radius: dt('treeselect.chip.border.radius');\n    }\n\n    .p-treeselect-label:has(.p-chip) {\n        padding: calc(dt('treeselect.padding.y') / 2) calc(dt('treeselect.padding.x') / 2);\n    }\n\n    .p-treeselect-sm .p-treeselect-label {\n        font-size: dt('treeselect.sm.font.size');\n        padding-block: dt('treeselect.sm.padding.y');\n        padding-inline: dt('treeselect.sm.padding.x');\n    }\n\n    .p-treeselect-sm .p-treeselect-dropdown .p-icon {\n        font-size: dt('treeselect.sm.font.size');\n        width: dt('treeselect.sm.font.size');\n        height: dt('treeselect.sm.font.size');\n    }\n\n    .p-treeselect-lg .p-treeselect-label {\n        font-size: dt('treeselect.lg.font.size');\n        padding-block: dt('treeselect.lg.padding.y');\n        padding-inline: dt('treeselect.lg.padding.x');\n    }\n\n    .p-treeselect-lg .p-treeselect-dropdown .p-icon {\n        font-size: dt('treeselect.lg.font.size');\n        width: dt('treeselect.lg.font.size');\n        height: dt('treeselect.lg.font.size');\n    }\n";
+var style = "\n    .p-treeselect {\n        display: inline-flex;\n        cursor: pointer;\n        position: relative;\n        user-select: none;\n        background: dt('treeselect.background');\n        border: 1px solid dt('treeselect.border.color');\n        transition:\n            background dt('treeselect.transition.duration'),\n            color dt('treeselect.transition.duration'),\n            border-color dt('treeselect.transition.duration'),\n            outline-color dt('treeselect.transition.duration'),\n            box-shadow dt('treeselect.transition.duration');\n        border-radius: dt('treeselect.border.radius');\n        outline-color: transparent;\n        box-shadow: dt('treeselect.shadow');\n    }\n\n    .p-treeselect:not(.p-disabled):hover {\n        border-color: dt('treeselect.hover.border.color');\n    }\n\n    .p-treeselect:not(.p-disabled).p-focus {\n        border-color: dt('treeselect.focus.border.color');\n        box-shadow: dt('treeselect.focus.ring.shadow');\n        outline: dt('treeselect.focus.ring.width') dt('treeselect.focus.ring.style') dt('treeselect.focus.ring.color');\n        outline-offset: dt('treeselect.focus.ring.offset');\n    }\n\n    .p-treeselect.p-variant-filled {\n        background: dt('treeselect.filled.background');\n    }\n\n    .p-treeselect.p-variant-filled:not(.p-disabled):hover {\n        background: dt('treeselect.filled.hover.background');\n    }\n\n    .p-treeselect.p-variant-filled.p-focus {\n        background: dt('treeselect.filled.focus.background');\n    }\n\n    .p-treeselect.p-invalid {\n        border-color: dt('treeselect.invalid.border.color');\n    }\n\n    .p-treeselect.p-disabled {\n        opacity: 1;\n        background: dt('treeselect.disabled.background');\n    }\n\n    .p-treeselect-clear-icon {\n        align-self: center;\n        color: dt('treeselect.clear.icon.color');\n        inset-inline-end: dt('treeselect.dropdown.width');\n    }\n\n    .p-treeselect-dropdown {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        flex-shrink: 0;\n        background: transparent;\n        color: dt('treeselect.dropdown.color');\n        width: dt('treeselect.dropdown.width');\n        border-start-end-radius: dt('border.radius.md');\n        border-end-end-radius: dt('border.radius.md');\n    }\n\n    .p-treeselect-label-container {\n        overflow: hidden;\n        flex: 1 1 auto;\n        cursor: pointer;\n    }\n\n    .p-treeselect-label {\n        display: flex;\n        align-items: center;\n        gap: calc(dt('treeselect.padding.y') / 2);\n        white-space: nowrap;\n        cursor: pointer;\n        overflow: hidden;\n        text-overflow: ellipsis;\n        padding: dt('treeselect.padding.y') dt('treeselect.padding.x');\n        color: dt('treeselect.color');\n    }\n\n    .p-treeselect-label.p-placeholder {\n        color: dt('treeselect.placeholder.color');\n    }\n\n    .p-treeselect.p-invalid .p-treeselect-label.p-placeholder {\n        color: dt('treeselect.invalid.placeholder.color');\n    }\n\n    .p-treeselect:has(.p-select-clear-icon) .p-treeselect-label {\n        padding-inline-end: dt('treeselect.padding.x');\n    }\n\n    .p-treeselect.p-disabled .p-treeselect-label {\n        color: dt('treeselect.disabled.color');\n    }\n\n    .p-treeselect-label-empty {\n        overflow: hidden;\n        visibility: hidden;\n    }\n\n    .p-treeselect-overlay {\n        position: absolute;\n        top: 0;\n        left: 0;\n        background: dt('treeselect.overlay.background');\n        color: dt('treeselect.overlay.color');\n        border: 1px solid dt('treeselect.overlay.border.color');\n        border-radius: dt('treeselect.overlay.border.radius');\n        box-shadow: dt('treeselect.overlay.shadow');\n        overflow: hidden;\n        min-width: 100%;\n    }\n\n    .p-treeselect-tree-container {\n        overflow: auto;\n    }\n\n    .p-treeselect-empty-message {\n        padding: dt('treeselect.empty.message.padding');\n        background: transparent;\n    }\n\n    .p-treeselect-fluid {\n        display: flex;\n    }\n\n    .p-treeselect-overlay .p-tree {\n        padding: dt('treeselect.tree.padding');\n    }\n\n    .p-treeselect-overlay .p-tree-loading {\n        min-height: 3rem;\n    }\n\n    .p-treeselect-label .p-chip {\n        padding-block-start: calc(dt('treeselect.padding.y') / 2);\n        padding-block-end: calc(dt('treeselect.padding.y') / 2);\n        border-radius: dt('treeselect.chip.border.radius');\n    }\n\n    .p-treeselect-label:has(.p-chip) {\n        padding: calc(dt('treeselect.padding.y') / 2) calc(dt('treeselect.padding.x') / 2);\n    }\n\n    .p-treeselect-sm .p-treeselect-label {\n        font-size: dt('treeselect.sm.font.size');\n        padding-block: dt('treeselect.sm.padding.y');\n        padding-inline: dt('treeselect.sm.padding.x');\n    }\n\n    .p-treeselect-sm .p-treeselect-dropdown .p-icon {\n        font-size: dt('treeselect.sm.font.size');\n        width: dt('treeselect.sm.font.size');\n        height: dt('treeselect.sm.font.size');\n    }\n\n    .p-treeselect-lg .p-treeselect-label {\n        font-size: dt('treeselect.lg.font.size');\n        padding-block: dt('treeselect.lg.padding.y');\n        padding-inline: dt('treeselect.lg.padding.x');\n    }\n\n    .p-treeselect-lg .p-treeselect-dropdown .p-icon {\n        font-size: dt('treeselect.lg.font.size');\n        width: dt('treeselect.lg.font.size');\n        height: dt('treeselect.lg.font.size');\n    }\n";
 
 // node_modules/primeng/fesm2022/primeng-treeselect.mjs
 var _c0 = ["value"];
@@ -547,6 +546,7 @@ var classes = {
     "p-placeholder": instance.label === instance.placeholder,
     "p-treeselect-label-empty": !instance.placeholder && instance.emptyValue
   }],
+  clearIcon: "p-treeselect-clear-icon",
   chip: "p-treeselect-chip-item",
   pcChip: "p-treeselect-chip",
   dropdown: "p-treeselect-dropdown",
@@ -582,6 +582,7 @@ var TreeSelectClasses;
   TreeSelectClasses2["labelContainer"] = "p-treeselect-label-container";
   TreeSelectClasses2["label"] = "p-treeselect-label";
   TreeSelectClasses2["chipItem"] = "p-treeselect-chip-item";
+  TreeSelectClasses2["clearIcon"] = "p-treeselect-clear-icon";
   TreeSelectClasses2["pcChip"] = "p-treeselect-chip";
   TreeSelectClasses2["dropdown"] = "p-treeselect-dropdown";
   TreeSelectClasses2["dropdownIcon"] = "p-treeselect-dropdown-icon";
@@ -1036,7 +1037,7 @@ var TreeSelect = class _TreeSelect extends BaseEditableHolder {
           s(this.filterValue) && this.treeViewChild?._filter(this.filterValue);
           this.filterInputAutoFocus && this.filterViewChild?.nativeElement.focus();
         } else {
-          let focusableElements = b(this.panelEl.nativeElement);
+          let focusableElements = b(this.panelEl?.nativeElement);
           if (focusableElements && focusableElements.length > 0) {
             focusableElements[0].focus();
           }
@@ -1111,7 +1112,7 @@ var TreeSelect = class _TreeSelect extends BaseEditableHolder {
       filteredValue: this.treeViewChild?.filteredNodes
     });
     setTimeout(() => {
-      this.overlayViewChild.alignOverlay();
+      this.overlayViewChild?.alignOverlay();
     });
   }
   onArrowDown(event) {
@@ -1154,7 +1155,7 @@ var TreeSelect = class _TreeSelect extends BaseEditableHolder {
   onTabKey(event, pressedInInputText = false) {
     if (!pressedInInputText) {
       if (this.overlayVisible && this.hasFocusableElements()) {
-        bt(event.shiftKey ? this.lastHiddenFocusableElementOnOverlay.nativeElement : this.firstHiddenFocusableElementOnOverlay.nativeElement);
+        bt(event.shiftKey ? this.lastHiddenFocusableElementOnOverlay?.nativeElement : this.firstHiddenFocusableElementOnOverlay?.nativeElement);
         event.preventDefault();
       } else {
         this.overlayVisible && this.hide(this.filter);
@@ -1162,7 +1163,7 @@ var TreeSelect = class _TreeSelect extends BaseEditableHolder {
     }
   }
   hasFocusableElements() {
-    return b(this.overlayViewChild.overlayViewChild.nativeElement, ':not([data-p-hidden-focusable="true"])').length > 0;
+    return b(this.overlayViewChild?.overlayViewChild?.nativeElement, ':not([data-p-hidden-focusable="true"])').length > 0;
   }
   resetFilter() {
     if (this.filter && !this.resetFilterOnHide) {
@@ -1209,14 +1210,14 @@ var TreeSelect = class _TreeSelect extends BaseEditableHolder {
     this.onNodeExpand.emit(event);
     this.expandedNodes.push(event.node);
     setTimeout(() => {
-      this.overlayViewChild.alignOverlay();
+      this.overlayViewChild?.alignOverlay();
     });
   }
   nodeCollapse(event) {
     this.onNodeCollapse.emit(event);
     this.expandedNodes.splice(this.expandedNodes.indexOf(event.node), 1);
     setTimeout(() => {
-      this.overlayViewChild.alignOverlay();
+      this.overlayViewChild?.alignOverlay();
     });
   }
   resetExpandedNodes() {

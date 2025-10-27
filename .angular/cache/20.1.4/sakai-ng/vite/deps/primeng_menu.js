@@ -1,33 +1,40 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-KSBGS73W.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
-import {
-  Badge,
-  BadgeModule
-} from "./chunk-TRCD2RJ4.js";
+} from "./chunk-QCI5ZXXW.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
-} from "./chunk-C5DLRIHR.js";
+} from "./chunk-Q42KCB4K.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   OverlayService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-W2Q77YF4.js";
+import {
+  animate,
+  style,
+  transition,
+  trigger
+} from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
 import {
   D,
   I,
@@ -36,24 +43,17 @@ import {
   bt,
   s3 as s,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
-import "./chunk-W2Q77YF4.js";
-import {
-  animate,
-  style,
-  transition,
-  trigger
-} from "./chunk-7R335IKT.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   RouterLink,
   RouterLinkActive,
   RouterModule
-} from "./chunk-QKGY44ID.js";
+} from "./chunk-WZWEIIDP.js";
 import {
   DomSanitizer
-} from "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -109,6 +109,8 @@ import {
   ɵɵlistener,
   ɵɵloadQuery,
   ɵɵnextContext,
+  ɵɵpipe,
+  ɵɵpipeBind1,
   ɵɵproperty,
   ɵɵpureFunction0,
   ɵɵpureFunction1,
@@ -132,7 +134,7 @@ import "./chunk-RTGP7ALM.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/@primeuix/styles/dist/menu/index.mjs
-var style2 = "\n    .p-menu {\n        background: dt('menu.background');\n        color: dt('menu.color');\n        border: 1px solid dt('menu.border.color');\n        border-radius: dt('menu.border.radius');\n        min-width: 12.5rem;\n    }\n\n    .p-menu-list {\n        margin: 0;\n        padding: dt('menu.list.padding');\n        outline: 0 none;\n        list-style: none;\n        display: flex;\n        flex-direction: column;\n        gap: dt('menu.list.gap');\n    }\n\n    .p-menu-item-content {\n        transition:\n            background dt('menu.transition.duration'),\n            color dt('menu.transition.duration');\n        border-radius: dt('menu.item.border.radius');\n        color: dt('menu.item.color');\n    }\n\n    .p-menu-item-link {\n        cursor: pointer;\n        display: flex;\n        align-items: center;\n        text-decoration: none;\n        overflow: hidden;\n        position: relative;\n        color: inherit;\n        padding: dt('menu.item.padding');\n        gap: dt('menu.item.gap');\n        user-select: none;\n        outline: 0 none;\n    }\n\n    .p-menu-item-label {\n        line-height: 1;\n    }\n\n    .p-menu-item-icon {\n        color: dt('menu.item.icon.color');\n    }\n\n    .p-menu-item.p-focus .p-menu-item-content {\n        color: dt('menu.item.focus.color');\n        background: dt('menu.item.focus.background');\n    }\n\n    .p-menu-item.p-focus .p-menu-item-icon {\n        color: dt('menu.item.icon.focus.color');\n    }\n\n    .p-menu-item:not(.p-disabled) .p-menu-item-content:hover {\n        color: dt('menu.item.focus.color');\n        background: dt('menu.item.focus.background');\n    }\n\n    .p-menu-item:not(.p-disabled) .p-menu-item-content:hover .p-menu-item-icon {\n        color: dt('menu.item.icon.focus.color');\n    }\n\n    .p-menu-overlay {\n        box-shadow: dt('menu.shadow');\n    }\n\n    .p-menu-submenu-label {\n        background: dt('menu.submenu.label.background');\n        padding: dt('menu.submenu.label.padding');\n        color: dt('menu.submenu.label.color');\n        font-weight: dt('menu.submenu.label.font.weight');\n    }\n\n    .p-menu-separator {\n        border-block-start: 1px solid dt('menu.separator.border.color');\n    }\n";
+var style2 = "\n    .p-menu {\n        background: dt('menu.background');\n        color: dt('menu.color');\n        border: 1px solid dt('menu.border.color');\n        border-radius: dt('menu.border.radius');\n        min-width: 12.5rem;\n    }\n\n    .p-menu-list {\n        margin: 0;\n        padding: dt('menu.list.padding');\n        outline: 0 none;\n        list-style: none;\n        display: flex;\n        flex-direction: column;\n        gap: dt('menu.list.gap');\n    }\n\n    .p-menu-item-content {\n        transition:\n            background dt('menu.transition.duration'),\n            color dt('menu.transition.duration');\n        border-radius: dt('menu.item.border.radius');\n        color: dt('menu.item.color');\n        overflow: hidden;\n    }\n\n    .p-menu-item-link {\n        cursor: pointer;\n        display: flex;\n        align-items: center;\n        text-decoration: none;\n        overflow: hidden;\n        position: relative;\n        color: inherit;\n        padding: dt('menu.item.padding');\n        gap: dt('menu.item.gap');\n        user-select: none;\n        outline: 0 none;\n    }\n\n    .p-menu-item-label {\n        line-height: 1;\n    }\n\n    .p-menu-item-icon {\n        color: dt('menu.item.icon.color');\n    }\n\n    .p-menu-item.p-focus .p-menu-item-content {\n        color: dt('menu.item.focus.color');\n        background: dt('menu.item.focus.background');\n    }\n\n    .p-menu-item.p-focus .p-menu-item-icon {\n        color: dt('menu.item.icon.focus.color');\n    }\n\n    .p-menu-item:not(.p-disabled) .p-menu-item-content:hover {\n        color: dt('menu.item.focus.color');\n        background: dt('menu.item.focus.background');\n    }\n\n    .p-menu-item:not(.p-disabled) .p-menu-item-content:hover .p-menu-item-icon {\n        color: dt('menu.item.icon.focus.color');\n    }\n\n    .p-menu-overlay {\n        box-shadow: dt('menu.shadow');\n    }\n\n    .p-menu-submenu-label {\n        background: dt('menu.submenu.label.background');\n        padding: dt('menu.submenu.label.padding');\n        color: dt('menu.submenu.label.color');\n        font-weight: dt('menu.submenu.label.font.weight');\n    }\n\n    .p-menu-separator {\n        border-block-start: 1px solid dt('menu.separator.border.color');\n    }\n";
 
 // node_modules/primeng/fesm2022/primeng-menu.mjs
 var _c0 = ["pMenuItemContent", ""];
@@ -246,10 +248,11 @@ function MenuItemContent_ng_template_3_span_1_Template(rf, ctx) {
 function MenuItemContent_ng_template_3_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "span", 12);
+    ɵɵpipe(1, "safeHtml");
   }
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("innerHTML", ctx_r1.sanitizeHtml(ctx_r1.item.label), ɵɵsanitizeHtml);
+    ɵɵproperty("innerHTML", ɵɵpipeBind1(1, 1, ctx_r1.item.label), ɵɵsanitizeHtml);
   }
 }
 function MenuItemContent_ng_template_3_p_badge_4_Template(rf, ctx) {
@@ -263,7 +266,7 @@ function MenuItemContent_ng_template_3_p_badge_4_Template(rf, ctx) {
 }
 function MenuItemContent_ng_template_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, MenuItemContent_ng_template_3_span_0_Template, 1, 6, "span", 9)(1, MenuItemContent_ng_template_3_span_1_Template, 2, 3, "span", 10)(2, MenuItemContent_ng_template_3_ng_template_2_Template, 1, 1, "ng-template", null, 1, ɵɵtemplateRefExtractor)(4, MenuItemContent_ng_template_3_p_badge_4_Template, 1, 2, "p-badge", 11);
+    ɵɵtemplate(0, MenuItemContent_ng_template_3_span_0_Template, 1, 6, "span", 9)(1, MenuItemContent_ng_template_3_span_1_Template, 2, 3, "span", 10)(2, MenuItemContent_ng_template_3_ng_template_2_Template, 2, 3, "ng-template", null, 1, ɵɵtemplateRefExtractor)(4, MenuItemContent_ng_template_3_p_badge_4_Template, 1, 2, "p-badge", 11);
   }
   if (rf & 2) {
     const htmlLabel_r4 = ɵɵreference(3);
@@ -337,17 +340,17 @@ function Menu_div_0_5_ng_template_0_li_1_ng_container_1_span_1_Template(rf, ctx)
 function Menu_div_0_5_ng_template_0_li_1_ng_container_1_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "span", 16);
+    ɵɵpipe(1, "safeHtml");
   }
   if (rf & 2) {
     const submenu_r3 = ɵɵnextContext(3).$implicit;
-    const ctx_r1 = ɵɵnextContext(3);
-    ɵɵproperty("innerHTML", ctx_r1.sanitizeHtml(submenu_r3.label), ɵɵsanitizeHtml);
+    ɵɵproperty("innerHTML", ɵɵpipeBind1(1, 1, submenu_r3.label), ɵɵsanitizeHtml);
   }
 }
 function Menu_div_0_5_ng_template_0_li_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementContainerStart(0);
-    ɵɵtemplate(1, Menu_div_0_5_ng_template_0_li_1_ng_container_1_span_1_Template, 2, 1, "span", 15)(2, Menu_div_0_5_ng_template_0_li_1_ng_container_1_ng_template_2_Template, 1, 1, "ng-template", null, 2, ɵɵtemplateRefExtractor);
+    ɵɵtemplate(1, Menu_div_0_5_ng_template_0_li_1_ng_container_1_span_1_Template, 2, 1, "span", 15)(2, Menu_div_0_5_ng_template_0_li_1_ng_container_1_ng_template_2_Template, 2, 3, "ng-template", null, 2, ɵɵtemplateRefExtractor);
     ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -687,14 +690,6 @@ var SafeHtmlPipe = class _SafeHtmlPipe {
     type: DomSanitizer
   }], null);
 })();
-function sanitizeHtml(value) {
-  const platformId = inject(PLATFORM_ID);
-  const sanitizer = inject(DomSanitizer);
-  if (!value || !isPlatformBrowser(platformId)) {
-    return value;
-  }
-  return sanitizer.bypassSecurityTrustHtml(value);
-}
 var MenuItemContent = class _MenuItemContent extends BaseComponent {
   item;
   itemTemplate;
@@ -749,7 +744,7 @@ var MenuItemContent = class _MenuItemContent extends BaseComponent {
         ɵɵproperty("ngIf", ctx.itemTemplate);
       }
     },
-    dependencies: [CommonModule, NgIf, NgTemplateOutlet, RouterModule, RouterLink, RouterLinkActive, Ripple, TooltipModule, BadgeModule, Badge, SharedModule],
+    dependencies: [CommonModule, NgIf, NgTemplateOutlet, RouterModule, RouterLink, RouterLinkActive, Ripple, TooltipModule, BadgeModule, Badge, SharedModule, SafeHtmlPipe],
     encapsulation: 2
   });
 };
@@ -759,7 +754,7 @@ var MenuItemContent = class _MenuItemContent extends BaseComponent {
     args: [{
       selector: "[pMenuItemContent]",
       standalone: true,
-      imports: [CommonModule, RouterModule, Ripple, TooltipModule, BadgeModule, SharedModule],
+      imports: [CommonModule, RouterModule, Ripple, TooltipModule, BadgeModule, SharedModule, SafeHtmlPipe],
       template: ` <div [class]="cx('itemContent')" (click)="onItemClick($event, item)" [attr.data-pc-section]="'content'">
         <ng-container *ngIf="!itemTemplate">
             <a
@@ -806,7 +801,7 @@ var MenuItemContent = class _MenuItemContent extends BaseComponent {
         <ng-template #itemContent>
             <span [class]="cx('itemIcon', { item })" *ngIf="item.icon" [style]="item.iconStyle"></span>
             <span [class]="cx('itemLabel')" *ngIf="item.escape !== false; else htmlLabel">{{ item.label }}</span>
-            <ng-template #htmlLabel><span class="p-menu-item-label" [innerHTML]="sanitizeHtml(item.label)"></span></ng-template>
+            <ng-template #htmlLabel><span class="p-menu-item-label" [innerHTML]="item.label | safeHtml"></span></ng-template>
             <p-badge *ngIf="item.badge" [styleClass]="item.badgeStyleClass" [value]="item.badge" />
         </ng-template>
     </div>`,
@@ -1047,13 +1042,13 @@ var Menu = class _Menu extends BaseComponent {
           this.container = event.element;
           this.moveOnTop();
           this.onShow.emit({});
-          this.attrSelector && this.container.setAttribute(this.attrSelector, "");
+          this.attrSelector && this.container?.setAttribute(this.attrSelector, "");
           this.appendOverlay();
           this.alignOverlay();
           this.bindDocumentClickListener();
           this.bindDocumentResizeListener();
           this.bindScrollListener();
-          bt(this.listViewChild.nativeElement);
+          bt(this.listViewChild?.nativeElement);
         }
         break;
       case "void":
@@ -1189,12 +1184,12 @@ var Menu = class _Menu extends BaseComponent {
     event.preventDefault();
   }
   onEndKey(event) {
-    this.changeFocusedOptionIndex(Y(this.containerViewChild.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]').length - 1);
+    this.changeFocusedOptionIndex(Y(this.containerViewChild?.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]').length - 1);
     event.preventDefault();
   }
   onEnterKey(event) {
-    const element = z(this.containerViewChild.nativeElement, `li[id="${`${this.focusedOptionIndex()}`}"]`);
-    const anchorElement = element && z(element, 'a[data-pc-section="action"]');
+    const element = z(this.containerViewChild?.nativeElement, `li[id="${`${this.focusedOptionIndex()}`}"]`);
+    const anchorElement = element && (z(element, '[data-pc-section="action"]') || z(element, "a,button"));
     this.popup && bt(this.target);
     anchorElement ? anchorElement.click() : element && element.click();
     event.preventDefault();
@@ -1203,17 +1198,17 @@ var Menu = class _Menu extends BaseComponent {
     this.onEnterKey(event);
   }
   findNextOptionIndex(index) {
-    const links = Y(this.containerViewChild.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
+    const links = Y(this.containerViewChild?.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
     const matchedOptionIndex = [...links].findIndex((link) => link.id === index);
     return matchedOptionIndex > -1 ? matchedOptionIndex + 1 : 0;
   }
   findPrevOptionIndex(index) {
-    const links = Y(this.containerViewChild.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
+    const links = Y(this.containerViewChild?.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
     const matchedOptionIndex = [...links].findIndex((link) => link.id === index);
     return matchedOptionIndex > -1 ? matchedOptionIndex - 1 : 0;
   }
   changeFocusedOptionIndex(index) {
-    const links = Y(this.containerViewChild.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
+    const links = Y(this.containerViewChild?.nativeElement, 'li[data-pc-section="menuitem"][data-p-disabled="false"]');
     if (links.length > 0) {
       let order = index >= links.length ? links.length - 1 : index < 0 ? 0 : index;
       order > -1 && this.focusedOptionIndex.set(links[order].getAttribute("id"));
@@ -1411,7 +1406,7 @@ var Menu = class _Menu extends BaseComponent {
         ɵɵproperty("ngIf", !ctx.popup || ctx.visible);
       }
     },
-    dependencies: [CommonModule, NgForOf, NgIf, NgTemplateOutlet, NgStyle, RouterModule, MenuItemContent, TooltipModule, Tooltip, BadgeModule, SharedModule],
+    dependencies: [CommonModule, NgForOf, NgIf, NgTemplateOutlet, NgStyle, RouterModule, MenuItemContent, TooltipModule, Tooltip, BadgeModule, SharedModule, SafeHtmlPipe],
     encapsulation: 2,
     data: {
       animation: [trigger("overlayAnimation", [transition(":enter", [style({
@@ -1430,7 +1425,7 @@ var Menu = class _Menu extends BaseComponent {
     args: [{
       selector: "p-menu",
       standalone: true,
-      imports: [CommonModule, RouterModule, MenuItemContent, TooltipModule, BadgeModule, SharedModule],
+      imports: [CommonModule, RouterModule, MenuItemContent, TooltipModule, BadgeModule, SharedModule, SafeHtmlPipe],
       template: `
         <div
             #container
@@ -1471,7 +1466,7 @@ var Menu = class _Menu extends BaseComponent {
                     <li [class]="cx('submenuLabel')" [attr.data-automationid]="submenu.automationId" *ngIf="!submenu.separator" pTooltip [tooltipOptions]="submenu.tooltipOptions" role="none" [attr.id]="menuitemId(submenu, id, i)">
                         <ng-container *ngIf="!submenuHeaderTemplate && !_submenuHeaderTemplate">
                             <span *ngIf="submenu.escape !== false; else htmlSubmenuLabel">{{ submenu.label }}</span>
-                            <ng-template #htmlSubmenuLabel><span [innerHTML]="sanitizeHtml(submenu.label)"></span></ng-template>
+                            <ng-template #htmlSubmenuLabel><span [innerHTML]="submenu.label | safeHtml"></span></ng-template>
                         </ng-container>
                         <ng-container *ngTemplateOutlet="submenuHeaderTemplate ?? _submenuHeaderTemplate; context: { $implicit: submenu }"></ng-container>
                     </li>
@@ -1667,7 +1662,6 @@ export {
   MenuItemContent,
   MenuModule,
   MenuStyle,
-  SafeHtmlPipe,
-  sanitizeHtml
+  SafeHtmlPipe
 };
 //# sourceMappingURL=primeng_menu.js.map

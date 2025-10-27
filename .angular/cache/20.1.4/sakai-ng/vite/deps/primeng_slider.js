@@ -1,29 +1,29 @@
 import {
   BaseEditableHolder
-} from "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
+} from "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
+import {
+  AutoFocus
+} from "./chunk-DCN6VKWH.js";
+import "./chunk-Q42KCB4K.js";
 import {
   NG_VALUE_ACCESSOR
 } from "./chunk-R7JFBUJZ.js";
-import {
-  AutoFocus
-} from "./chunk-FKVBP7E7.js";
-import "./chunk-C5DLRIHR.js";
-import "./chunk-64SSRD2L.js";
+import "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   $,
   O,
   V,
   W,
   k2 as k
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -536,8 +536,8 @@ var Slider = class _Slider extends BaseEditableHolder {
   decrementValue(event, index, pageKey = false) {
     let newValue;
     if (this.range) {
-      if (this.step) newValue = this.values[index] - this.step;
-      else newValue = this.values[index] - 1;
+      if (this.step) newValue = (this.values?.[index] ?? 0) - this.step;
+      else newValue = (this.values?.[index] ?? 0) - 1;
     } else {
       if (this.step) newValue = this.value - this.step;
       else if (!this.step && pageKey) newValue = this.value - 10;
@@ -549,8 +549,8 @@ var Slider = class _Slider extends BaseEditableHolder {
   incrementValue(event, index, pageKey = false) {
     let newValue;
     if (this.range) {
-      if (this.step) newValue = this.values[index] + this.step;
-      else newValue = this.values[index] + 1;
+      if (this.step) newValue = (this.values?.[index] ?? 0) + this.step;
+      else newValue = (this.values?.[index] ?? 0) + 1;
     } else {
       if (this.step) newValue = this.value + this.step;
       else if (!this.step && pageKey) newValue = this.value + 10;

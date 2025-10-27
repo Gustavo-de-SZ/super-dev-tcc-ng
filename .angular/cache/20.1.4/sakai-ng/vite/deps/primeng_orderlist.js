@@ -2,56 +2,55 @@ import {
   DragDropModule,
   Listbox,
   moveItemInArray
-} from "./chunk-322GN7PA.js";
-import "./chunk-LSE2JJYG.js";
-import "./chunk-S2U7HDTI.js";
-import "./chunk-OTUZOPVJ.js";
-import "./chunk-4AC7EG3S.js";
-import "./chunk-4IDJL2IJ.js";
-import "./chunk-6XHQSDGF.js";
-import "./chunk-E5WQHZTW.js";
+} from "./chunk-CQGV7U5K.js";
+import "./chunk-GESXCIU2.js";
+import "./chunk-6ETDI7OT.js";
+import "./chunk-OTSBTDBE.js";
+import {
+  ButtonDirective,
+  ButtonIcon,
+  ButtonModule
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import "./chunk-VCFFJTNK.js";
+import "./chunk-B7Y7BKU4.js";
+import "./chunk-A5YG57EN.js";
+import "./chunk-W5RSSVAB.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import {
+  Ripple
+} from "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
+import {
+  AngleDoubleDownIcon,
+  AngleDoubleUpIcon,
+  AngleDownIcon,
+  AngleUpIcon
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   FormsModule,
   NgControlStatus,
   NgModel
 } from "./chunk-R7JFBUJZ.js";
 import {
-  ButtonDirective,
-  ButtonIcon,
-  ButtonModule
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import {
-  Ripple
-} from "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
-import {
-  AngleDoubleDownIcon,
-  AngleDoubleUpIcon,
-  AngleDownIcon,
-  AngleUpIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
-import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   FilterService,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   C,
   Kt,
   s3 as s
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgIf,
@@ -431,6 +430,11 @@ var OrderList = class _OrderList extends BaseComponent {
    */
   autoOptionFocus = true;
   /**
+   * Name of the field that uniquely identifies the record in the data.
+   * @group Props
+   */
+  dataKey;
+  /**
    * A list of values that are currently selected.
    * @group Props
    */
@@ -449,6 +453,8 @@ var OrderList = class _OrderList extends BaseComponent {
     this._value = val;
     if (this.filterValue) {
       this.filter();
+    } else if (this.dragdrop) {
+      this.visibleOptions = [...val || []];
     }
   }
   get value() {
@@ -618,6 +624,9 @@ var OrderList = class _OrderList extends BaseComponent {
         reset: () => this.resetFilter()
       };
     }
+    if (this.dragdrop && this.value && !this.visibleOptions) {
+      this.visibleOptions = [...this.value];
+    }
   }
   templates;
   _itemTemplate;
@@ -694,7 +703,7 @@ var OrderList = class _OrderList extends BaseComponent {
    * @group Method
    */
   resetFilter() {
-    this.filterValue = null;
+    this.filterValue = "";
     this.filterViewChild && (this.filterViewChild.nativeElement.value = "");
   }
   isItemVisible(item) {
@@ -715,20 +724,24 @@ var OrderList = class _OrderList extends BaseComponent {
     return this.filterValue ? !this.visibleOptions || this.visibleOptions.length === 0 : !this.value || this.value.length === 0;
   }
   moveUp() {
-    if (this.selection) {
-      for (let i = 0; i < this.selection.length; i++) {
-        let selectedItem = this.selection[i];
+    if (this.selection && this.value instanceof Array) {
+      const sortedSelection = this.sortByIndexInList(this.selection, this.value);
+      for (let selectedItem of sortedSelection) {
         let selectedItemIndex = C(selectedItem, this.value);
-        if (selectedItemIndex != 0 && this.value instanceof Array) {
+        if (selectedItemIndex > 0) {
           let movedItem = this.value[selectedItemIndex];
           let temp = this.value[selectedItemIndex - 1];
           this.value[selectedItemIndex - 1] = movedItem;
           this.value[selectedItemIndex] = temp;
-        } else {
-          break;
         }
       }
-      if (this.dragdrop && this.filterValue) this.filter();
+      if (this.dragdrop) {
+        if (this.filterValue) {
+          this.filter();
+        } else if (this.visibleOptions) {
+          this.visibleOptions = [...this.value];
+        }
+      }
       this.movedUp = true;
       this.onReorder.emit(this.selection);
     }
@@ -738,7 +751,7 @@ var OrderList = class _OrderList extends BaseComponent {
     if (this.selection) {
       for (let i = this.selection.length - 1; i >= 0; i--) {
         let selectedItem = this.selection[i];
-        let selectedItemIndex = C(selectedItem, this.value);
+        let selectedItemIndex = C(selectedItem, this.value || []);
         if (selectedItemIndex != 0 && this.value instanceof Array) {
           let movedItem = this.value.splice(selectedItemIndex, 1)[0];
           this.value.unshift(movedItem);
@@ -746,7 +759,13 @@ var OrderList = class _OrderList extends BaseComponent {
           break;
         }
       }
-      if (this.dragdrop && this.filterValue) this.filter();
+      if (this.dragdrop) {
+        if (this.filterValue) {
+          this.filter();
+        } else if (this.visibleOptions) {
+          this.visibleOptions = [...this.value || []];
+        }
+      }
       this.onReorder.emit(this.selection);
       setTimeout(() => {
         this.listViewChild.scrollInView(0);
@@ -755,20 +774,24 @@ var OrderList = class _OrderList extends BaseComponent {
     this.listViewChild?.cd?.markForCheck();
   }
   moveDown() {
-    if (this.selection) {
-      for (let i = this.selection.length - 1; i >= 0; i--) {
-        let selectedItem = this.selection[i];
+    if (this.selection && this.value instanceof Array) {
+      const sortedSelection = this.sortByIndexInList(this.selection, this.value).reverse();
+      for (let selectedItem of sortedSelection) {
         let selectedItemIndex = C(selectedItem, this.value);
-        if (this.value instanceof Array && selectedItemIndex != this.value.length - 1) {
+        if (selectedItemIndex < this.value.length - 1) {
           let movedItem = this.value[selectedItemIndex];
           let temp = this.value[selectedItemIndex + 1];
           this.value[selectedItemIndex + 1] = movedItem;
           this.value[selectedItemIndex] = temp;
-        } else {
-          break;
         }
       }
-      if (this.dragdrop && this.filterValue) this.filter();
+      if (this.dragdrop) {
+        if (this.filterValue) {
+          this.filter();
+        } else if (this.visibleOptions) {
+          this.visibleOptions = [...this.value];
+        }
+      }
       this.movedDown = true;
       this.onReorder.emit(this.selection);
     }
@@ -778,7 +801,7 @@ var OrderList = class _OrderList extends BaseComponent {
     if (this.selection) {
       for (let i = 0; i < this.selection.length; i++) {
         let selectedItem = this.selection[i];
-        let selectedItemIndex = C(selectedItem, this.value);
+        let selectedItemIndex = C(selectedItem, this.value || []);
         if (this.value instanceof Array && selectedItemIndex != this.value.length - 1) {
           let movedItem = this.value.splice(selectedItemIndex, 1)[0];
           this.value.push(movedItem);
@@ -786,26 +809,83 @@ var OrderList = class _OrderList extends BaseComponent {
           break;
         }
       }
-      if (this.dragdrop && this.filterValue) this.filter();
+      if (this.dragdrop) {
+        if (this.filterValue) {
+          this.filter();
+        } else if (this.visibleOptions) {
+          this.visibleOptions = [...this.value || []];
+        }
+      }
       this.onReorder.emit(this.selection);
-      this.listViewChild.scrollInView(this.value?.length - 1);
+      this.listViewChild?.scrollInView(this.value?.length ? this.value.length - 1 : 0);
     }
     this.listViewChild?.cd?.markForCheck();
   }
   onDrop(event) {
     let previousIndex = event.previousIndex;
     let currentIndex = event.currentIndex;
+    const originalValue = [...this.value || []];
+    const originalVisibleOptions = this.visibleOptions ? [...this.visibleOptions] : null;
     if (previousIndex !== currentIndex) {
-      if (this.visibleOptions) {
-        if (this.filterValue) {
-          previousIndex = C(event.item.data, this.value);
-          currentIndex = C(this.visibleOptions[currentIndex], this.value);
+      let itemsToMove = [];
+      if (this.selection && this.selection.length > 1 && C(event.item.data, this.selection) !== -1) {
+        itemsToMove = [...this.selection];
+        if (this.value) {
+          this.value.length = 0;
+          this.value.push(...originalValue);
         }
-        moveItemInArray(this.visibleOptions, event.previousIndex, event.currentIndex);
+        if (originalVisibleOptions && this.visibleOptions) {
+          this.visibleOptions.length = 0;
+          this.visibleOptions.push(...originalVisibleOptions);
+        }
+        itemsToMove = this.sortByIndexInList(itemsToMove, this.value || []);
+        let itemsBefore = 0;
+        for (const item of itemsToMove) {
+          const itemIndex = C(item, this.value || []);
+          if (itemIndex !== -1 && itemIndex < currentIndex) {
+            itemsBefore++;
+          }
+        }
+        for (let i = itemsToMove.length - 1; i >= 0; i--) {
+          const itemIndex = C(itemsToMove[i], this.value || []);
+          if (itemIndex !== -1) {
+            this.value?.splice(itemIndex, 1);
+          }
+        }
+        const targetIndex = Math.max(0, currentIndex - itemsBefore);
+        for (let i = 0; i < itemsToMove.length; i++) {
+          this.value?.splice(targetIndex + i, 0, itemsToMove[i]);
+        }
+        if (this.dragdrop) {
+          if (this.filterValue) {
+            this.filter();
+          } else if (this.visibleOptions) {
+            this.visibleOptions = [...this.value || []];
+          }
+        }
+        this.cd?.markForCheck();
+        this.onReorder.emit(itemsToMove);
+      } else {
+        itemsToMove = [event.item.data];
+        if (this.filterValue) {
+          previousIndex = C(event.item.data, this.value || []);
+          currentIndex = C(this.visibleOptions?.[currentIndex], this.value || []);
+        }
+        moveItemInArray(this.value, previousIndex, currentIndex);
+        if (this.dragdrop && this.visibleOptions && !this.filterValue) {
+          this.visibleOptions = [...this.value || []];
+        }
+        this.onReorder.emit([event.item.data]);
       }
-      moveItemInArray(this.value, previousIndex, currentIndex);
-      this.onReorder.emit([event.item.data]);
     }
+  }
+  // Helper method to sort items by their index in a list
+  sortByIndexInList(items, list) {
+    return items.sort((a, b) => {
+      const indexA = C(a, list);
+      const indexB = C(b, list);
+      return indexA - indexB;
+    });
   }
   onListFocus(event) {
     this.onFocus.emit(event);
@@ -827,6 +907,7 @@ var OrderList = class _OrderList extends BaseComponent {
         this.renderer.setAttribute(this.el.nativeElement.children[0], this.id, "");
         this.styleElement = this.renderer.createElement("style");
         this.renderer.setAttribute(this.styleElement, "type", "text/css");
+        Kt(this.styleElement, "nonce", this.config?.csp()?.nonce);
         this.renderer.appendChild(this.document.head, this.styleElement);
         let innerHTML = `
                     @media screen and (max-width: ${this.breakpoint}) {
@@ -945,6 +1026,7 @@ var OrderList = class _OrderList extends BaseComponent {
       trackBy: "trackBy",
       scrollHeight: "scrollHeight",
       autoOptionFocus: [2, "autoOptionFocus", "autoOptionFocus", booleanAttribute],
+      dataKey: "dataKey",
       selection: "selection",
       value: "value",
       buttonProps: "buttonProps",
@@ -963,8 +1045,8 @@ var OrderList = class _OrderList extends BaseComponent {
     },
     features: [ɵɵProvidersFeature([OrderListStyle]), ɵɵInheritDefinitionFeature],
     decls: 19,
-    vars: 48,
-    consts: [["listelement", ""], ["header", ""], ["item", ""], ["empty", ""], ["emptyfilter", ""], ["type", "button", "pButton", "", "pRipple", "", 3, "click", "disabled", "buttonProps"], ["data-p-icon", "angle-up", "pButtonIcon", "", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "angle-double-up", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-down", "pButtonIcon", "", 4, "ngIf"], ["optionLabel", "name", 3, "ngModelChange", "onFocus", "onBlur", "onChange", "onDrop", "multiple", "options", "ngModel", "id", "listStyle", "striped", "tabindex", "ariaLabel", "disabled", "metaKeySelection", "scrollHeight", "autoOptionFocus", "filter", "filterBy", "filterLocale", "filterPlaceHolder", "dragdrop"], [4, "ngIf"], ["data-p-icon", "angle-up", "pButtonIcon", ""], ["data-p-icon", "angle-double-up", "pButtonIcon", ""], ["data-p-icon", "angle-down", "pButtonIcon", ""], ["data-p-icon", "angle-double-down", "pButtonIcon", ""], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+    vars: 49,
+    consts: [["listelement", ""], ["header", ""], ["item", ""], ["empty", ""], ["emptyfilter", ""], ["type", "button", "pButton", "", "pRipple", "", 3, "click", "disabled", "buttonProps"], ["data-p-icon", "angle-up", "pButtonIcon", "", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "angle-double-up", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-down", "pButtonIcon", "", 4, "ngIf"], ["data-p-icon", "angle-double-down", "pButtonIcon", "", 4, "ngIf"], [3, "ngModelChange", "onFocus", "onBlur", "onChange", "onDrop", "multiple", "options", "ngModel", "optionLabel", "id", "listStyle", "striped", "tabindex", "ariaLabel", "disabled", "metaKeySelection", "scrollHeight", "autoOptionFocus", "filter", "filterBy", "filterLocale", "filterPlaceHolder", "dragdrop"], [4, "ngIf"], ["data-p-icon", "angle-up", "pButtonIcon", ""], ["data-p-icon", "angle-double-up", "pButtonIcon", ""], ["data-p-icon", "angle-down", "pButtonIcon", ""], ["data-p-icon", "angle-double-down", "pButtonIcon", ""], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
     template: function OrderList_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = ɵɵgetCurrentView();
@@ -1052,7 +1134,7 @@ var OrderList = class _OrderList extends BaseComponent {
         ɵɵadvance();
         ɵɵproperty("multiple", true)("options", ctx.value);
         ɵɵtwoWayProperty("ngModel", ctx.d_selection);
-        ɵɵproperty("id", ctx.id + "_list")("listStyle", ctx.listStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("ariaLabel", ctx.ariaLabel)("disabled", ctx.disabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterPlaceHolder", ctx.filterPlaceholder)("dragdrop", ctx.dragdrop);
+        ɵɵproperty("optionLabel", ctx.dataKey ?? "name")("id", ctx.id + "_list")("listStyle", ctx.listStyle)("striped", ctx.stripedRows)("tabindex", ctx.tabindex)("ariaLabel", ctx.ariaLabel)("disabled", ctx.disabled)("metaKeySelection", ctx.metaKeySelection)("scrollHeight", ctx.scrollHeight)("autoOptionFocus", ctx.autoOptionFocus)("filter", ctx.filterBy)("filterBy", ctx.filterBy)("filterLocale", ctx.filterLocale)("filterPlaceHolder", ctx.filterPlaceholder)("dragdrop", ctx.dragdrop);
         ɵɵadvance(2);
         ɵɵproperty("ngIf", ctx.headerTemplate || ctx._headerTemplate);
         ɵɵadvance();
@@ -1099,7 +1181,7 @@ var OrderList = class _OrderList extends BaseComponent {
             [multiple]="true"
             [options]="value"
             [(ngModel)]="d_selection"
-            optionLabel="name"
+            [optionLabel]="dataKey ?? 'name'"
             [id]="id + '_list'"
             [listStyle]="listStyle"
             [striped]="stripedRows"
@@ -1233,6 +1315,9 @@ var OrderList = class _OrderList extends BaseComponent {
       args: [{
         transform: booleanAttribute
       }]
+    }],
+    dataKey: [{
+      type: Input
     }],
     selection: [{
       type: Input

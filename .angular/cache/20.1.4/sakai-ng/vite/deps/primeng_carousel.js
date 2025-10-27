@@ -1,40 +1,39 @@
 import {
   Button,
   ButtonModule
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   Footer,
   Header,
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   Kt,
   Q2 as Q,
   Y2 as Y,
   s3 as s,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -855,6 +854,7 @@ var Carousel = class _Carousel extends BaseComponent {
     if (!this.carouselStyle) {
       this.carouselStyle = this.renderer.createElement("style");
       this.carouselStyle.type = "text/css";
+      Kt(this.carouselStyle, "nonce", this.config?.csp()?.nonce);
       this.renderer.appendChild(this.document.head, this.carouselStyle);
       Kt(this.carouselStyle, "nonce", this.config?.csp()?.nonce);
     }
@@ -1009,7 +1009,7 @@ var Carousel = class _Carousel extends BaseComponent {
     }
   }
   onRightKey() {
-    const indicators = [...Y(this.indicatorContent.nativeElement, '[data-pc-section="indicator"]')];
+    const indicators = [...Y(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"]')];
     const activeIndex = this.findFocusedIndicatorIndex();
     this.changedFocusedIndicator(activeIndex, activeIndex + 1 === indicators.length ? indicators.length - 1 : activeIndex + 1);
   }
@@ -1022,25 +1022,25 @@ var Carousel = class _Carousel extends BaseComponent {
     this.changedFocusedIndicator(activeIndex, 0);
   }
   onEndKey() {
-    const indicators = [...Y(this.indicatorContent.nativeElement, '[data-pc-section="indicator"]r')];
+    const indicators = [...Y(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"]r')];
     const activeIndex = this.findFocusedIndicatorIndex();
     this.changedFocusedIndicator(activeIndex, indicators.length - 1);
   }
   onTabKey() {
-    const indicators = [...Y(this.indicatorContent.nativeElement, '[data-pc-section="indicator"]')];
+    const indicators = [...Y(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"]')];
     const highlightedIndex = indicators.findIndex((ind) => Q(ind, "data-p-highlight") === true);
-    const activeIndicator = z(this.indicatorContent.nativeElement, '[data-pc-section="indicator"] > button[tabindex="0"]');
+    const activeIndicator = z(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"] > button[tabindex="0"]');
     const activeIndex = indicators.findIndex((ind) => ind === activeIndicator.parentElement);
     indicators[activeIndex].children[0].tabIndex = "-1";
     indicators[highlightedIndex].children[0].tabIndex = "0";
   }
   findFocusedIndicatorIndex() {
-    const indicators = [...Y(this.indicatorContent.nativeElement, '[data-pc-section="indicator"]')];
-    const activeIndicator = z(this.indicatorContent.nativeElement, '[data-pc-section="indicator"] > button[tabindex="0"]');
-    return indicators.findIndex((ind) => ind === activeIndicator.parentElement);
+    const indicators = [...Y(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"]')];
+    const activeIndicator = z(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"] > button[tabindex="0"]');
+    return indicators.findIndex((ind) => ind === activeIndicator?.parentElement);
   }
   changedFocusedIndicator(prevInd, nextInd) {
-    const indicators = [...Y(this.indicatorContent.nativeElement, '[data-pc-section="indicator"]')];
+    const indicators = [...Y(this.indicatorContent?.nativeElement, '[data-pc-section="indicator"]')];
     indicators[prevInd].children[0].tabIndex = "-1";
     indicators[nextInd].children[0].tabIndex = "0";
     indicators[nextInd].children[0].focus();
@@ -1148,19 +1148,19 @@ var Carousel = class _Carousel extends BaseComponent {
     }
   }
   ariaPrevButtonLabel() {
-    return this.config.translation.aria ? this.config.translation.aria.prevPageLabel : void 0;
+    return this.config.translation.aria ? this.config.translation.aria?.prevPageLabel : void 0;
   }
   ariaSlideLabel() {
-    return this.config.translation.aria ? this.config.translation.aria.slide : void 0;
+    return this.config.translation.aria ? this.config.translation.aria?.slide : void 0;
   }
   ariaNextButtonLabel() {
-    return this.config.translation.aria ? this.config.translation.aria.nextPageLabel : void 0;
+    return this.config.translation.aria ? this.config.translation.aria?.nextPageLabel : void 0;
   }
   ariaSlideNumber(value) {
-    return this.config.translation.aria ? this.config.translation.aria.slideNumber.replace(/{slideNumber}/g, value) : void 0;
+    return this.config.translation.aria ? this.config.translation.aria?.slideNumber?.replace(/{slideNumber}/g, value) : void 0;
   }
   ariaPageLabel(value) {
-    return this.config.translation.aria ? this.config.translation.aria.pageLabel.replace(/{page}/g, value) : void 0;
+    return this.config.translation.aria ? this.config.translation.aria?.pageLabel?.replace(/{page}/g, value) : void 0;
   }
   bindDocumentListeners() {
     if (isPlatformBrowser(this.platformId)) {

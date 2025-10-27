@@ -1,39 +1,31 @@
 import {
+  Button
+} from "./chunk-HP7BHHX4.js";
+import "./chunk-KSBGS73W.js";
+import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
-import {
-  Button
-} from "./chunk-76ULWBKW.js";
-import "./chunk-V6LKXDNH.js";
-import "./chunk-6PBBDZZF.js";
-import "./chunk-Q6YVT4HY.js";
-import "./chunk-TRCD2RJ4.js";
-import "./chunk-FKVBP7E7.js";
-import {
-  TimesIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
+import "./chunk-CDN2HBI6.js";
+import "./chunk-DCN6VKWH.js";
+import "./chunk-QCI5ZXXW.js";
 import {
   blockBodyScroll,
   unblockBodyScroll
-} from "./chunk-C5DLRIHR.js";
+} from "./chunk-Q42KCB4K.js";
+import {
+  TimesIcon
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import {
-  Kt,
-  O,
-  W,
-  ut
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
 import "./chunk-W2Q77YF4.js";
 import {
   animate,
@@ -43,6 +35,13 @@ import {
   trigger,
   useAnimation
 } from "./chunk-7R335IKT.js";
+import "./chunk-QNSNH7RB.js";
+import {
+  Kt,
+  O,
+  W,
+  ut
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgClass,
@@ -430,6 +429,7 @@ var hideAnimation = animation([animate("{{transition}}", style({
   transform: "{{transform}}",
   opacity: 0
 }))]);
+var defaultTransformOptions = "translate3d(-100%, 0px, 0px)";
 var Drawer = class _Drawer extends BaseComponent {
   /**
    *  Target element to attach the dialog, valid values are "body" or a local ng-template variable of another element (note: use binding with brackets for template variables, e.g. [appendTo]="mydiv" for a div element having #mydiv as variable name).
@@ -506,7 +506,7 @@ var Drawer = class _Drawer extends BaseComponent {
    * @group Props
    */
   get visible() {
-    return this._visible;
+    return this._visible ?? false;
   }
   set visible(val) {
     this._visible = val;
@@ -548,7 +548,11 @@ var Drawer = class _Drawer extends BaseComponent {
   }
   set fullScreen(value) {
     this._fullScreen = value;
-    if (value) this.transformOptions = "none";
+    if (value === true) {
+      this.transformOptions = "none";
+    } else {
+      this.transformOptions = defaultTransformOptions;
+    }
   }
   /**
    * Title content of the dialog.
@@ -589,7 +593,7 @@ var Drawer = class _Drawer extends BaseComponent {
   _position = "left";
   _fullScreen = false;
   container;
-  transformOptions = "translate3d(-100%, 0px, 0px)";
+  transformOptions = defaultTransformOptions;
   mask;
   maskClickListener;
   documentEscapeListener;
@@ -660,7 +664,7 @@ var Drawer = class _Drawer extends BaseComponent {
     }
   }
   show() {
-    this.container.setAttribute(this.attrSelector, "");
+    this.container?.setAttribute(this.attrSelector, "");
     if (this.autoZIndex) {
       zindexutils.set("modal", this.container, this.baseZIndex || this.config.zIndex.modal);
     }
@@ -689,9 +693,11 @@ var Drawer = class _Drawer extends BaseComponent {
     const zIndex = activeDrawersLength == 1 ? String(parseInt(this.container.style.zIndex) - 1) : String(parseInt(activeDrawers[activeDrawersLength - 1].style.zIndex) - 1);
     if (!this.mask) {
       this.mask = this.renderer.createElement("div");
-      Kt(this.mask, "style", this.getMaskStyle());
-      Kt(this.mask, "style", `z-index: ${zIndex}`);
-      W(this.mask, this.cx("mask"));
+      if (this.mask) {
+        Kt(this.mask, "style", this.getMaskStyle());
+        Kt(this.mask, "style", `z-index: ${zIndex}`);
+        W(this.mask, this.cx("mask"));
+      }
       if (this.dismissible) {
         this.maskClickListener = this.renderer.listen(this.mask, "click", (event) => {
           if (this.dismissible) {
@@ -749,8 +755,11 @@ var Drawer = class _Drawer extends BaseComponent {
   }
   appendContainer() {
     if (this.appendTo) {
-      if (this.appendTo === "body") this.renderer.appendChild(this.document.body, this.container);
-      else ut(this.appendTo, this.container);
+      if (this.appendTo === "body" && this.container) {
+        this.renderer.appendChild(this.document.body, this.container);
+      } else if (this.container) {
+        ut(this.appendTo, this.container);
+      }
     }
   }
   bindDocumentEscapeListener() {

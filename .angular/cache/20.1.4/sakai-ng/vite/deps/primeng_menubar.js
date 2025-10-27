@@ -1,35 +1,35 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
+import {
+  Badge,
+  BadgeModule
+} from "./chunk-KSBGS73W.js";
 import {
   zindexutils
 } from "./chunk-UQLQBFGK.js";
 import {
   Ripple
-} from "./chunk-Q6YVT4HY.js";
-import {
-  Badge,
-  BadgeModule
-} from "./chunk-TRCD2RJ4.js";
+} from "./chunk-QCI5ZXXW.js";
+import "./chunk-Q42KCB4K.js";
 import {
   AngleDownIcon,
   AngleRightIcon,
   BarsIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   M,
   Yt,
@@ -40,15 +40,15 @@ import {
   s,
   s3 as s2,
   z2 as z
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   RouterLink,
   RouterLinkActive,
   RouterModule
-} from "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -786,6 +786,7 @@ var MenubarSub = class _MenubarSub extends BaseComponent {
     if (this.activeItemPath) {
       return this.activeItemPath.some((path) => path.key === processedItem.key);
     }
+    return false;
   }
   isItemDisabled(processedItem) {
     return this.getItemProp(processedItem, "disabled");
@@ -1377,7 +1378,7 @@ var Menubar = class _Menubar extends BaseComponent {
         item
       });
       this.dirty = !root;
-      bt(this.rootmenu.el.nativeElement);
+      bt(this.rootmenu?.el.nativeElement);
     } else {
       if (grouped) {
         this.onItemChange(event);
@@ -1386,7 +1387,7 @@ var Menubar = class _Menubar extends BaseComponent {
         this.hide(originalEvent);
         this.changeFocusedItemIndex(originalEvent, rootProcessedItem ? rootProcessedItem.index : -1);
         this.mobileActive = false;
-        bt(this.rootmenu.el.nativeElement);
+        bt(this.rootmenu?.el.nativeElement);
       }
     }
   }
@@ -1425,7 +1426,7 @@ var Menubar = class _Menubar extends BaseComponent {
   }
   scrollInView(index = -1) {
     const id = index !== -1 ? `${this.id}_${index}` : this.focusedItemId;
-    const element = z(this.rootmenu.el.nativeElement, `li[id="${id}"]`);
+    const element = z(this.rootmenu?.el.nativeElement, `li[id="${id}"]`);
     if (element) {
       element.scrollIntoView && element.scrollIntoView({
         block: "nearest",
@@ -1457,7 +1458,7 @@ var Menubar = class _Menubar extends BaseComponent {
       item
     });
     grouped && (this.dirty = true);
-    isFocus && bt(this.rootmenu.el.nativeElement);
+    isFocus && bt(this.rootmenu?.el.nativeElement);
     if (type === "hover" && this.queryMatches) {
       return;
     }
@@ -1466,11 +1467,11 @@ var Menubar = class _Menubar extends BaseComponent {
   toggle(event) {
     if (this.mobileActive) {
       this.mobileActive = false;
-      zindexutils.clear(this.rootmenu.el.nativeElement);
+      zindexutils.clear(this.rootmenu?.el.nativeElement);
       this.hide();
     } else {
       this.mobileActive = true;
-      zindexutils.set("menu", this.rootmenu.el.nativeElement, this.config.zIndex.menu);
+      zindexutils.set("menu", this.rootmenu?.el.nativeElement, this.config.zIndex.menu);
       setTimeout(() => {
         this.show();
       }, 0);
@@ -1481,7 +1482,7 @@ var Menubar = class _Menubar extends BaseComponent {
   hide(event, isFocus) {
     if (this.mobileActive) {
       setTimeout(() => {
-        bt(this.menubutton.nativeElement);
+        bt(this.menubutton?.nativeElement);
       }, 0);
     }
     this.activeItemPath.set([]);
@@ -1774,8 +1775,8 @@ var Menubar = class _Menubar extends BaseComponent {
   }
   onEnterKey(event) {
     if (this.focusedItemInfo().index !== -1) {
-      const element = z(this.rootmenu.el.nativeElement, `li[id="${`${this.focusedItemId}`}"]`);
-      const anchorElement = element && z(element, 'a[data-pc-section="action"]');
+      const element = z(this.rootmenu?.el.nativeElement, `li[id="${`${this.focusedItemId}`}"]`);
+      const anchorElement = element && (z(element, '[data-pc-section="action"]') || z(element, "a,button"));
       anchorElement ? anchorElement.click() : element && element.click();
     }
     event.preventDefault();
@@ -1811,8 +1812,8 @@ var Menubar = class _Menubar extends BaseComponent {
     if (isPlatformBrowser(this.platformId)) {
       if (!this.outsideClickListener) {
         this.outsideClickListener = this.renderer.listen(this.document, "click", (event) => {
-          const isOutsideContainer = this.rootmenu.el.nativeElement !== event.target && !this.rootmenu.el.nativeElement.contains(event.target);
-          const isOutsideMenuButton = this.mobileActive && this.menubutton.nativeElement !== event.target && !this.menubutton.nativeElement.contains(event.target);
+          const isOutsideContainer = this.rootmenu?.el.nativeElement !== event.target && !this.rootmenu?.el.nativeElement?.contains(event.target);
+          const isOutsideMenuButton = this.mobileActive && this.menubutton?.nativeElement !== event.target && !this.menubutton?.nativeElement?.contains(event.target);
           if (isOutsideContainer) {
             isOutsideMenuButton ? this.mobileActive = false : this.hide();
           }

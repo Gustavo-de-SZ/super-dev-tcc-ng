@@ -1,20 +1,20 @@
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
 import {
   O,
   Tt,
   W,
   s3 as s
-} from "./chunk-ICG2ZITK.js";
+} from "./chunk-LEDTVQ4Z.js";
 import {
   CommonModule,
   NgTemplateOutlet,
@@ -319,7 +319,7 @@ var ScrollPanel = class _ScrollPanel extends BaseComponent {
     this.clearTimer();
   }
   repeat(bar, step) {
-    this.contentViewChild.nativeElement[bar] += step;
+    this.contentViewChild?.nativeElement && (this.contentViewChild.nativeElement[bar] += step);
     this.moveBar();
   }
   setTimer(bar, step) {
@@ -359,9 +359,9 @@ var ScrollPanel = class _ScrollPanel extends BaseComponent {
   }
   onYBarMouseDown(e) {
     this.isYBarClicked = true;
-    this.yBarViewChild.nativeElement.focus();
+    this.yBarViewChild?.nativeElement?.focus();
     this.lastPageY = e.pageY;
-    this.yBarViewChild.nativeElement.setAttribute("data-p-scrollpanel-grabbed", "true");
+    this.yBarViewChild?.nativeElement?.setAttribute("data-p-scrollpanel-grabbed", "true");
     W(this.yBarViewChild.nativeElement, "p-scrollpanel-grabbed");
     this.document.body.setAttribute("data-p-scrollpanel-grabbed", "true");
     W(this.document.body, "p-scrollpanel-grabbed");
@@ -370,9 +370,9 @@ var ScrollPanel = class _ScrollPanel extends BaseComponent {
   }
   onXBarMouseDown(e) {
     this.isXBarClicked = true;
-    this.xBarViewChild.nativeElement.focus();
+    this.xBarViewChild?.nativeElement?.focus();
     this.lastPageX = e.pageX;
-    this.xBarViewChild.nativeElement.setAttribute("data-p-scrollpanel-grabbed", "false");
+    this.xBarViewChild?.nativeElement?.setAttribute("data-p-scrollpanel-grabbed", "false");
     W(this.xBarViewChild.nativeElement, "p-scrollpanel-grabbed");
     this.document.body.setAttribute("data-p-scrollpanel-grabbed", "false");
     W(this.document.body, "p-scrollpanel-grabbed");
@@ -414,9 +414,9 @@ var ScrollPanel = class _ScrollPanel extends BaseComponent {
     this.contentViewChild.nativeElement.scrollTop = scrollTop;
   }
   onFocus(event) {
-    if (this.xBarViewChild.nativeElement.isSameNode(event.target)) {
+    if (this.xBarViewChild?.nativeElement?.isSameNode(event.target)) {
       this.orientation = "horizontal";
-    } else if (this.yBarViewChild.nativeElement.isSameNode(event.target)) {
+    } else if (this.yBarViewChild?.nativeElement?.isSameNode(event.target)) {
       this.orientation = "vertical";
     }
   }
@@ -426,9 +426,9 @@ var ScrollPanel = class _ScrollPanel extends BaseComponent {
     }
   }
   onDocumentMouseUp(e) {
-    this.yBarViewChild.nativeElement.setAttribute("data-p-scrollpanel-grabbed", "false");
+    this.yBarViewChild?.nativeElement?.setAttribute("data-p-scrollpanel-grabbed", "false");
     O(this.yBarViewChild.nativeElement, "p-scrollpanel-grabbed");
-    this.xBarViewChild.nativeElement.setAttribute("data-p-scrollpanel-grabbed", "false");
+    this.xBarViewChild?.nativeElement?.setAttribute("data-p-scrollpanel-grabbed", "false");
     O(this.xBarViewChild.nativeElement, "p-scrollpanel-grabbed");
     this.document.body.setAttribute("data-p-scrollpanel-grabbed", "false");
     O(this.document.body, "p-scrollpanel-grabbed");

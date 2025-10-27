@@ -1,34 +1,35 @@
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-LUYMOFWJ.js";
+} from "./chunk-SYXSV3Z6.js";
 import "./chunk-UQLQBFGK.js";
+import "./chunk-Q42KCB4K.js";
 import {
   ChevronRightIcon,
   HomeIcon
-} from "./chunk-WSGNGDVK.js";
-import "./chunk-NJWM2EWG.js";
-import "./chunk-C5DLRIHR.js";
+} from "./chunk-GP6JIWIS.js";
+import "./chunk-E7AGI74O.js";
 import {
   BaseComponent
-} from "./chunk-64SSRD2L.js";
+} from "./chunk-JTDX2LAG.js";
 import {
   BaseStyle
-} from "./chunk-X3D5LLJV.js";
-import "./chunk-ZLMKASLL.js";
+} from "./chunk-KLJWC2CE.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-DW56MBMF.js";
-import "./chunk-ICG2ZITK.js";
+} from "./chunk-XKTXS6OF.js";
+import "./chunk-QNSNH7RB.js";
+import "./chunk-LEDTVQ4Z.js";
 import {
   Router,
   RouterLink,
+  RouterLinkActive,
   RouterModule
-} from "./chunk-QKGY44ID.js";
-import "./chunk-YIYCLP5X.js";
-import "./chunk-RSPUADW5.js";
+} from "./chunk-WZWEIIDP.js";
+import "./chunk-AFGWAMKA.js";
 import "./chunk-MFAXB7NO.js";
+import "./chunk-RSPUADW5.js";
 import {
   CommonModule,
   NgForOf,
@@ -62,7 +63,6 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
-  ɵɵdirectiveInject,
   ɵɵelement,
   ɵɵelementContainerEnd,
   ɵɵelementContainerStart,
@@ -634,7 +634,6 @@ var BreadcrumbClasses;
   BreadcrumbClasses2["itemLabel"] = "p-breadcrumb-item-label";
 })(BreadcrumbClasses || (BreadcrumbClasses = {}));
 var Breadcrumb = class _Breadcrumb extends BaseComponent {
-  router;
   /**
    * An array of menuitems.
    * @group Props
@@ -667,10 +666,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
    */
   onItemClick = new EventEmitter();
   _componentStyle = inject(BreadCrumbStyle);
-  constructor(router) {
-    super();
-    this.router = router;
-  }
+  router = inject(Router);
   onClick(event, item) {
     if (item.disabled) {
       event.preventDefault();
@@ -718,9 +714,12 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
       }
     });
   }
-  static ɵfac = function Breadcrumb_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _Breadcrumb)(ɵɵdirectiveInject(Router));
-  };
+  static ɵfac = /* @__PURE__ */ (() => {
+    let ɵBreadcrumb_BaseFactory;
+    return function Breadcrumb_Factory(__ngFactoryType__) {
+      return (ɵBreadcrumb_BaseFactory || (ɵBreadcrumb_BaseFactory = ɵɵgetInheritedFactory(_Breadcrumb)))(__ngFactoryType__ || _Breadcrumb);
+    };
+  })();
   static ɵcmp = ɵɵdefineComponent({
     type: _Breadcrumb,
     selectors: [["p-breadcrumb"]],
@@ -750,7 +749,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
     features: [ɵɵProvidersFeature([BreadCrumbStyle]), ɵɵInheritDefinitionFeature],
     decls: 5,
     vars: 12,
-    consts: [["htmlHomeLabel", ""], ["htmlHomeRouteLabel", ""], ["htmlLabel", ""], ["htmlRouteLabel", ""], ["pTooltip", "", 3, "class", "ngStyle", "tooltipOptions", 4, "ngIf"], [3, "class", 4, "ngIf"], ["ngFor", "", 3, "ngForOf"], ["pTooltip", "", 3, "ngStyle", "tooltipOptions"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "href", "class", "target", "click", 4, "ngIf"], [3, "routerLink", "queryParams", "routerLinkActiveOptions", "class", "target", "fragment", "queryParamsHandling", "preserveFragment", "skipLocationChange", "replaceUrl", "state", "click", 4, "ngIf"], [3, "click", "href", "target"], [3, "class", "ngStyle", 4, "ngIf"], ["data-p-icon", "home", 3, "class", 4, "ngIf"], [4, "ngIf"], [3, "ngStyle"], ["data-p-icon", "home"], [3, "class", 4, "ngIf", "ngIfElse"], [3, "innerHTML"], [3, "click", "routerLink", "queryParams", "routerLinkActiveOptions", "target", "fragment", "queryParamsHandling", "preserveFragment", "skipLocationChange", "replaceUrl", "state"], [3, "class", "style", 4, "ngIf"], ["data-p-icon", "chevron-right", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "chevron-right"], ["pTooltip", "", 3, "class", "style", "tooltipOptions", 4, "ngIf"], ["pTooltip", "", 3, "tooltipOptions"], [3, "class", "target", "click", 4, "ngIf"], [3, "click", "target"]],
+    consts: [["htmlHomeLabel", ""], ["htmlHomeRouteLabel", ""], ["htmlLabel", ""], ["htmlRouteLabel", ""], ["pTooltip", "", 3, "class", "ngStyle", "tooltipOptions", 4, "ngIf"], [3, "class", 4, "ngIf"], ["ngFor", "", 3, "ngForOf"], ["pTooltip", "", 3, "ngStyle", "tooltipOptions"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "href", "class", "target", "click", 4, "ngIf"], ["routerLinkActive", "p-menuitem-link-active", 3, "routerLink", "queryParams", "routerLinkActiveOptions", "class", "target", "fragment", "queryParamsHandling", "preserveFragment", "skipLocationChange", "replaceUrl", "state", "click", 4, "ngIf"], [3, "click", "href", "target"], [3, "class", "ngStyle", 4, "ngIf"], ["data-p-icon", "home", 3, "class", 4, "ngIf"], [4, "ngIf"], [3, "ngStyle"], ["data-p-icon", "home"], [3, "class", 4, "ngIf", "ngIfElse"], [3, "innerHTML"], ["routerLinkActive", "p-menuitem-link-active", 3, "click", "routerLink", "queryParams", "routerLinkActiveOptions", "target", "fragment", "queryParamsHandling", "preserveFragment", "skipLocationChange", "replaceUrl", "state"], [3, "class", "style", 4, "ngIf"], ["data-p-icon", "chevron-right", 4, "ngIf"], [4, "ngTemplateOutlet"], ["data-p-icon", "chevron-right"], ["pTooltip", "", 3, "class", "style", "tooltipOptions", 4, "ngIf"], ["pTooltip", "", 3, "tooltipOptions"], [3, "class", "target", "click", 4, "ngIf"], [3, "click", "target"]],
     template: function Breadcrumb_Template(rf, ctx) {
       if (rf & 1) {
         ɵɵelementStart(0, "nav")(1, "ol");
@@ -772,7 +771,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
         ɵɵproperty("ngForOf", ctx.model);
       }
     },
-    dependencies: [CommonModule, NgForOf, NgIf, NgTemplateOutlet, NgStyle, RouterModule, RouterLink, TooltipModule, Tooltip, ChevronRightIcon, HomeIcon, SharedModule],
+    dependencies: [CommonModule, NgForOf, NgIf, NgTemplateOutlet, NgStyle, RouterModule, RouterLink, RouterLinkActive, TooltipModule, Tooltip, ChevronRightIcon, HomeIcon, SharedModule],
     encapsulation: 2,
     changeDetection: 0
   });
@@ -783,7 +782,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
     args: [{
       selector: "p-breadcrumb",
       standalone: true,
-      imports: [CommonModule, RouterModule, TooltipModule, ChevronRightIcon, HomeIcon, SharedModule],
+      imports: [CommonModule, RouterModule, RouterLink, RouterLinkActive, TooltipModule, ChevronRightIcon, HomeIcon, SharedModule],
       template: `
         <nav [class]="cn(cx('root'), styleClass)" [style]="style" [attr.data-pc-name]="'breadcrumb'" [attr.data-pc-section]="'root'">
             <ol [attr.data-pc-section]="'menu'" [class]="cx('list')">
@@ -811,6 +810,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
                         <a
                             *ngIf="home.routerLink"
                             [routerLink]="home.routerLink"
+                            routerLinkActive="p-menuitem-link-active"
                             [attr.aria-label]="homeAriaLabel"
                             [queryParams]="home.queryParams"
                             [routerLinkActiveOptions]="home.routerLinkActiveOptions || { exact: false }"
@@ -872,6 +872,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
                             <a
                                 *ngIf="menuitem?.routerLink"
                                 [routerLink]="menuitem?.routerLink"
+                                routerLinkActive="p-menuitem-link-active"
                                 [queryParams]="menuitem?.queryParams"
                                 [routerLinkActiveOptions]="menuitem?.routerLinkActiveOptions || { exact: false }"
                                 [class]="cx('itemLink')"
@@ -906,9 +907,7 @@ var Breadcrumb = class _Breadcrumb extends BaseComponent {
       encapsulation: ViewEncapsulation.None,
       providers: [BreadCrumbStyle]
     }]
-  }], () => [{
-    type: Router
-  }], {
+  }], null, {
     model: [{
       type: Input
     }],
