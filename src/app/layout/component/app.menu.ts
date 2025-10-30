@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AppMenuitem } from './app.menuitem';
+import { label } from '@primeuix/themes/aura/metergroup';
 
 @Component({
     selector: 'app-menu',
@@ -39,6 +40,11 @@ export class AppMenu {
                         icon: 'pi pi-fw pi-lock',
                         routerLink: ['/admin/suporte']
                     },
+                    { 
+                        label: 'Inventário',
+                        icon: 'pi pi-fw pi-storage',
+                        routerLink: ['admin/inventario-list']
+                    } 
                 ]
             }
         ];
